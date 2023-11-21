@@ -1,0 +1,97 @@
+.box-grid {
+  position: relative;
+  height: 350px;
+}
+
+.box1 {
+  //   height: 27%;
+  height: 166px;
+  left: 0;
+  border-radius: 32px 32px 8px 32px;
+  border: 1.82px;
+  background: linear-gradient(201.38deg, rgba(255, 255, 255, 0.1) 11.69%, rgba(100, 193, 222, 0.1) 92.17%);
+
+}
+
+.box2 {
+  //   height: 24%;
+  height: 140px;
+  right: 0;
+  border-radius: 32px 32px 32px 8px;
+  border: 1.82px;
+  background: linear-gradient(224.53deg, rgba(255, 255, 255, 0.1) 14.12%, rgba(242, 71, 104, 0.1) 100%);
+
+}
+
+.box3 {
+  //   height: 24%;
+  height: 140px;
+  top: 185px;
+  //   top: 30%;
+  left: 0;
+  border-radius: 32px 8px 32px 32px;
+  border: 1.82px;
+  background: linear-gradient(223.96deg, rgba(255, 255, 255, 0.1) 14.12%, rgba(255, 207, 38, 0.1) 90.76%);
+//   background: 
+// linear-gradient(223.96deg, rgba(255, 255, 255, 0.1) 14.12%, rgba(255, 207, 38, 0.1) 90.76%),linear-gradient(0deg, #FFFFFF, #FFFFFF);
+
+}
+
+.box4 {
+  //   height: 27%;
+  height: 166px;
+  top: 159px;
+  //   top: 27%;
+  right: 0;
+  border-radius: 8px 32px 32px 32px;
+  border: 1.82px;
+  background: linear-gradient(222.73deg, rgba(255, 255, 255, 0.1) 14.1%, rgba(220, 110, 216, 0.1) 88.53%);
+
+}
+
+.box {
+  border: 1.82px solid;
+  border-image-source: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 4.17%, rgba(255, 255, 255, 0) 81.25%, #FFFFFF 100%);
+  position: absolute;
+  width: 45%;
+
+  ion-img {
+    width: 65px;
+    height: 65px;
+    top: 5px;
+    right: 5px;
+    position: absolute;
+  }
+
+  .lbl{
+    position: absolute;
+    bottom: 35px;
+    left: 10px;
+    font-size: 1.2em;
+    color: #000;
+  }
+
+  .sub{
+    font-size: 0.8em;
+  }
+}
+
+round-progress {
+  transform: rotateZ(180deg);
+  margin: auto;
+}
+
+.current {
+  position: absolute;
+  color: #bbb;
+  font-weight: 100;
+  line-height: 1;
+}
+
+.meter {
+  background: linear-gradient(222.52deg, rgba(235, 197, 249, 0.1) 21.86%, rgba(197, 126, 208, 0.1) 85.23%),
+    linear-gradient(0deg, #FFFFFF, #FFFFFF);
+  box-shadow: 0px 3px 23px 0px #92479B1A;
+  border-radius: 32px;
+  border: 0.5px solid #dedede70;
+}
