@@ -21,84 +21,6 @@ export class TimelinePage implements OnInit {
     // this.user_id = this.route.snapshot.paramMap.get("id");
     this.user_id=this.user.id;
     this.getTimeline();
-    // this.timeline = [
-    //   {
-    //     "name": "Call with Tax Expert",
-    //     "status": "Done",
-    //     "completed": true,
-    //     "date": "2023-10-13T19:58:32.425716",
-    //     "doc_name": "",
-    //     "file": ""
-    //   },
-    //   {
-    //     "name": "Engagement Letter",
-    //     "status": "Awaited",
-    //     "completed": false,
-    //     "date": null,
-    //     "doc_name": "Engagement Letter",
-    //     "file": [
-    //       {
-    //         "id": 791,
-    //         "created_date": "2023-11-20T16:11:25.571625",
-    //         "updated_date": "2023-11-20T16:11:25.571648",
-    //         "status": false,
-    //         "file": "https://mobilitybackend.s3.amazonaws.com/dev/master/logo_xsLgJXR.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4EDEFENEFXLNB6DX%2F20231125%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20231125T160014Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=58a308a24e3b6f15a2779215528d879e1ef7ccc0b7e0a54bd6fa18b9479eae33",
-    //         "title": "Engagement Letter",
-    //         "description": null,
-    //         "is_deleted": false,
-    //         "user": 185
-    //       }
-    //     ]
-    //   },
-    //   {
-    //     "name": "Tax Organizer",
-    //     "status": "Awaited",
-    //     "completed": false,
-    //     "date": null,
-    //     "doc_name": "Organizer",
-    //     "file": []
-    //   },
-    //   {
-    //     "name": "Tax Return Preparation",
-    //     "status": "Awaited",
-    //     "completed": false,
-    //     "date": null,
-    //     "doc_name": "Tax Return",
-    //     "file": []
-    //   },
-    //   {
-    //     "name": "Tax Return Review",
-    //     "status": "Awaited",
-    //     "completed": false,
-    //     "date": null,
-    //     "doc_name": "Review Points",
-    //     "file": []
-    //   },
-    //   {
-    //     "name": "Sent for Client Review",
-    //     "status": "Awaited",
-    //     "completed": false,
-    //     "date": null,
-    //     "doc_name": "Final return",
-    //     "file": []
-    //   },
-    //   {
-    //     "name": "Return Finalized",
-    //     "status": "Awaited",
-    //     "completed": false,
-    //     "date": null,
-    //     "doc_name": "Client Approval",
-    //     "file": []
-    //   },
-    //   {
-    //     "name": "e-file Return",
-    //     "status": "Awaited",
-    //     "completed": false,
-    //     "date": null,
-    //     "doc_name": "E-File Report",
-    //     "file": []
-    //   }
-    // ]
   }
 
   getTimeline() {
@@ -144,6 +66,19 @@ export class TimelinePage implements OnInit {
     } else {
       return false;
     }
+  }
+
+  gotoPage(name:any) {
+    var url = ''
+    if (name.toLowerCase() == 'call with tax expert') {
+      url = '/schedule-call'
+    } else if (name.toLowerCase() == 'engagement letter') {
+      url = '/eng-letter'
+    } else if (name.toLowerCase() == 'tax organizer') {
+      url = '/organizer'
+    }
+    if (url)
+      this.router.navigate([url]);
   }
 
 }

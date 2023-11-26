@@ -124,7 +124,7 @@ ion-item.selected {
 
 .profile-pic{
   width: 60px;
-  height: 60px;
+  // height: 60px;
   border: 1px solid #92479B;
   border-radius: 100%;
   object-fit: cover;
@@ -133,9 +133,15 @@ ion-item.selected {
 .name{
   color: #000;
   font-weight: bold;
+  text-transform: capitalize;
 }
 
 .org_name{
   color: #92479B;
   font-weight: bold;
+  font-size: 1.2em;
+}
+
+.right-arrow{
+  font-size: 1em;
 }

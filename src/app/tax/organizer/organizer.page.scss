@@ -1,0 +1,26 @@
+.section_name {
+  border: 0.5px solid #92479B;
+  background:linear-gradient(0deg, #FCE6FF, #FCE6FF);
+  padding: 3%;
+  margin: 0 4%;
+  border-radius: 6px;
+  border: 0.5px;
+  color: #92479B;
+
+  .number {
+    background: #92479B;
+    color: #fff;
+    padding: 2px 9px;
+    border-radius: 100%;
+    margin-right: 3%;
+  }
+
+  ion-text {
+    font-family: Poppins;
+    font-size: .8em;
+    font-weight: 500;
+    line-height: 18px;
+    letter-spacing: 0em;
+    text-align: left;
+  }
+}

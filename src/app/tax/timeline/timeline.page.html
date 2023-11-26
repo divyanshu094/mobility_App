@@ -4,7 +4,7 @@
 
 <ion-content [fullscreen]="true">
   <ion-card class="cards" *ngFor="let step of timeline;let i=index">
-    <ion-card-header class="border-bottom">
+    <ion-card-header class="border-bottom" (click)="gotoPage(step.name)">
       <span class="statusBg"
         [ngClass]="{'activeStatusbg': !step.completed,'completeStatusbg':step.completed}">{{step.status}}</span>
       <ion-item lines="none" class="margin-top-4">

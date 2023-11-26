@@ -4,7 +4,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'user-dashboard',
+    redirectTo: 'login',
     pathMatch: 'full'
   }, {
     path: 'login',
@@ -29,6 +29,10 @@ const routes: Routes = [
   {
     path: 'vault',
     loadChildren: () => import('./vault/vault.module').then( m => m.VaultPageModule)
+  },
+  {
+    path: 'organizer',
+    loadChildren: () => import('./tax/organizer/organizer.module').then( m => m.OrganizerPageModule)
   }
 ];
 

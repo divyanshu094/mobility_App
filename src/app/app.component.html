@@ -3,37 +3,31 @@
     <ion-menu contentId="main-content" type="overlay">
       <ion-content>
         <ion-list id="inbox-list">
-          <!-- <ion-list-header>
-            <ion-img src="./assets/icon/tax_organizer_dash.svg" alt="profile-img" class="profile-pic"></ion-img>
-           </ion-list-header> -->
-          <!--<ion-note>hi@ionicframework.com</ion-note> -->
           <ion-row class="ion-align-items-center">
-            <ion-col size="3"><ion-img src="./assets/icon/tax_organizer_dash.svg" alt="profile-img"
-                class="profile-pic"></ion-img></ion-col>
+            <ion-col size="3"><img [src]="profile_pic ? profile_pic : './assets/icon/my_profile.svg'" alt="profile-img"
+                class="profile-pic"/></ion-col>
             <ion-col size="9">
-              <ion-note>Hey <span class="name">Mohan Singh</span>,
-                Welcome to <span class="org_name">MobilitySQR.</span></ion-note>
+              <ion-note>Hey <span class="name">{{name}}</span>,
+                Welcome to <span class="org_name">{{org_name}}</span></ion-note>
             </ion-col>
           </ion-row>
 
           <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
             <ion-item routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false"
               routerLinkActive="selected">
-              <!-- <ion-icon aria-hidden="true" slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon> -->
               <ion-img [src]="p.icon" alt="p.icon" slot="start" class="menu-icons"></ion-img>
               <ion-label>{{ p.title }}</ion-label>
+              <ion-icon aria-hidden="true" slot="end" ios="chevron-forward-outline" md="chevron-forward-sharp" class="right-arrow"></ion-icon>
+            </ion-item>
+          </ion-menu-toggle>
+          <ion-menu-toggle auto-hide="false" (click)="presentLogoutAlert()">
+            <ion-item routerDirection="root" lines="none" detail="false">
+              <ion-img src="./assets/icon/signout.svg" alt="logout" slot="start" class="menu-icons"></ion-img>
+              <ion-label>Log Out</ion-label>
+              <ion-icon aria-hidden="true" slot="end" ios="chevron-forward-outline" md="chevron-forward-sharp" class="right-arrow"></ion-icon>
             </ion-item>
           </ion-menu-toggle>
         </ion-list>
-
-        <!-- <ion-list id="labels-list">
-          <ion-list-header>Labels</ion-list-header>
-
-          <ion-item *ngFor="let label of labels" lines="none">
-            <ion-icon aria-hidden="true" slot="start" ios="bookmark-outline" md="bookmark-sharp"></ion-icon>
-            <ion-label>{{ label }}</ion-label>
-          </ion-item>
-        </ion-list> -->
       </ion-content>
     </ion-menu>
     <ion-router-outlet id="main-content"></ion-router-outlet>
