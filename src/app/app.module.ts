@@ -8,26 +8,33 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
-import {RoundProgressModule} from 'angular-svg-round-progressbar';
-import { AllImportModule } from './components/all-import/all-import.module';
+import { RoundProgressModule } from 'angular-svg-round-progressbar';
+import { TokenInterceptorService } from './services/token-interceptor.service';
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
-    BrowserModule, 
-    IonicModule.forRoot(), 
+    BrowserModule,
+    IonicModule.forRoot(),
     AppRoutingModule,
     HttpClientModule,
     RoundProgressModule,
-    // AllImportModule
   ],
   providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptorService,
+      multi: true,
+    },
+    DatePipe,
     // {
-    //   provide: HTTP_INTERCEPTORS,
-    //   useClass: TokenInterceptorService,
-    //   multi: true,
+    //   provide: DateAdapter,
+    //   useClass: MomentDateAdapter,
+    //   deps: [MAT_DATE_LOCALE],
     // },
+    // { provide: MAT_DATE_FORMATS, useValue: MY_FORMATS },
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

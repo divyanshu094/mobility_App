@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostBinding, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ApiserviceService } from '../services/apiservice.service';
 import { CommonserviceService } from '../services/commonservice.service';
@@ -11,20 +11,46 @@ import { CommonserviceService } from '../services/commonservice.service';
 export class LoginPage implements OnInit {
   username: any = "";
   password: any = '';
-
+  type:any='password';
+  // @HostBinding() type: string='password';
+  public actionSheetButtons = [
+    {
+      text: 'Delete',
+      role: 'destructive',
+      data: {
+        action: 'delete',
+      },
+    },
+    {
+      text: 'Share',
+      data: {
+        action: 'share',
+      },
+    },
+    {
+      text: 'Cancel',
+      role: 'cancel',
+      data: {
+        action: 'cancel',
+      },
+    },
+  ];
   constructor(private router: Router, private apiService: ApiserviceService, private commonService: CommonserviceService) { }
 
   ngOnInit() {
   }
 
+  toggleEye(){
+   this.type= this.type=="password" ? "text" : "password";
+  }
+
   signIn() {
-      debugger
-    if (this.username == '') {
+    if (!this.username) {
       this.commonService.showAlert('Alert', 'Please enter Username');
       return;
     }
 
-    if (this.password == '') {
+    if (!this.password) {
       this.commonService.showAlert('Alert', 'Please enter password');
       return;
     }

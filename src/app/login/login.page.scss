@@ -1,0 +1,115 @@
+.top-img-item {
+    width: 70%;
+    margin: 7% auto 5%;
+}
+
+.login-image {
+    width: 100%;
+}
+
+.ion-text-box,
+.ion-text-box-sign {
+    font-family: poppins;
+    color: #222;
+}
+
+.ion-text-box-sign {
+    margin-bottom: 2%;
+}
+
+.ion-text-box-sign h1 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 2%;
+}
+
+.ion-text-box-sign h6 {
+    font-size: 0.75rem;
+    font-weight: 400;
+}
+
+.ion-text-box h1 {
+    font-weight: 600;
+    font-size: 0.875rem;
+    margin-bottom: 3%;
+}
+
+.mrgn-top {
+    margin-top: 4%;
+}
+
+.ion-text-box h6 {
+    font-size: 0.75rem;
+    font-weight: 400;
+    padding-top: 0.9rem;
+}
+
+.positon-rel {
+    position: relative;
+}
+
+.position-abslt {
+    position: absolute;
+    right: 10%;
+    z-index: 2;
+    top: 30%;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.forgot-pswd {
+    color: #92479B;
+    font-weight: 500;
+    font-size: 1.1em;
+    text-decoration: none;
+    text-align: right;
+    margin: 5% 0;
+}
+
+.sign-in-btn {
+    --border-radius: 5px;
+    --border: 1px solid #92479B;
+    --background: #92479B;
+    --box-shadow: none;
+    height: 45px;
+}
+
+.cont-otp {
+    border-radius: 5px;
+    border: 1px solid #92479B;
+    --background: #FFF;
+    --color: #92479B;
+    --box-shadow: none;
+    height: 45px;
+}
+
+.ion-input-tag {
+    border-radius: 8px;
+    border: 1px solid #D9D9D9;
+    background: #FFF;
+    padding: 2% 3%!important
+    // color: #A5A5A5;
+}
+
+.or-text {
+    font-size: 2rem;
+    display: grid;
+    grid-template-columns: 1fr max-content 1fr;
+    grid-column-gap: 1.2rem;
+    align-items: center;
+    color: #696969;
+    font-weight: 400;
+    font-size: 0.9rem;
+    width: 70%;
+    margin: 5% auto;
+}
+
+.or-text::before,
+.or-text::after {
+    content: "";
+    display: block;
+    height: 1px;
+    background-color: #E3E3E3;
+}

@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { ToastController } from '@ionic/angular';
 
 
 const TOKEN_KEY = 'auth-token';
@@ -9,7 +10,7 @@ const USER_KEY = 'auth-user';
 })
 export class CommonserviceService {
   userInfo: any = {};
-  constructor(){}
+  constructor(private toastController: ToastController) { }
   // constructor(private toastr: ToastrService, public dialog: MatDialog) { }
 
 
@@ -37,16 +38,40 @@ export class CommonserviceService {
   //   }
   // }
 
-  showSuccess(title: any, msg: any) {
-    // this.toastr.success(msg, title);
+  async showSuccess(title: any, msg: any) {
+    const toast = await this.toastController.create({
+      message: msg,
+      duration: 1500,
+      positionAnchor: "header",
+      color:'success',
+      position: 'bottom',
+    });
+
+    await toast.present();
   }
 
-  showError(title: string, msg: any) {
-    // this.toastr.error(msg, title);
+  async showError(title: string, msg: any) {
+    const toast = await this.toastController.create({
+      message: msg,
+      duration: 1500,
+      positionAnchor: "header",
+      color:'danger',
+      position: 'bottom',
+    });
+
+    await toast.present();
   }
 
-  showAlert(title: string, msg: string) {
-    // this.toastr.warning(msg, title);
+  async showAlert(title: string, msg: string) {
+    const toast = await this.toastController.create({
+      message: msg,
+      duration: 1500,
+      positionAnchor: "header",
+      color:'warning',
+      position: 'bottom',
+    });
+
+    await toast.present();
   }
 
   amountFormated(evt: { which: any; keyCode: any; }) {
@@ -106,7 +131,7 @@ export class CommonserviceService {
   }
 
   blockspecialcharacter(e: { keyCode: any; which: any; }) {
-    var key:any = document.all ? key = e.keyCode : key = e.which;
+    var key: any = document.all ? key = e.keyCode : key = e.which;
     return ((key > 64 && key < 91) || (key > 96 && key < 123) || key == 8 || (key >= 48 && key <= 57));
   }
 

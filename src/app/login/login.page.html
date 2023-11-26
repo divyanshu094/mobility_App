@@ -1,18 +1,33 @@
 <ion-content [fullscreen]="true">
-  <ion-list>
-    <ion-item>
-      <ion-input labelPlacement="floating" fill="outline" [(ngModel)]="username">
-        <div slot="label">Username <ion-text color="danger">(Required)</ion-text></div>
-      </ion-input>
-    </ion-item>
+  <ion-item lines="none" class="top-img-item">
+    <ion-img src="./assets/icon/logo_small.svg" class="login-image"></ion-img>
+  </ion-item>
 
-    <ion-item>
-      <ion-input labelPlacement="floating" fill="outline"  [(ngModel)]="password">
-        <div slot="label">Password <ion-text color="danger">(Required)</ion-text></div>
-      </ion-input>
-    </ion-item>
-  </ion-list>
-
-  <ion-button color="success" expand="block" (click)="signIn()">Login</ion-button>
-  
+  <ion-grid class="ion-padding">
+    <h1>Sign in</h1>
+    <ion-note>Kindly enter your user name & password for sign in.</ion-note>
+    <ion-list>
+      <ion-text class="ion-text-box">
+        <h1>User Name</h1>
+      </ion-text>
+      <ion-item lines="none" class="ion-no-padding">
+        <ion-input [legacy]="true" type="text" [(ngModel)]="username" placeholder="Enter user name" class="ion-input-tag"></ion-input>
+      </ion-item>
+      <ion-text class="ion-text-box">
+        <h1>Password</h1>
+      </ion-text>
+      <ion-item lines="none" class="ion-no-padding">
+        <ion-input [legacy]="true" [type]="type" [(ngModel)]="password" placeholder="Enter user name" class="ion-input-tag"></ion-input>
+        <img src="./assets/icon/eye.svg" alt="eye" class="position-abslt" (click)="toggleEye()">
+      </ion-item>
+      <ion-item lines="none" class="ion-no-padding">
+        <ion-label class="forgot-pswd">Forgot Password?</ion-label>
+      </ion-item>
+      <ion-button expand="block" class="sign-in-btn" (click)="signIn()">Sign In</ion-button>
+      <ion-text class="or-text">Or</ion-text>
+      <ion-button expand="block" class="cont-otp" id="open-action-sheet">Continue With OTP</ion-button>
+      <ion-action-sheet trigger="open-action-sheet" class="new-open-action-sheet" header="Actions"
+        [buttons]="actionSheetButtons"></ion-action-sheet>
+    </ion-list>
+  </ion-grid>
 </ion-content>
