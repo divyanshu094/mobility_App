@@ -6,9 +6,11 @@ import { IonicModule } from '@ionic/angular';
 
 import { HeaderComponent } from '../header/header.component';
 import { BackHeaderComponent } from '../back-header/back-header.component';
+import { OtpComponent } from '../otp/otp.component';
+
 
 @NgModule({
-  declarations: [HeaderComponent,BackHeaderComponent],
+  declarations: [HeaderComponent,BackHeaderComponent,OtpComponent],
   imports: [
     CommonModule,
     FormsModule,
@@ -16,7 +18,8 @@ import { BackHeaderComponent } from '../back-header/back-header.component';
   ],
   exports: [
     HeaderComponent,
-    BackHeaderComponent
+    BackHeaderComponent,
+    OtpComponent
   ]
 })
 export class AllImportModule { }

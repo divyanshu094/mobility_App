@@ -62,7 +62,7 @@
 .forgot-pswd {
     color: #92479B;
     font-weight: 500;
-    font-size: 1.1em;
+    font-size: 1em;
     text-decoration: none;
     text-align: right;
     margin: 5% 0;
@@ -73,7 +73,8 @@
     --border: 1px solid #92479B;
     --background: #92479B;
     --box-shadow: none;
-    height: 45px;
+    height: 40px;
+    text-transform: capitalize;
 }
 
 .cont-otp {
@@ -82,7 +83,8 @@
     --background: #FFF;
     --color: #92479B;
     --box-shadow: none;
-    height: 45px;
+    height: 40px;
+    text-transform: capitalize;
 }
 
 .ion-input-tag {

@@ -25,9 +25,7 @@
       </ion-item>
       <ion-button expand="block" class="sign-in-btn" (click)="signIn()">Sign In</ion-button>
       <ion-text class="or-text">Or</ion-text>
-      <ion-button expand="block" class="cont-otp" id="open-action-sheet">Continue With OTP</ion-button>
-      <ion-action-sheet trigger="open-action-sheet" class="new-open-action-sheet" header="Actions"
-        [buttons]="actionSheetButtons"></ion-action-sheet>
+      <ion-button expand="block" class="cont-otp" id="open-action-sheet" (click)="loginViaOTP()">Continue With OTP</ion-button>
     </ion-list>
   </ion-grid>
 </ion-content>

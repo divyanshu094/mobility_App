@@ -1,0 +1,68 @@
+ion-content{
+    --padding-start: 5px;
+    --padding-end: 5px;
+}
+
+.icon-div{
+    text-align: end;
+    padding-right: 3%;
+}
+
+.heading {
+  text-align: center;
+  margin-top: 0;
+}
+
+p {
+  text-align: center;
+}
+
+.text {
+  font-family: Poppins;
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 25px;
+  letter-spacing: 0em;
+  text-align: center;
+
+  span {
+    font-family: Poppins;
+    font-size: .9em;
+    font-weight: 500;
+    line-height: 25px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #92479B;
+  }
+}
+
+.sign-in-btn {
+  --border-radius: 5px;
+  --border: 1px solid #92479B;
+  --background: #92479B;
+  --box-shadow: none;
+  height: 40px;
+  text-transform: capitalize;
+  margin: 3%;
+}
+
+.send-again {
+  color: #92479B;
+  font-size: .9em;
+}
+
+.dd {
+  font-size: .9em;
+  margin-top: 8%;
+}
+
+ion-input {
+    display: inline-block;
+    width: 15%;
+    height: 48px !important;
+    min-height: initial !important;
+    margin: 0.8%;
+    text-align: center;
+    border: 1px solid #92479B;
+    border-radius: 8px;
+}

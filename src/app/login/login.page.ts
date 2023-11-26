@@ -2,6 +2,8 @@ import { Component, HostBinding, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ApiserviceService } from '../services/apiservice.service';
 import { CommonserviceService } from '../services/commonservice.service';
+import { ModalController } from '@ionic/angular';
+import { OtpComponent } from '../components/otp/otp.component';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +13,7 @@ import { CommonserviceService } from '../services/commonservice.service';
 export class LoginPage implements OnInit {
   username: any = "";
   password: any = '';
-  type:any='password';
+  type: any = 'password';
   // @HostBinding() type: string='password';
   public actionSheetButtons = [
     {
@@ -35,13 +37,23 @@ export class LoginPage implements OnInit {
       },
     },
   ];
-  constructor(private router: Router, private apiService: ApiserviceService, private commonService: CommonserviceService) { }
+  constructor(private router: Router, private apiService: ApiserviceService, private commonService: CommonserviceService, private modalCtrl: ModalController) { }
 
   ngOnInit() {
   }
 
-  toggleEye(){
-   this.type= this.type=="password" ? "text" : "password";
+  toggleEye() {
+    this.type = this.type == "password" ? "text" : "password";
+  }
+
+  async loginViaOTP() {
+    const modal = await this.modalCtrl.create({
+      component: OtpComponent,
+      breakpoints: [0, 0.3, 0.5, 0.8],
+      initialBreakpoint: 0.5,
+      cssClass: 'otp-modal'
+    });
+    await modal.present();
   }
 
   signIn() {
