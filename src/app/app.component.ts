@@ -8,19 +8,22 @@ import { Router } from '@angular/router';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  org_name:any="";
-  name:any="";
-  profile_pic:any="";
+  org_name: any = "";
+  name: any = "";
+  profile_pic: any = "";
   public appPages = [
     { title: 'My Profile', url: 'fs', icon: './assets/icon/my_profile.svg' },
     { title: 'Documents', url: 'fds', icon: './assets/icon/documents_menu.svg' },
     { title: 'Notification', url: 'ds', icon: './assets/icon/bell_icon.svg' },
   ];
-  constructor(public commonService: CommonserviceService,private alertController: AlertController,private router: Router) {
-    var user_detail=JSON.parse(localStorage["user_detail"]);
-    this.profile_pic=user_detail.profile.photo.file;
-    this.name=user_detail.first_name+' '+user_detail.last_name;
-    this.org_name=user_detail.membership[0].organizations.org_name;
+  constructor(public commonService: CommonserviceService, private alertController: AlertController, private router: Router) {
+    if (localStorage["user_detail"])
+      var user_detail = JSON.parse(localStorage["user_detail"]);
+    if (user_detail) {
+      this.profile_pic = user_detail.profile.photo.file;
+      this.name = user_detail.first_name + ' ' + user_detail.last_name;
+      this.org_name = user_detail.membership[0].organizations.org_name;
+    }
   }
 
   async presentLogoutAlert() {
@@ -31,10 +34,12 @@ export class AppComponent {
         text: 'Yes',
         role: 'confirm',
         handler: () => {
+          localStorage.clear();
+          sessionStorage.clear();
           this.router.navigate(['/']);
         },
       }
-      ,'No'],
+        , 'No'],
     });
 
     await alert.present();
