@@ -1,0 +1,78 @@
+.cards {
+  border-radius: 15px;
+  box-shadow: 0px 3px 20px 0px #0025611A;
+}
+
+.border-bottom {
+  border-bottom: 0.5px solid #DADADA
+}
+
+ion-card-header,
+ion-card-content {
+  padding: 0;
+}
+
+.date {
+  color: #92479B;
+}
+
+ion-avatar {
+  width: 50px;
+  height: 50px;
+}
+
+.statusBg {
+  padding: 0.8% 4%;
+  font-size: 0.9em;
+  border-radius: 0px 15px 0px 15px;
+  margin-left: 2%;
+  position: absolute;
+  top: 0;
+  font-weight: bold;
+  right: 0;
+  z-index: 10;
+}
+
+.activeStatusbg {
+  background: #F8F3C4 !important;
+  color: #7D751A;
+}
+
+.completeStatusbg {
+  background: #D2FACE !important;
+  color: #227D1A;
+}
+
+.margin-top-4 {
+  margin-top: 4%;
+}
+
+h2 {
+  font-size: 1.2em;
+  font-weight: 500;
+}
+
+.buttons{
+  margin-left: 60px;
+}
+
+
+.accept-btn{
+  --background: #227D1A;
+  --background-hover: #227D1A;
+  --background-activated: #227D1A;
+  --background-focused: #227D1A;
+  text-transform: capitalize;
+  --color: #fff;
+  width: 35%;
+}
+
+.reject-btn{
+  --background: #7D1A1A;
+  --background-hover: #7D1A1A;
+  --background-activated: #7D1A1A;
+  --background-focused: #7D1A1A;
+  text-transform: capitalize;
+  --color: #fff;
+  width: 35%;
+}

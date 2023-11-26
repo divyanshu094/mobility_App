@@ -13,6 +13,22 @@ const routes: Routes = [
   {
     path: 'user-dashboard',
     loadChildren: () => import('./tax/user-dashboard/user-dashboard.module').then( m => m.UserDashboardPageModule)
+  },
+  {
+    path: 'timeline',
+    loadChildren: () => import('./tax/timeline/timeline.module').then( m => m.TimelinePageModule)
+  },
+  {
+    path: 'travel-cal',
+    loadChildren: () => import('./tax/travel-cal/travel-cal.module').then( m => m.TravelCalPageModule)
+  },
+  {
+    path: 'return-status',
+    loadChildren: () => import('./tax/return-status/return-status.module').then( m => m.ReturnStatusPageModule)
+  },
+  {
+    path: 'vault',
+    loadChildren: () => import('./vault/vault.module').then( m => m.VaultPageModule)
   }
 ];
 

@@ -9,8 +9,7 @@ import { UserDashboardPageRoutingModule } from './user-dashboard-routing.module'
 import { UserDashboardPage } from './user-dashboard.page';
 
 import {RoundProgressModule} from 'angular-svg-round-progressbar';
-
-import { HeaderComponent } from '../../header/header.component';
+import { AllImportModule } from 'src/app/components/all-import/all-import.module';
 
 @NgModule({
   imports: [
@@ -18,8 +17,9 @@ import { HeaderComponent } from '../../header/header.component';
     FormsModule,
     IonicModule,
     UserDashboardPageRoutingModule,
-    RoundProgressModule
+    RoundProgressModule,
+    AllImportModule
   ],
-  declarations: [UserDashboardPage,HeaderComponent]
+  declarations: [UserDashboardPage]
 })
 export class UserDashboardPageModule {}

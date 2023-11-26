@@ -5,33 +5,37 @@
 <ion-content [fullscreen]="true">
   <ion-card class="meter">
     <ion-card-content>
-      <div class="current" [ngStyle]="getOverlayStyle()">2/8</div>
+      <div class="current">Estimated
+        Tax Payments
+        <br>
+        <span class="due_date">Due Date: <em>Nov 21, 2023</em></span>
+      </div>
       <round-progress [current]="2" [max]="8" [color]="'#FFBCBC'" [background]="'#DC6ED833'" [radius]="100"
-        [stroke]="15" [semicircle]="false" [rounded]="true" [clockwise]="true" [responsive]="false" [duration]="800"
+        [stroke]="15" [semicircle]="false" [rounded]="true" [clockwise]="true" [responsive]="true" [duration]="800"
         [animation]="'easeInOutQuart'" [animationDelay]="100">
       </round-progress>
     </ion-card-content>
   </ion-card>
 
   <ion-grid class="box-grid">
-    <ion-card class="box box1">
+    <ion-card class="box box1" routerLink="/timeline">
       <ion-img src="./assets/icon/tax_organizer_dash.svg" alt="tax_organizer_dash"></ion-img>
       <ion-label class="lbl">Tax <br>Organizer</ion-label>
     </ion-card>
 
-    <ion-card class="box box2">
+    <ion-card class="box box2" routerLink="/travel-cal">
       <ion-img src="./assets/icon/travel_calendar_dash.svg" alt="travel_calendar_dash"></ion-img>
       <ion-label class="lbl">Travel <br>Calendar</ion-label>
     </ion-card>
 
-    <ion-card class="box box3">
+    <ion-card class="box box3" routerLink="/return-status">
       <ion-img src="./assets/icon/return_status_dash.svg" alt="return_status_dash"></ion-img>
       <ion-label class="lbl">Tax <br>Return Status</ion-label>
     </ion-card>
 
-    <ion-card class="box box4">
+    <ion-card class="box box4" routerLink="/vault">
       <ion-img src="./assets/icon/vault_dash.svg" alt="vault_dash"></ion-img>
-      <ion-label class="lbl">Vault  <br><span class="sub">(for Documents)</span></ion-label>
+      <ion-label class="lbl">Vault <br><span class="sub">(for Documents)</span></ion-label>
     </ion-card>
   </ion-grid>
 </ion-content>

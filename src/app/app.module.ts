@@ -9,8 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import {RoundProgressModule} from 'angular-svg-round-progressbar';
-
-import { HeaderComponent } from './header/header.component';
+import { AllImportModule } from './components/all-import/all-import.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -20,6 +19,7 @@ import { HeaderComponent } from './header/header.component';
     AppRoutingModule,
     HttpClientModule,
     RoundProgressModule,
+    // AllImportModule
   ],
   providers: [
     // {
