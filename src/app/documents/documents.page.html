@@ -1,0 +1,47 @@
+<ion-header [translucent]="true" class="ion-no-border">
+  <app-back-header title="Documents"></app-back-header>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-searchbar placeholder="Search" [debounce]="1000" class="custom"></ion-searchbar>
+  <h5>Document List</h5>
+
+  <ion-list>
+    <ion-card *ngFor="let item of documents">
+      <ion-card-content>
+        <ion-item>
+          <ion-img src="./assets/icon/three_dot.svg" class="dots" [id]="item.title"></ion-img>
+          <ion-avatar slot="start">
+            <img [alt]="item.title" src="./assets/icon/pdf_icon.svg" />
+          </ion-avatar>
+          <ion-label>
+            <h2>{{item.title}}</h2>
+            <p>Uploaded Date: <b>{{item.updated_date | date}}</b></p>
+            <p>Uploaded Time: <b>{{item.updated_date | date : 'hh:mm a'}}</b></p>
+          </ion-label>
+        </ion-item>
+      </ion-card-content>
+      <ion-popover [trigger]="item.title" triggerAction="click">
+        <ng-template>
+          <ion-content class="ion-padding">
+            <ion-item lines="none" (click)="edit(item)">
+              <ion-thumbnail class="pop_icon">
+                <img src="./assets/icon/edit.svg" />
+              </ion-thumbnail>
+              <ion-label>Edit</ion-label>
+            </ion-item>
+            <ion-item lines="none" (click)="delete(item)">
+              <ion-thumbnail class="pop_icon">
+                <img src="./assets/icon/del.svg" />
+              </ion-thumbnail>
+              <ion-label>Delete</ion-label>
+            </ion-item>
+          </ion-content>
+        </ng-template>
+      </ion-popover>
+    </ion-card>
+  </ion-list>
+
+  
+
+</ion-content>

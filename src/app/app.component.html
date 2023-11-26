@@ -1,6 +1,6 @@
 <ion-app>
   <ion-split-pane contentId="main-content">
-    <ion-menu contentId="main-content" type="overlay">
+    <ion-menu contentId="main-content" type="overlay" (ionWillOpen)="showDetails()">
       <ion-content>
         <ion-list id="inbox-list">
           <ion-row class="ion-align-items-center">
@@ -13,7 +13,7 @@
           </ion-row>
 
           <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
-            <ion-item routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false"
+            <ion-item [routerLink]="[p.url]" lines="none" detail="false"
               routerLinkActive="selected">
               <ion-img [src]="p.icon" alt="p.icon" slot="start" class="menu-icons"></ion-img>
               <ion-label>{{ p.title }}</ion-label>
@@ -32,4 +32,5 @@
     </ion-menu>
     <ion-router-outlet id="main-content"></ion-router-outlet>
   </ion-split-pane>
+  <!-- <ion-loading trigger="open-loading" message="Loading..." [duration]="3000" spinner="circles"></ion-loading> -->
 </ion-app>

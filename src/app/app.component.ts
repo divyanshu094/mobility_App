@@ -12,11 +12,15 @@ export class AppComponent {
   name: any = "";
   profile_pic: any = "";
   public appPages = [
-    { title: 'My Profile', url: 'fs', icon: './assets/icon/my_profile.svg' },
-    { title: 'Documents', url: 'fds', icon: './assets/icon/documents_menu.svg' },
-    { title: 'Notification', url: 'ds', icon: './assets/icon/bell_icon.svg' },
+    { title: 'My Profile', url: '/profile', icon: './assets/icon/my_profile.svg' },
+    { title: 'Documents', url: '/documents', icon: './assets/icon/documents_menu.svg', },
+    { title: 'Notification', url: '/notification', icon: './assets/icon/bell_icon.svg' },
   ];
   constructor(public commonService: CommonserviceService, private alertController: AlertController, private router: Router) {
+  
+  }
+
+  showDetails(){
     if (localStorage["user_detail"])
       var user_detail = JSON.parse(localStorage["user_detail"]);
     if (user_detail) {

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
+import { LoadingController } from '@ionic/angular';
 
 
 const httpOptions = {
@@ -12,47 +13,75 @@ const httpOptions = {
 })
 export class ApiserviceService {
   serverUrl = environment.baseUrl;
-  constructor(private http: HttpClient) { }
+  loading:any;
+  constructor(private http: HttpClient, public loadingController: LoadingController) { }
 
-  requestViaGet(method:any) {
+  async showLoader() {
+    // this.loading = await this.loadingController.create({
+    //   message: 'Please Wait',
+    //   spinner:'bubbles',
+    //   mode:'ios',
+    //   keyboardClose:true,
+    //   translucent: true,
+    // });
+    // await this.loading.present();
+  }
+
+  async hideLoader(){
+    // await this.loading.dismiss();
+  }
+
+  requestViaGet(method: any) {
+    this.showLoader();
     return new Promise((resolve, reject) => {
       this.http.get(this.serverUrl + method)
         .subscribe(res => {
+          this.hideLoader();
           resolve(res);
         }, (err) => {
+          this.hideLoader();
           reject(err);
         });
     });
   }
 
-  requestViaPost(method:any, data:any) {
+  requestViaPost(method: any, data: any) {
+    this.showLoader();
     return new Promise((resolve, reject) => {
       this.http.post(this.serverUrl + method, data)
         .subscribe(res => {
+          this.hideLoader();
           resolve(res);
         }, (err) => {
+          this.hideLoader();
           reject(err);
         });
     });
   }
 
-  requestViaPatch(method:any, data:any) {
+  requestViaPatch(method: any, data: any) {
+    this.showLoader();
     return new Promise((resolve, reject) => {
       this.http.patch(this.serverUrl + method, data)
         .subscribe(res => {
+          this.hideLoader();
           resolve(res);
         }, (err) => {
+          this.hideLoader();
           reject(err);
         });
     });
   }
 
   requestViaDelete(method: string) {
+    this.showLoader();
     return new Promise((resolve, reject) => {
       this.http.delete(this.serverUrl + method)
         .subscribe(res => {
+          this.hideLoader();
           resolve(res);
         }, (err) => {
+          this.hideLoader();
           reject(err);
         });
     });

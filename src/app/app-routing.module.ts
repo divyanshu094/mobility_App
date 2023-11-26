@@ -33,6 +33,22 @@ const routes: Routes = [
   {
     path: 'organizer',
     loadChildren: () => import('./tax/organizer/organizer.module').then( m => m.OrganizerPageModule)
+  },
+  {
+    path: 'documents',
+    loadChildren: () => import('./documents/documents.module').then( m => m.DocumentsPageModule)
+  },
+  {
+    path: 'notification',
+    loadChildren: () => import('./notification/notification.module').then( m => m.NotificationPageModule)
+  },
+  {
+    path: 'profile',
+    loadChildren: () => import('./tax/profile/profile.module').then( m => m.ProfilePageModule)
+  },
+  {
+    path: 'eng-letter',
+    loadChildren: () => import('./tax/eng-letter/eng-letter.module').then( m => m.EngLetterPageModule)
   }
 ];
 
