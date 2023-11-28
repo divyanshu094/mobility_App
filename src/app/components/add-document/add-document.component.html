@@ -1,0 +1,32 @@
+<ion-content class="ion-padding">
+  <ion-row class="header">
+    <ion-col size="2"></ion-col>
+    <ion-col size="8">
+      <h4>Add New Document</h4>
+    </ion-col>
+    <ion-col size="2"><ion-icon name="close-outline" size="large" (click)="cancel()"></ion-icon></ion-col>
+  </ion-row>
+
+  <h6>Document Name</h6>
+  <ion-input type="text" [(ngModel)]="doc_name" class="ion-input-tag" placeholder="Enter email"></ion-input>
+
+  <h6>Add Document</h6>
+
+  <ion-row>
+    <ion-col class="box">
+      <ion-img src="./assets/icon/upload.svg" class=""></ion-img>
+      <p>Upload File</p>
+    </ion-col>
+    <ion-col class="box">
+      <ion-img src="./assets/icon/take_photo.svg" class="logo"></ion-img>
+      <p>Take Photo</p>
+    </ion-col>
+  </ion-row>
+  <ion-item lines="none" class="ion-no-padding">
+    <ion-avatar slot="start">
+      <img src="./assets/icon/pdf_icon.svg" />
+    </ion-avatar>
+    <ion-label>Engagement letter.pdf</ion-label>
+  </ion-item>
+  <ion-button expand="block" class="sign-in-btn">Add</ion-button>
+</ion-content>

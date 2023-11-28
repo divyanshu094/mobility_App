@@ -4,13 +4,13 @@
 
 <ion-content [fullscreen]="true">
   <ion-searchbar placeholder="Search" [debounce]="1000" class="custom"></ion-searchbar>
-  <h5>Document List</h5>
+  <h5>Document List <span class="add-text" (click)="addDocument()">Add New</span></h5>
 
   <ion-list>
-    <ion-card *ngFor="let item of documents">
+    <ion-card *ngFor="let item of documents;let i=index">
       <ion-card-content>
         <ion-item>
-          <ion-img src="./assets/icon/three_dot.svg" class="dots" [id]="item.title"></ion-img>
+          <ion-img src="./assets/icon/three_dot.svg" class="dots" [id]="i+'over'"></ion-img>
           <ion-avatar slot="start">
             <img [alt]="item.title" src="./assets/icon/pdf_icon.svg" />
           </ion-avatar>
@@ -21,7 +21,7 @@
           </ion-label>
         </ion-item>
       </ion-card-content>
-      <ion-popover [trigger]="item.title" triggerAction="click">
+      <ion-popover [trigger]="i+'over'" triggerAction="click">
         <ng-template>
           <ion-content class="ion-padding">
             <ion-item lines="none" (click)="edit(item)">

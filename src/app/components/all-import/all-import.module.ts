@@ -8,10 +8,17 @@ import { HeaderComponent } from '../header/header.component';
 import { BackHeaderComponent } from '../back-header/back-header.component';
 import { OtpComponent } from '../otp/otp.component';
 import { ForgotPassComponent } from '../forgot-pass/forgot-pass.component';
+import { AddDocumentComponent } from '../add-document/add-document.component';
 
 
 @NgModule({
-  declarations: [HeaderComponent, BackHeaderComponent, OtpComponent, ForgotPassComponent],
+  declarations: [
+    HeaderComponent,
+    BackHeaderComponent,
+    OtpComponent,
+    ForgotPassComponent,
+    AddDocumentComponent
+  ],
   imports: [
     CommonModule,
     FormsModule,
@@ -21,7 +28,8 @@ import { ForgotPassComponent } from '../forgot-pass/forgot-pass.component';
     HeaderComponent,
     BackHeaderComponent,
     OtpComponent,
-    ForgotPassComponent
+    ForgotPassComponent,
+    AddDocumentComponent
   ]
 })
 export class AllImportModule { }

@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { LoadingController } from '@ionic/angular';
@@ -11,24 +11,26 @@ const httpOptions = {
 @Injectable({
   providedIn: 'root'
 })
-export class ApiserviceService {
+export class ApiserviceService{
   serverUrl = environment.baseUrl;
-  loading:any;
-  constructor(private http: HttpClient, public loadingController: LoadingController) { }
+  loading: any;
+  constructor(private http: HttpClient, public loadingController: LoadingController) {
+    this.loadingController.create({
+      message: 'Please Wait',
+      spinner: 'bubbles',
+      mode: 'ios',
+      keyboardClose: true,
+      translucent: true,
+    });
+  }
+
 
   async showLoader() {
-    // this.loading = await this.loadingController.create({
-    //   message: 'Please Wait',
-    //   spinner:'bubbles',
-    //   mode:'ios',
-    //   keyboardClose:true,
-    //   translucent: true,
-    // });
     // await this.loading.present();
   }
 
-  async hideLoader(){
-    // await this.loading.dismiss();
+  async hideLoader() {
+      // await this.loading.dismiss();
   }
 
   requestViaGet(method: any) {

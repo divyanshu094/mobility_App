@@ -3,8 +3,8 @@
     <ion-icon name="close-outline" size="large" (click)="cancel()"></ion-icon>
   </div>
   <h3 class="heading">OTP Verification</h3>
-  <p class="text">We have sent OTP on your register Email ID <span>moha*******@gmail.com</span></p>
-
+  <p class="text">We have sent OTP on your register Email ID </p>
+  <!-- <span>moha*******@gmail.com</span> -->
   <ion-row text-center>
     <ion-col>
       <ion-input type="tel" [legacy]="true" placeholder="_" [(ngModel)]="otp.first" #otp1 required maxLength="1" (keyup)="otpController($event,otp2,'')">
