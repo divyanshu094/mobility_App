@@ -1,0 +1,79 @@
+ion-content{
+    --padding-start: 5px;
+    --padding-end: 5px;
+}
+
+.icon-div{
+    text-align: end;
+    padding-right: 3%;
+}
+
+.text {
+  font-family: Poppins;
+  font-size: .9em;
+  font-weight: 400;
+  line-height: 25px;
+  letter-spacing: 0em;
+  margin: 0;
+
+  span {
+    font-family: Poppins;
+    font-size: .9em;
+    font-weight: 500;
+    line-height: 25px;
+    letter-spacing: 0em;
+    color: #92479B;
+  }
+}
+
+.ion-text-box,
+.ion-text-box-sign {
+    font-family: poppins;
+    color: #222;
+}
+
+.ion-text-box-sign {
+    margin-bottom: 2%;
+}
+
+.ion-text-box-sign h1 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 2%;
+}
+
+.ion-text-box-sign h6 {
+    font-size: 0.75rem;
+    font-weight: 400;
+}
+
+.ion-text-box h1 {
+    font-weight: 600;
+    font-size: 0.875rem;
+    margin-bottom: 3%;
+}
+
+.ion-text-box h6 {
+    font-size: 0.75rem;
+    font-weight: 400;
+    padding-top: 0.9rem;
+}
+
+.ion-input-tag {
+    border-radius: 8px;
+    border: 1px solid #D9D9D9;
+    background: #FFF;
+    padding: 0 3% !important;
+    height: 48px !important;
+    min-height: initial !important;
+    margin-bottom: 5%;
+}
+
+.sign-in-btn {
+    --border-radius: 5px;
+    --border: 1px solid #92479B;
+    --background: #92479B;
+    --box-shadow: none;
+    height: 40px;
+    text-transform: capitalize;
+}

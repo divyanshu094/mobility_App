@@ -18,10 +18,10 @@
       </ion-text>
       <ion-item lines="none" class="ion-no-padding">
         <ion-input [legacy]="true" [type]="type" [(ngModel)]="password" placeholder="Enter user name" class="ion-input-tag"></ion-input>
-        <img src="./assets/icon/eye.svg" alt="eye" class="position-abslt" (click)="toggleEye()">
+        <ion-img src="./assets/icon/eye.svg" alt="eye" class="position-abslt" (click)="toggleEye()"></ion-img>
       </ion-item>
       <ion-item lines="none" class="ion-no-padding">
-        <ion-label class="forgot-pswd">Forgot Password?</ion-label>
+        <ion-label class="forgot-pswd" (click)="forgotPopup()">Forgot Password?</ion-label>
       </ion-item>
       <ion-button expand="block" class="sign-in-btn" (click)="signIn()">Sign In</ion-button>
       <ion-text class="or-text">Or</ion-text>

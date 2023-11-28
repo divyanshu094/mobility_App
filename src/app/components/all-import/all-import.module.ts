@@ -7,10 +7,11 @@ import { IonicModule } from '@ionic/angular';
 import { HeaderComponent } from '../header/header.component';
 import { BackHeaderComponent } from '../back-header/back-header.component';
 import { OtpComponent } from '../otp/otp.component';
+import { ForgotPassComponent } from '../forgot-pass/forgot-pass.component';
 
 
 @NgModule({
-  declarations: [HeaderComponent,BackHeaderComponent,OtpComponent],
+  declarations: [HeaderComponent, BackHeaderComponent, OtpComponent, ForgotPassComponent],
   imports: [
     CommonModule,
     FormsModule,
@@ -19,7 +20,8 @@ import { OtpComponent } from '../otp/otp.component';
   exports: [
     HeaderComponent,
     BackHeaderComponent,
-    OtpComponent
+    OtpComponent,
+    ForgotPassComponent
   ]
 })
 export class AllImportModule { }

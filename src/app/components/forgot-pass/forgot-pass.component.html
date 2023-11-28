@@ -1,0 +1,15 @@
+<ion-content class="ion-padding">
+  <div class="icon-div">
+    <ion-icon name="close-outline" size="large" (click)="cancel()"></ion-icon>
+  </div>
+  <h3 class="heading">Forgot Password</h3>
+  <p class="text">We have sent password on your register Email ID.</p>
+  <ion-text class="ion-text-box">
+    <h1>User Name</h1>
+  </ion-text>
+  <ion-item lines="none" class="ion-no-padding">
+    <ion-input name="email" type="text" [(ngModel)]="email" class="ion-input-tag" placeholder="Enter email"></ion-input>
+  </ion-item>
+
+  <ion-button expand="block" class="sign-in-btn" (click)="sendMail()">Verify</ion-button>
+</ion-content>

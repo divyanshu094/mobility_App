@@ -28,7 +28,7 @@ export class AppComponent {
     var lastTimeBackPress = 0;
     var timePeriodToExit = 2000;
     this.platform.backButton.subscribeWithPriority(0, async () => {
-      if (this.router.url === '/dashboard') {
+      if (this.router.url === '/user-dashboard') {
         if (new Date().getTime() - lastTimeBackPress < timePeriodToExit) {
           App.exitApp(); //Exit from app
         } else {

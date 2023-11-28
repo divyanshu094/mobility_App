@@ -4,6 +4,7 @@ import { ApiserviceService } from '../services/apiservice.service';
 import { CommonserviceService } from '../services/commonservice.service';
 import { ModalController } from '@ionic/angular';
 import { OtpComponent } from '../components/otp/otp.component';
+import { ForgotPassComponent } from '../components/forgot-pass/forgot-pass.component';
 
 @Component({
   selector: 'app-login',
@@ -14,29 +15,6 @@ export class LoginPage implements OnInit {
   username: any = "";
   password: any = '';
   type: any = 'password';
-  // @HostBinding() type: string='password';
-  public actionSheetButtons = [
-    {
-      text: 'Delete',
-      role: 'destructive',
-      data: {
-        action: 'delete',
-      },
-    },
-    {
-      text: 'Share',
-      data: {
-        action: 'share',
-      },
-    },
-    {
-      text: 'Cancel',
-      role: 'cancel',
-      data: {
-        action: 'cancel',
-      },
-    },
-  ];
   constructor(private router: Router, private apiService: ApiserviceService, private commonService: CommonserviceService, private modalCtrl: ModalController) { }
 
   ngOnInit() {
@@ -46,14 +24,46 @@ export class LoginPage implements OnInit {
     this.type = this.type == "password" ? "text" : "password";
   }
 
-  async loginViaOTP() {
+  async forgotPopup() {
     const modal = await this.modalCtrl.create({
-      component: OtpComponent,
-      breakpoints: [0, 0.3, 0.5, 0.8],
+      component: ForgotPassComponent,
+      breakpoints: [0.5, 0.8],
       initialBreakpoint: 0.5,
-      cssClass: 'otp-modal'
+      cssClass: 'otp-modal',
     });
     await modal.present();
+  }
+
+  async loginViaOTP() {
+    if (!this.username) {
+      this.commonService.showAlert("Alert", "Please enter username")
+      return;
+    }
+
+    var postParams = {
+      username: this.username
+    };
+    this.apiService.requestViaPost('/employee/otp_generate/', postParams).then(
+      async (result: any) => {
+        console.log(result)
+        if (result.status) {
+          const modal = await this.modalCtrl.create({
+            component: OtpComponent,
+            breakpoints: [0.5, 0.8],
+            initialBreakpoint: 0.5,
+            cssClass: 'otp-modal',
+            componentProps: { username: this.username }
+          });
+          await modal.present();
+          this.commonService.showSuccess('Success', result.massage);
+        } else {
+          this.commonService.showError('Alert', result.message);
+        }
+      }, (err) => {
+        console.log(err);
+
+      }
+    );
   }
 
   signIn() {
