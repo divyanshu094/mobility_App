@@ -1,12 +1,11 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
-  selector: 'app-investment-income',
-  templateUrl: './investment-income.component.html',
-  styleUrls: ['./investment-income.component.scss'],
+  selector: 'app-rental-income',
+  templateUrl: './rental-income.component.html',
+  styleUrls: ['./rental-income.component.scss'],
 })
-export class InvestmentIncomeComponent  implements OnInit {
-
+export class RentalIncomeComponent  implements OnInit {
   @Output() pageChange = new EventEmitter<string>();
   constructor() { }
 
@@ -19,5 +18,4 @@ export class InvestmentIncomeComponent  implements OnInit {
   prev() {
     this.pageChange.emit("prev");
   }
-
 }

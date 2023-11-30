@@ -1,0 +1,161 @@
+<ion-content [fullscreen]="true" class="ion-padding ion-content-scroll">
+  <ion-row>
+    <p class="warn">Please upload copies of the following documents:</p>
+    <ul class="list-ul">
+      <li>Forms 1099-SSA (social security)</li>
+      <li>Forms 1099-R (distribution from retirement plans)</li>
+      <li>Forms 1099-R and Forms 5498 (distributions from IRA)</li>
+      <li>Foreign Social Security contribution / distribution document</li>
+    </ul>
+    <ion-col size="12">
+      <ion-checkbox labelPlacement="end" class="checkbox-box"><span class="ion-text-wrap">Retirement, IRA, and Social
+          Security Distributions Reported on Forms 1099-R and 1099-SSA</span></ion-checkbox>
+    </ion-col>
+
+    <ion-col size="12">
+      <ion-text class="ion-text-box">
+        <h1 class="ion-text-label">User Type(T/S/J)</h1>
+      </ion-text>
+      <ion-item lines="none" class="ion-no-padding">
+        <ion-select placeholder="Select" class="ion-input-tag">
+          <ion-select-option value="apple">Apple</ion-select-option>
+          <ion-select-option value="banana">Banana</ion-select-option>
+          <ion-select-option value="orange">Orange</ion-select-option>
+        </ion-select>
+        <ion-img src="assets/icon/arrow-down.svg" class="arrow-down-img"></ion-img>
+      </ion-item>
+    </ion-col>
+
+    <ion-col size="12">
+      <ion-text class="ion-text-box">
+        <h1 class="ion-text-label">Organization Name</h1>
+      </ion-text>
+      <ion-item lines="none" class="ion-no-padding">
+        <ion-input [legacy]="true" type="Number" placeholder="Enter" class="ion-input-tag"></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col size="12">
+      <ion-text class="ion-text-box">
+        <h1 class="ion-text-label">Add Attachment</h1>
+      </ion-text>
+      <div class="upload-box">
+        <ion-img src="./assets/icon/upload.svg" class=""></ion-img>
+        <p>Upload File</p>
+      </div>
+    </ion-col>
+
+    <ion-col size="12">
+      <ion-checkbox labelPlacement="end" class="checkbox-box"><span class="ion-text-wrap">Foreign Retirement and Social
+          Security.</span></ion-checkbox>
+    </ion-col>
+
+    <ion-col size="12">
+      <ion-text class="ion-text-box">
+        <h1 class="ion-text-label">User Type(T/S)</h1>
+      </ion-text>
+      <ion-item lines="none" class="ion-no-padding">
+        <ion-select placeholder="Select" class="ion-input-tag">
+          <ion-select-option value="apple">Apple</ion-select-option>
+          <ion-select-option value="banana">Banana</ion-select-option>
+          <ion-select-option value="orange">Orange</ion-select-option>
+        </ion-select>
+        <ion-img src="assets/icon/arrow-down.svg" class="arrow-down-img"></ion-img>
+      </ion-item>
+    </ion-col>
+
+    <ion-col size="12">
+      <ion-text class="ion-text-box">
+        <h1 class="ion-text-label">Organization Name</h1>
+      </ion-text>
+      <ion-item lines="none" class="ion-no-padding">
+        <ion-input [legacy]="true" type="Number" placeholder="Enter" class="ion-input-tag"></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col size="12">
+      <ion-text class="ion-text-box">
+        <h1 class="ion-text-label">Add Attachment</h1>
+      </ion-text>
+      <div class="upload-box">
+        <ion-img src="./assets/icon/upload.svg" class=""></ion-img>
+        <p>Upload File</p>
+      </div>
+    </ion-col>
+
+    <ion-col size="12">
+      <p class="taxpayer-text">IRA Information</p>
+    </ion-col>
+
+    <p class="warn">Please complete the following</p>
+    <ul  class="list-ul">
+      <li>If you received a U.S. IRA distribution</li>
+      <li>converted a traditional IRA to a Roth IRA during 2023,</li>
+    </ul>
+
+    <h6 class="row-head">Total value of all traditional IRAs on Dec. 31, 2023</h6>
+    <ion-col size="6">
+      <p class="ion-text-label">Taxpayer</p>
+      <ion-item lines="none" class="ion-no-padding">
+        <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col size="6">
+      <p class="ion-text-label">Spouse</p>
+      <ion-item lines="none" class="ion-no-padding posRelative">
+        <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"></ion-input>
+      </ion-item>
+    </ion-col>
+
+    <h6 class="row-head">Outstanding rollovers on Dec. 31, 2023</h6>
+    <ion-col size="6">
+      <p class="ion-text-label">Taxpayer</p>
+      <ion-item lines="none" class="ion-no-padding">
+        <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col size="6">
+      <p class="ion-text-label">Spouse</p>
+      <ion-item lines="none" class="ion-no-padding posRelative">
+        <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"></ion-input>
+      </ion-item>
+    </ion-col>
+
+    <h6 class="row-head">Total distributions converted to Roth IRAs</h6>
+    <ion-col size="6">
+      <p class="ion-text-label">Taxpayer</p>
+      <ion-item lines="none" class="ion-no-padding">
+        <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col size="6">
+      <p class="ion-text-label">Spouse</p>
+      <ion-item lines="none" class="ion-no-padding posRelative">
+        <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"></ion-input>
+      </ion-item>
+    </ion-col>
+
+    <h6 class="row-head">Total retirement plans converted to Roth IRAs</h6>
+    <ion-col size="6">
+      <p class="ion-text-label">Taxpayer</p>
+      <ion-item lines="none" class="ion-no-padding">
+        <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col size="6">
+      <p class="ion-text-label">Spouse</p>
+      <ion-item lines="none" class="ion-no-padding posRelative">
+        <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"></ion-input>
+      </ion-item>
+    </ion-col>
+
+    <ion-col size="6">
+      <ion-button expand="block" class="btn-outline" (click)="prev()">
+        <ion-icon slot="start" mode="ios" name="chevron-back-outline"></ion-icon>
+        Previous</ion-button>
+    </ion-col>
+    <ion-col size="6">
+      <ion-button expand="block" class="btn-save-nxt" (click)="next()">Save & Next
+        <ion-icon slot="end" mode="ios" name="chevron-forward-outline"></ion-icon>
+      </ion-button>
+    </ion-col>
+  </ion-row>
+</ion-content>

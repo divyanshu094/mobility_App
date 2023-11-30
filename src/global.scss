@@ -62,7 +62,7 @@ ion-item {
 ion-input,
 ion-select {
   min-height: 0px !important;
-  height: 40px !important;
+  height: 44px !important;
   font-family: 'Poppins';
 }
 
@@ -79,6 +79,12 @@ span {
 
 
 /////////////////////////////////////////////
+
+ion-select {
+  background: url('/assets/icon/arrow-down.svg') no-repeat;
+  background-position: 95% center;
+}
+
 .ion-content-scroll {
   overflow: hidden;
   height: 85vh;
@@ -101,7 +107,7 @@ span {
   background: #FFF;
   padding: 0% 6px !important;
   font-size: 0.9em;
-    font-family: 'Poppins';
+  font-family: 'Poppins';
 }
 
 .ion-text-label {
@@ -144,24 +150,25 @@ ion-checkbox::part(container) {
   --border: 1px solid #92479B;
   --background: #92479B;
   --box-shadow: none;
-  height: 40px;
+  height: 44px;
   text-transform: capitalize;
 }
 
 .btn-outline {
   border-radius: 8px;
-    border: 1px solid #92479B;
-    --background: transparent;
-    --box-shadow: none;
-    height: 40px;
-    color: #92479B;
-    text-transform: capitalize;
+  border: 1px solid #92479B;
+  --background: transparent;
+  --box-shadow: none;
+  height: 44px;
+  color: #92479B;
+  text-transform: capitalize;
 }
 
 ion-select::part(icon) {
-  color: #92479B;
-  opacity: 1;
-  width: 20px;
+  // color: #92479B;
+  // opacity: 1;
+  // width: 20px;
+  display: none;
 }
 
 .arrow-down-img {
@@ -178,11 +185,24 @@ ion-select::part(icon) {
   margin: 0;
 }
 
-.warn{
+.warn {
   font-size: 0.8em;
   font-weight: 500;
   color: #FF3717;
   margin: 0 3%;
+}
+
+.row-head {
+  font-size: .9em;
+  margin: 2% 2% 0;
+}
+
+.list-ul {
+  padding: 0 0 0 8%;
+  font-size: 0.8em;
+  font-family: 'Poppins';
+  color: #222222;
+  font-weight: 500;
 }
 
 .upload-box {

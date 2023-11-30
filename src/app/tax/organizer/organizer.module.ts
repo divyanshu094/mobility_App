@@ -13,6 +13,9 @@ import { InvestmentIncomeComponent } from 'src/app/tax-components/investment-inc
 import { DirectDepositeComponent } from 'src/app/tax-components/direct-deposite/direct-deposite.component';
 import { EstimatedTaxComponent } from 'src/app/tax-components/estimated-tax/estimated-tax.component';
 import { SalaryWageComponent } from 'src/app/tax-components/salary-wage/salary-wage.component';
+import { PensionIncomeComponent } from 'src/app/tax-components/pension-income/pension-income.component';
+import { BusinessIncomeComponent } from 'src/app/tax-components/business-income/business-income.component';
+import { RentalIncomeComponent } from 'src/app/tax-components/rental-income/rental-income.component';
 
 
 @NgModule({
@@ -23,6 +26,16 @@ import { SalaryWageComponent } from 'src/app/tax-components/salary-wage/salary-w
     OrganizerPageRoutingModule,
     AllImportModule
   ],
-  declarations: [OrganizerPage, PersonalInfoComponent, DirectDepositeComponent, EstimatedTaxComponent, SalaryWageComponent, InvestmentIncomeComponent]
+  declarations: [
+    OrganizerPage, 
+    PersonalInfoComponent, 
+    DirectDepositeComponent, 
+    EstimatedTaxComponent, 
+    SalaryWageComponent, 
+    InvestmentIncomeComponent,
+    PensionIncomeComponent,
+    BusinessIncomeComponent,
+    RentalIncomeComponent
+  ]
 })
 export class OrganizerPageModule { }

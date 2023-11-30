@@ -1,11 +1,11 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
-  selector: 'app-investment-income',
-  templateUrl: './investment-income.component.html',
-  styleUrls: ['./investment-income.component.scss'],
+  selector: 'app-pension-income',
+  templateUrl: './pension-income.component.html',
+  styleUrls: ['./pension-income.component.scss'],
 })
-export class InvestmentIncomeComponent  implements OnInit {
+export class PensionIncomeComponent  implements OnInit {
 
   @Output() pageChange = new EventEmitter<string>();
   constructor() { }
