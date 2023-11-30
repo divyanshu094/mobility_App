@@ -18,6 +18,10 @@ export class AddDocumentComponent  implements OnInit {
     this.modalCtrl.dismiss(null, 'cancel');
   }
 
+  addDoc(){
+    this.modalCtrl.dismiss(null, 'cancel');
+  }
+
   uploadFiles() {
 
     if (!this.doc_name) {

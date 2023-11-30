@@ -1,8 +1,9 @@
 import { HttpInterceptor, HttpRequest, HttpHandler, HttpEvent, HttpErrorResponse, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, catchError, throwError, switchMap, filter, take } from 'rxjs';
+import { BehaviorSubject, Observable, catchError, throwError, switchMap, filter, take, finalize } from 'rxjs';
 import { ApiserviceService } from './apiservice.service';
 import { CommonserviceService } from './commonservice.service';
+import { LoadingController } from '@ionic/angular';
 
 const TOKEN_HEADER_KEY = 'Authorization';
 @Injectable({
@@ -13,12 +14,25 @@ export class TokenInterceptorService implements HttpInterceptor {
   token: any;
   private isRefreshing = false;
   private refreshTokenSubject: BehaviorSubject<any> = new BehaviorSubject<any>(null);
-  constructor(private tokenService: CommonserviceService, private authService: ApiserviceService) {
+  constructor(private tokenService: CommonserviceService, private authService: ApiserviceService, public loadingCtrl: LoadingController) {
     // var token = (sessionStorage.getItem('token'));
 
   }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<Object>> {
+
+    this.loadingCtrl.getTop().then(hasLoading => {
+      if (!hasLoading) {
+        this.loadingCtrl.create({
+          message: 'Please Wait',
+          spinner: 'bubbles',
+          mode: 'ios',
+          keyboardClose: true,
+          translucent: true
+        }).then(loading => loading.present());
+      }
+    })
+
     let authReq = req;
     // var token = sessionStorage.getItem('token')
     const token = this.tokenService.getToken();
@@ -30,7 +44,15 @@ export class TokenInterceptorService implements HttpInterceptor {
         return this.handle401Error(authReq, next);
       }
       return throwError(error);
-    }));
+    }),
+      finalize(() => {
+        this.loadingCtrl.getTop().then(hasLoading => {
+          if (hasLoading) {
+            this.loadingCtrl.dismiss();
+          }
+        });
+      })
+    )
   }
 
   private handle401Error(request: HttpRequest<any>, next: HttpHandler) {

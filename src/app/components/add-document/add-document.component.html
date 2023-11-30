@@ -8,7 +8,7 @@
   </ion-row>
 
   <h6>Document Name</h6>
-  <ion-input type="text" [(ngModel)]="doc_name" class="ion-input-tag" placeholder="Enter email"></ion-input>
+  <ion-input type="text" [(ngModel)]="doc_name" class="ion-input-tag" placeholder="Enter document name"></ion-input>
 
   <h6>Add Document</h6>
 
@@ -28,5 +28,5 @@
     </ion-avatar>
     <ion-label>Engagement letter.pdf</ion-label>
   </ion-item>
-  <ion-button expand="block" class="sign-in-btn">Add</ion-button>
+  <ion-button expand="block" class="sign-in-btn" (click)="addDoc()">Add</ion-button>
 </ion-content>

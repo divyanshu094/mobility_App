@@ -1,18 +1,22 @@
 .section_name {
   border: 0.5px solid #92479B;
-  background:linear-gradient(0deg, #FCE6FF, #FCE6FF);
-  padding: 3%;
+  background: linear-gradient(0deg, #FCE6FF, #FCE6FF);
+  padding: 1%;
   margin: 0 4%;
   border-radius: 6px;
-  border: 0.5px;
   color: #92479B;
+  align-items: baseline;
 
   .number {
     background: #92479B;
     color: #fff;
-    padding: 2px 9px;
     border-radius: 100%;
-    margin-right: 3%;
+    // margin-right: 3%;
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    text-align: center;
+    font-size: .9em;
   }
 
   ion-text {
@@ -22,5 +26,9 @@
     line-height: 18px;
     letter-spacing: 0em;
     text-align: left;
+  }
+
+  .second-col{
+    padding-left: 10px;
   }
 }

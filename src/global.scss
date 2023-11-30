@@ -51,3 +51,158 @@ ion-content {
     box-shadow: 0px 0px 20px 5px rgb(0 0 0 / 32%);
   }
 }
+
+
+ion-item {
+  --padding-end: 0px;
+  --inner-padding-end: 0px;
+  padding: 0 !important;
+}
+
+ion-input,
+ion-select {
+  min-height: 0px !important;
+  height: 40px !important;
+  font-family: 'Poppins';
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span {
+  font-family: 'Poppins';
+}
+
+
+/////////////////////////////////////////////
+.ion-content-scroll {
+  overflow: hidden;
+  height: 85vh;
+  --padding-start: 8px !important;
+  --padding-end: 8px !important;
+}
+
+.taxpayer-text {
+  color: #92479B;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin: 0 2% 2%;
+  padding-bottom: 1%;
+  border-bottom: 0.5px solid #DADADA;
+}
+
+.ion-input-tag {
+  border-radius: 8px;
+  border: 1px solid #D9D9D9;
+  background: #FFF;
+  padding: 0% 6px !important;
+  font-size: 0.9em;
+    font-family: 'Poppins';
+}
+
+.ion-text-label {
+  color: #222222;
+  font-family: 'Poppins';
+  font-size: 0.8rem;
+  font-weight: 500;
+  margin: 0% 0% 1% 2%;
+}
+
+.posRelative {
+  position: relative;
+}
+
+.calander-posAbs {
+  position: absolute;
+  right: 5%;
+  // bottom: 15px;
+  z-index: 2;
+}
+
+ion-checkbox {
+  --checkbox-background-checked: #6815ec;
+  margin-bottom: 3%;
+  font-size: .9em;
+  font-family: 'Poppins';
+}
+
+.wrap {
+  white-space: normal;
+}
+
+ion-checkbox::part(container) {
+  border-radius: 4px;
+  border: 1px solid #C7C7C7;
+}
+
+.btn-save-nxt {
+  --border-radius: 8px;
+  --border: 1px solid #92479B;
+  --background: #92479B;
+  --box-shadow: none;
+  height: 40px;
+  text-transform: capitalize;
+}
+
+.btn-outline {
+  border-radius: 8px;
+    border: 1px solid #92479B;
+    --background: transparent;
+    --box-shadow: none;
+    height: 40px;
+    color: #92479B;
+    text-transform: capitalize;
+}
+
+ion-select::part(icon) {
+  color: #92479B;
+  opacity: 1;
+  width: 20px;
+}
+
+.arrow-down-img {
+  position: absolute;
+  right: 25px;
+  z-index: 11;
+}
+
+.taxpayer-quarter {
+  font-family: 'Poppins';
+  font-size: .9rem;
+  font-weight: 600;
+  letter-spacing: 0em;
+  margin: 0;
+}
+
+.warn{
+  font-size: 0.8em;
+  font-weight: 500;
+  color: #FF3717;
+  margin: 0 3%;
+}
+
+.upload-box {
+  border: 2px dotted #D9D9D9;
+  margin: 1%;
+  background: linear-gradient(0deg, #F7F7F7, #F7F7F7);
+  border-radius: 8px;
+  padding: 8%;
+
+  ion-img {
+    width: 20%;
+    margin: auto;
+  }
+
+  p {
+    font-size: 0.8em;
+    text-align: center;
+    color: #92479B;
+    margin-bottom: 0;
+  }
+}
+
+//////////////////////////

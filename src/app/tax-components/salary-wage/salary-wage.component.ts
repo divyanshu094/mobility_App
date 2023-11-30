@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-salary-wage',
@@ -7,8 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SalaryWageComponent  implements OnInit {
 
+  @Output() pageChange = new EventEmitter<string>();
   constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() { }
+
+  next() {
+    this.pageChange.emit("next");
+  }
+
+  prev() {
+    this.pageChange.emit("prev");
+  }
 
 }

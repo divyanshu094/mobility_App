@@ -44,7 +44,7 @@ export class CommonserviceService {
       duration: 1500,
       positionAnchor: "header",
       color:'success',
-      position: 'bottom',
+      position: 'top',
     });
 
     await toast.present();
@@ -56,7 +56,7 @@ export class CommonserviceService {
       duration: 1500,
       positionAnchor: "header",
       color:'danger',
-      position: 'bottom',
+      position: 'top',
     });
 
     await toast.present();

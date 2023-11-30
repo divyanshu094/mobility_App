@@ -1,3 +1,68 @@
-<p>
-  direct-deposite works!
-</p>
+<ion-content [fullscreen]="true" class="ion-padding ion-content-scroll">
+  <ion-row>
+    <ion-col size="12">
+      <ion-checkbox labelPlacement="end" class="checkbox-box"><span class="ion-text-wrap">Have my 2023 refund(s)
+          directly deposited into my bank
+          account.</span></ion-checkbox> <br />
+      <ion-checkbox labelPlacement="end" class="checkbox-box"><span class="ion-text-wrap">Pay my 2023 balance(s) due
+          directly from my bank
+          account.</span></ion-checkbox> <br />
+      <ion-checkbox labelPlacement="end" class="checkbox-box"><span class="ion-text-wrap">Pay my 2024 quarterly
+          estimated payments directly from my
+          bank.</span></ion-checkbox> <br />
+    </ion-col>
+
+    <ion-col size="12">
+      <ion-text class="ion-text-box">
+        <h1 class="ion-text-label">Account Owner</h1>
+      </ion-text>
+      <ion-item lines="none" class="ion-no-padding">
+        <ion-select placeholder="Select" class="ion-input-tag">
+          <ion-select-option value="apple">Apple</ion-select-option>
+          <ion-select-option value="banana">Banana</ion-select-option>
+          <ion-select-option value="orange">Orange</ion-select-option>
+        </ion-select>
+        <ion-img src="assets/icon/arrow-down.svg" class="arrow-down-img"></ion-img>
+      </ion-item>
+    </ion-col>
+    <ion-col size="12">
+      <ion-text class="ion-text-box">
+        <h1 class="ion-text-label">Type of Account</h1>
+      </ion-text>
+      <ion-item lines="none" class="ion-no-padding">
+        <ion-select placeholder="Select" class="ion-input-tag">
+          <ion-select-option value="apple">Apple</ion-select-option>
+          <ion-select-option value="banana">Banana</ion-select-option>
+          <ion-select-option value="orange">Orange</ion-select-option>
+        </ion-select>
+        <ion-img src="assets/icon/arrow-down.svg" class="arrow-down-img"></ion-img>
+      </ion-item>
+    </ion-col>
+    <ion-col size="12">
+      <ion-text class="ion-text-box">
+        <h1 class="ion-text-label">Routing Number</h1>
+      </ion-text>
+      <ion-item lines="none" class="ion-no-padding">
+        <ion-input [legacy]="true" type="Number" placeholder="Enter" class="ion-input-tag"></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col size="12">
+      <ion-text class="ion-text-box">
+        <h1 class="ion-text-label">Account Number</h1>
+      </ion-text>
+      <ion-item lines="none" class="ion-no-padding">
+        <ion-input [legacy]="true" type="Number" placeholder="Enter" class="ion-input-tag"></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col size="6">
+      <ion-button expand="block" class="btn-outline" (click)="prev()">
+        <ion-icon slot="start" mode="ios" name="chevron-back-outline"></ion-icon>
+        Previous</ion-button>
+    </ion-col>
+    <ion-col size="6">
+      <ion-button expand="block" class="btn-save-nxt" (click)="next()">Save & Next
+        <ion-icon slot="end" mode="ios" name="chevron-forward-outline"></ion-icon>
+      </ion-button>
+    </ion-col>
+  </ion-row>
+</ion-content>

@@ -3,13 +3,13 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <p class="section_name">
-    <ion-text class="number">1</ion-text>
-    <ion-text>PERSONAL INFORMATION</ion-text>
-  </p>
-  <app-personal-info></app-personal-info>
-  <!-- <app-estimated-tax></app-estimated-tax>
-  <app-direct-deposite></app-direct-deposite>
-  <app-salary-wage></app-salary-wage>
-  <app-investment-income></app-investment-income> -->
+  <ion-row class="section_name">
+    <ion-col size="1"><span class="number">{{step}}</span></ion-col>
+    <ion-col class="second-col"> <ion-text>{{step_names[step]}}</ion-text></ion-col>
+  </ion-row>
+  <app-personal-info (pageChange)="next($event)" *ngIf="step==1"></app-personal-info>
+  <app-estimated-tax (pageChange)="next($event)" *ngIf="step==2"></app-estimated-tax>
+  <app-direct-deposite (pageChange)="next($event)" *ngIf="step==3"></app-direct-deposite>
+  <app-salary-wage (pageChange)="next($event)" *ngIf="step==4"></app-salary-wage>
+  <app-investment-income (pageChange)="next($event)" *ngIf="step==5"></app-investment-income>
 </ion-content>

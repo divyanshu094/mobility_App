@@ -1,3 +1,92 @@
-<p>
-  investment-income works!
-</p>
+<ion-content [fullscreen]="true" class="ion-padding ion-content-scroll">
+  <ion-row>
+    <p class="warn">Please provide copies of all Form(s) K-1, 1042-S, 1099, and Consolidated brokerage statements.</p>
+    <ion-col size="12">
+      <ion-checkbox labelPlacement="end" class="checkbox-box"><span class="ion-text-wrap">Interest & Dividend income reported on 1099s.</span></ion-checkbox>
+    </ion-col>
+
+    <ion-col size="12">
+      <ion-text class="ion-text-box">
+        <h1 class="ion-text-label">User Type(T/S/J)</h1>
+      </ion-text>
+      <ion-item lines="none" class="ion-no-padding">
+        <ion-select placeholder="Select" class="ion-input-tag">
+          <ion-select-option value="apple">Apple</ion-select-option>
+          <ion-select-option value="banana">Banana</ion-select-option>
+          <ion-select-option value="orange">Orange</ion-select-option>
+        </ion-select>
+        <ion-img src="assets/icon/arrow-down.svg" class="arrow-down-img"></ion-img>
+      </ion-item>
+    </ion-col>
+  
+    <ion-col size="12">
+      <ion-text class="ion-text-box">
+        <h1 class="ion-text-label">Organization Name</h1>
+      </ion-text>
+      <ion-item lines="none" class="ion-no-padding">
+        <ion-input [legacy]="true" type="Number" placeholder="Enter" class="ion-input-tag"></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col size="12">
+      <ion-text class="ion-text-box">
+        <h1 class="ion-text-label">Add Attachment</h1>
+      </ion-text>
+      <div class="upload-box">
+        <ion-img src="./assets/icon/upload.svg" class=""></ion-img>
+        <p>Upload File</p>
+      </div>
+    </ion-col>
+
+    <ion-col size="12">
+      <ion-checkbox labelPlacement="end" class="checkbox-box"><span class="ion-text-wrap">Interest & Dividend income NOT reported on 1099s.</span></ion-checkbox>
+    </ion-col>
+
+    <ion-col size="12">
+      <ion-text class="ion-text-box">
+        <h1 class="ion-text-label">User Type(T/S)</h1>
+      </ion-text>
+      <ion-item lines="none" class="ion-no-padding">
+        <ion-select placeholder="Select" class="ion-input-tag">
+          <ion-select-option value="apple">Apple</ion-select-option>
+          <ion-select-option value="banana">Banana</ion-select-option>
+          <ion-select-option value="orange">Orange</ion-select-option>
+        </ion-select>
+        <ion-img src="assets/icon/arrow-down.svg" class="arrow-down-img"></ion-img>
+      </ion-item>
+    </ion-col>
+  
+    <ion-col size="12">
+      <ion-text class="ion-text-box">
+        <h1 class="ion-text-label">Organization Name</h1>
+      </ion-text>
+      <ion-item lines="none" class="ion-no-padding">
+        <ion-input [legacy]="true" type="Number" placeholder="Enter" class="ion-input-tag"></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col size="12">
+      <ion-text class="ion-text-box">
+        <h1 class="ion-text-label">Add Attachment</h1>
+      </ion-text>
+      <div class="upload-box">
+        <ion-img src="./assets/icon/upload.svg" class=""></ion-img>
+        <p>Upload File</p>
+      </div>
+    </ion-col>
+    <ion-col size="12">
+      <ion-checkbox labelPlacement="end" class="checkbox-box"><span class="ion-text-wrap">Capital Gains income reported on 1099s.</span></ion-checkbox>
+    </ion-col>
+    <ion-col size="12">
+      <ion-checkbox labelPlacement="end" class="checkbox-box"><span class="ion-text-wrap">Capital Gains income NOT reported on 1099s</span></ion-checkbox>
+    </ion-col>
+    <ion-col size="6">
+      <ion-button expand="block" class="btn-outline" (click)="prev()">
+        <ion-icon slot="start" mode="ios" name="chevron-back-outline"></ion-icon>
+        Previous</ion-button>
+    </ion-col>
+    <ion-col size="6">
+      <ion-button expand="block" class="btn-save-nxt" (click)="next()">Save & Next
+        <ion-icon slot="end" mode="ios" name="chevron-forward-outline"></ion-icon>
+      </ion-button>
+    </ion-col>
+  </ion-row>
+</ion-content>
