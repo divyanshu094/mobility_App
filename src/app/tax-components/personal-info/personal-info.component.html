@@ -7,7 +7,8 @@
         <h1 class="ion-text-label">First & Middle Name*</h1>
       </ion-text>
       <ion-item lines="none" class="ion-no-padding">
-        <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"></ion-input>
+        <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"
+          [(ngModel)]="base_data.first_name_t"></ion-input>
       </ion-item>
     </ion-col>
     <ion-col size="6">
@@ -15,7 +16,8 @@
         <h1 class="ion-text-label">Last name*</h1>
       </ion-text>
       <ion-item lines="none" class="ion-no-padding">
-        <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"></ion-input>
+        <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"
+          [(ngModel)]="base_data.last_name_t"></ion-input>
       </ion-item>
     </ion-col>
 
@@ -24,7 +26,8 @@
         <h1 class="ion-text-label">Date Of Birth</h1>
       </ion-text>
       <ion-item lines="none" class="ion-no-padding posRelative">
-        <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"></ion-input>
+        <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"
+          [(ngModel)]="base_data.date_of_birth_t"></ion-input>
         <ion-img src="assets/icon/calander.svg" class="calander-posAbs"></ion-img>
       </ion-item>
     </ion-col>
@@ -33,7 +36,8 @@
         <h1 class="ion-text-label">Occupation</h1>
       </ion-text>
       <ion-item lines="none" class="ion-no-padding">
-        <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"></ion-input>
+        <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"
+          [(ngModel)]="base_data.occupation_t"></ion-input>
       </ion-item>
     </ion-col>
 
@@ -51,7 +55,8 @@
         <h1 class="ion-text-label">Social Security No./ITIN</h1>
       </ion-text>
       <ion-item lines="none" class="ion-no-padding">
-        <ion-input [legacy]="true" type="Number" placeholder="Enter" class="ion-input-tag"></ion-input>
+        <ion-input [legacy]="true" type="Number" placeholder="Enter" class="ion-input-tag"
+          [(ngModel)]="base_data.social_security_no_t"></ion-input>
       </ion-item>
     </ion-col>
 
@@ -60,7 +65,8 @@
         <h1 class="ion-text-label">Email ID</h1>
       </ion-text>
       <ion-item lines="none" class="ion-no-padding">
-        <ion-input [legacy]="true" type="Email" placeholder="Enter" class="ion-input-tag"></ion-input>
+        <ion-input [legacy]="true" type="Email" placeholder="Enter" class="ion-input-tag"
+          [(ngModel)]="base_data.email_t"></ion-input>
       </ion-item>
     </ion-col>
 
@@ -69,7 +75,8 @@
         <h1 class="ion-text-label">Phone Number</h1>
       </ion-text>
       <ion-item lines="none" class="ion-no-padding">
-        <ion-input [legacy]="true" type="Number" placeholder="Enter" class="ion-input-tag"></ion-input>
+        <ion-input [legacy]="true" type="Number" placeholder="Enter" class="ion-input-tag"
+          [(ngModel)]="base_data.phone_t"></ion-input>
       </ion-item>
     </ion-col>
     <ion-col size="12">
@@ -80,7 +87,8 @@
         <h1 class="ion-text-label">First & Middle Name*</h1>
       </ion-text>
       <ion-item lines="none" class="ion-no-padding">
-        <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"></ion-input>
+        <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"
+          [(ngModel)]="base_data.first_name_s"></ion-input>
       </ion-item>
     </ion-col>
     <ion-col size="6">
@@ -88,23 +96,27 @@
         <h1 class="ion-text-label">Last name*</h1>
       </ion-text>
       <ion-item lines="none" class="ion-no-padding">
-        <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"></ion-input>
+        <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"
+          [(ngModel)]="base_data.last_name_s"></ion-input>
       </ion-item>
     </ion-col>
     <ion-col size="6">
       <ion-text class="ion-text-box">
-        <h1 class="ion-text-label">First & Middle Name*</h1>
+        <h1 class="ion-text-label">Date Of Birth</h1>
       </ion-text>
-      <ion-item lines="none" class="ion-no-padding">
-        <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"></ion-input>
+      <ion-item lines="none" class="ion-no-padding posRelative">
+        <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"
+          [(ngModel)]="base_data.date_of_birth_s"></ion-input>
+        <ion-img src="assets/icon/calander.svg" class="calander-posAbs"></ion-img>
       </ion-item>
     </ion-col>
     <ion-col size="6">
       <ion-text class="ion-text-box">
-        <h1 class="ion-text-label">Last name*</h1>
+        <h1 class="ion-text-label">Occupation</h1>
       </ion-text>
       <ion-item lines="none" class="ion-no-padding">
-        <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"></ion-input>
+        <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"
+          [(ngModel)]="base_data.occupation_s"></ion-input>
       </ion-item>
     </ion-col>
     <ion-col size="12">
@@ -121,7 +133,8 @@
         <h1 class="ion-text-label">Social Security No./ITIN</h1>
       </ion-text>
       <ion-item lines="none" class="ion-no-padding">
-        <ion-input [legacy]="true" type="Number" placeholder="Enter" class="ion-input-tag"></ion-input>
+        <ion-input [legacy]="true" type="Number" placeholder="Enter" class="ion-input-tag"
+          [(ngModel)]="base_data.social_security_no_s"></ion-input>
       </ion-item>
     </ion-col>
 
@@ -130,7 +143,8 @@
         <h1 class="ion-text-label">Email ID</h1>
       </ion-text>
       <ion-item lines="none" class="ion-no-padding">
-        <ion-input [legacy]="true" type="Email" placeholder="Enter" class="ion-input-tag"></ion-input>
+        <ion-input [legacy]="true" type="Email" placeholder="Enter" class="ion-input-tag"
+          [(ngModel)]="base_data.email_s"></ion-input>
       </ion-item>
     </ion-col>
 
@@ -139,17 +153,20 @@
         <h1 class="ion-text-label">Phone Number</h1>
       </ion-text>
       <ion-item lines="none" class="ion-no-padding">
-        <ion-input [legacy]="true" type="Number" placeholder="Enter" class="ion-input-tag"></ion-input>
+        <ion-input [legacy]="true" type="Number" placeholder="Enter" class="ion-input-tag"
+          [(ngModel)]="base_data.phone_s"></ion-input>
       </ion-item>
     </ion-col>
     <ion-col size="12">
       <p class="taxpayer-text">Others Information</p>
     </ion-col>
     <ion-col size="12">
-      <ion-checkbox labelPlacement="end">Taxpayer Legally Blind</ion-checkbox>
-      <ion-checkbox labelPlacement="end">Taxpayer Disabled</ion-checkbox>
-      <ion-checkbox labelPlacement="end">Spouse Legally Blind</ion-checkbox>
-      <ion-checkbox labelPlacement="end">Spouse Disabled</ion-checkbox>
+      <ion-checkbox labelPlacement="end" [(ngModel)]="base_data.taxpayer_legally_blind">Taxpayer Legally
+        Blind</ion-checkbox>
+      <ion-checkbox labelPlacement="end" [(ngModel)]="base_data.taxpayer_disabled">Taxpayer Disabled</ion-checkbox>
+      <ion-checkbox labelPlacement="end" [(ngModel)]="base_data.spouse_legally_blind">Spouse Legally
+        Blind</ion-checkbox>
+      <ion-checkbox labelPlacement="end" [(ngModel)]="base_data.spouse_disabled">Spouse Disabled</ion-checkbox>
     </ion-col>
     <ion-col size="12">
       <p class="taxpayer-text">Mailing Address</p>
@@ -158,34 +175,29 @@
       <ion-text class="ion-text-box">
         <h1 class="ion-text-label">Country</h1>
       </ion-text>
-      <!-- <ion-item lines="none" class="ion-no-padding"> -->
-      <ion-select placeholder="Select" class="ion-input-tag">
+      <ion-select placeholder="Select" class="ion-input-tag" [(ngModel)]="base_data.country">
         <ion-select-option value="apple">Apple</ion-select-option>
         <ion-select-option value="banana">Banana</ion-select-option>
         <ion-select-option value="orange">Orange</ion-select-option>
       </ion-select>
-      <!-- <ion-img src="assets/icon/arrow-down.svg" class="arrow-down-img"></ion-img> -->
-      <!-- </ion-item> -->
     </ion-col>
     <ion-col size="6">
       <ion-text class="ion-text-box">
         <h1 class="ion-text-label">State</h1>
       </ion-text>
-      <!-- <ion-item lines="none" class="ion-no-padding"> -->
-      <ion-select placeholder="Select" class="ion-input-tag">
+      <ion-select placeholder="Select" class="ion-input-tag" [(ngModel)]="base_data.state">
         <ion-select-option value="apple">Apple</ion-select-option>
         <ion-select-option value="banana">Banana</ion-select-option>
         <ion-select-option value="orange">Orange</ion-select-option>
       </ion-select>
-      <!-- <ion-img src="assets/icon/arrow-down.svg" class="arrow-down-img"></ion-img> -->
-      <!-- </ion-item> -->
     </ion-col>
     <ion-col size="6">
       <ion-text class="ion-text-box">
-        <h1 class="ion-text-label">City</h1>
+        <h1 class="ion-text-label">Zip</h1>
       </ion-text>
       <ion-item lines="none" class="ion-no-padding">
-        <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"></ion-input>
+        <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"
+          [(ngModel)]="base_data.zip"></ion-input>
       </ion-item>
     </ion-col>
     <ion-col size="6">
@@ -193,15 +205,26 @@
         <h1 class="ion-text-label">Apt#</h1>
       </ion-text>
       <ion-item lines="none" class="ion-no-padding">
-        <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"></ion-input>
+        <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"
+          [(ngModel)]="base_data.apt"></ion-input>
       </ion-item>
     </ion-col>
     <ion-col size="12">
       <ion-text class="ion-text-box">
-        <h1 class="ion-text-label">Street Name</h1>
+        <h1 class="ion-text-label">City</h1>
       </ion-text>
       <ion-item lines="none" class="ion-no-padding">
-        <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"></ion-input>
+        <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"
+          [(ngModel)]="base_data.city"></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col size="12">
+      <ion-text class="ion-text-box">
+        <h1 class="ion-text-label">Postal Address</h1>
+      </ion-text>
+      <ion-item lines="none" class="ion-no-padding">
+        <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"
+          [(ngModel)]="base_data.email2_t"></ion-input>
       </ion-item>
     </ion-col>
 
