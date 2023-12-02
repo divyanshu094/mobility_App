@@ -1,0 +1,258 @@
+.main-div {
+  padding: 0 3%;
+}
+
+.month {
+  padding: 70px 25px;
+  width: 100%;
+  background: #1abc9c;
+  text-align: center;
+}
+
+.month ul {
+  margin: 0;
+  padding: 0;
+}
+
+.month ul li {
+  color: white;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.month .prev {
+  float: left;
+  padding-top: 10px;
+}
+
+.month .next {
+  float: right;
+  padding-top: 10px;
+}
+
+.weekdays {
+  margin: 0;
+  padding: 1% 0;
+  background-color: #944890;
+  border-radius: 5px;
+}
+
+.weekdays li {
+  display: inline-block;
+  width: 14.2%;
+  color: #fff3ff;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 1% 0;
+}
+
+.days {
+  padding: 0;
+  margin: 2% 0;
+}
+
+.days li {
+  list-style-type: none;
+  display: inline-block;
+  width: 13%;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 7px;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #554848;
+  padding: 2% 0%;
+  margin: 1% 0.6% 0% 0.6%;
+  cursor: pointer;
+  position: relative;
+  line-height: 1.2;
+  background: white;
+}
+
+.days li .upr {
+  position: absolute;
+  top: 0%;
+  left: 0;
+  font-size: 0.6em;
+  width: 100%;
+  text-align: center;
+}
+
+.days li .lwr {
+  text-align: right;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  -webkit-transform: rotate(314deg);
+  transform: rotate(314deg);
+  z-index: 10;
+  position: absolute;
+  right: 5%;
+  bottom: 2%;
+}
+
+.holiday {
+  color: #fff !important;
+}
+
+.business {
+  color: #fff !important;
+}
+
+.work {
+  color: #fff !important;
+}
+
+.transit {
+  color: #fff !important;
+}
+
+.trns {
+  border: none !important;
+}
+
+.holiday_event {
+  background: linear-gradient(135deg, #fff 72%, #F2413D 20%) !important;
+}
+
+.business_event {
+  background: linear-gradient(135deg, #fff 72%, #45C4FF 20%) !important;
+}
+
+.work_event {
+  background: linear-gradient(135deg, #fff 72%, #4AB04E 20%) !important;
+}
+
+.transit_event {
+  background: linear-gradient(135deg, #fff 72%, #FAEA3B 20%) !important;
+}
+
+.today_loc {
+  color: #fff;
+}
+
+
+.day_loc {
+  color: #944890;
+}
+
+.work_active {
+  color: #fff !important;
+  background: linear-gradient(135deg, #9d589a 72%, #4AB04E 20%) !important;
+}
+
+.business_active {
+  color: #fff !important;
+  background: linear-gradient(135deg, #9d589a 72%, #45C4FF 20%) !important;
+}
+
+.transit_active {
+  color: #fff !important;
+  background: linear-gradient(135deg, #9d589a 72%, #FAEA3B 20%) !important;
+}
+
+.holiday_active {
+  color: #fff !important;
+  background: linear-gradient(135deg, #9d589a 72%, #F2413D 20%) !important;
+}
+
+.not_activity {
+  color: #fff !important;
+  background: linear-gradient(135deg, #9d589a 72%, #9d589a 20%) !important;
+}
+
+.work_background {
+  background: linear-gradient(135deg, #fff 72%, #dd8f4e 20%) !important;
+}
+
+.CalanderHeadding {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  padding: 0 2%;
+  align-items: baseline;
+}
+
+.prev,
+.next {
+  color: #944890;
+  font-size: 1.3rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.monthYear {
+  color: #020403;
+  font-size: 1.2rem;
+  font-weight: 600;
+  // width: 40%;
+  text-align: center;
+}
+
+.inProgress {
+  text-align: right;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  transform: rotate(314deg);
+  z-index: 10;
+  position: absolute;
+  /* right: 7%;
+    bottom: 9%; */
+  right: 0%;
+  bottom: 27%;
+}
+
+.upload-btn {
+  padding: 1% 4%;
+  font-size: 0.8em;
+  border-radius: 40px;
+  width: auto;
+  float: inline-end;
+  margin: 0;
+  background: #535B5C;
+  color: #fff;
+  border: none;
+}
+
+.isweekend {
+  background-color: #EFDBED !important;
+}
+
+.events {
+  display: table;
+  border: 1px solid #ccc;
+  margin: 2% 3%;
+  width: 94%;
+  border-radius: 5px;
+
+  p {
+    margin: 0;
+  }
+
+  span {
+    display: table-cell;
+  }
+
+  span:nth-of-type(1) {
+    width: 25%;
+    background: #e6e6e6;
+    vertical-align: middle;
+    padding-left: 2%;
+    text-transform: capitalize;
+    font-weight: bold;
+    color: #92479b;
+    font-size: 0.9em;
+  }
+
+  span:nth-of-type(2) {
+    width: 75%;
+    padding: 2%;
+  }
+}
+
+.mat-menu-content {
+  padding: 0% !important;
+}

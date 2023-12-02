@@ -5,10 +5,9 @@
 <ion-content [fullscreen]="true">
   <ion-card class="meter">
     <ion-card-content>
-      <div class="current">Estimated
-        Tax Payments
+      <div class="current">{{current_status}}
         <br>
-        <span class="due_date">Due Date: <em>Nov 21, 2023</em></span>
+        <span class="due_date">Due Date: <em>{{due_date}}</em></span>
       </div>
       <round-progress [current]="2" [max]="8" [color]="'#FFBCBC'" [background]="'#DC6ED833'" [radius]="100"
         [stroke]="15" [semicircle]="false" [rounded]="true" [clockwise]="true" [responsive]="true" [duration]="800"

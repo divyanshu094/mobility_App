@@ -26,9 +26,9 @@
         <h1 class="ion-text-label">Date Of Birth</h1>
       </ion-text>
       <ion-item lines="none" class="ion-no-padding posRelative">
-        <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"
-          [(ngModel)]="base_data.date_of_birth_t"></ion-input>
-        <ion-img src="assets/icon/calander.svg" class="calander-posAbs"></ion-img>
+        <input class="ion-input-tag date" [(ngModel)]="base_data.date_of_birth_t" [matDatepicker]="t_dob"
+          (click)="t_dob.open()" placeholder="Select Date" readonly>
+        <mat-datepicker #t_dob color="primary"></mat-datepicker>
       </ion-item>
     </ion-col>
     <ion-col size="6">
@@ -105,9 +105,9 @@
         <h1 class="ion-text-label">Date Of Birth</h1>
       </ion-text>
       <ion-item lines="none" class="ion-no-padding posRelative">
-        <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"
-          [(ngModel)]="base_data.date_of_birth_s"></ion-input>
-        <ion-img src="assets/icon/calander.svg" class="calander-posAbs"></ion-img>
+        <input class="ion-input-tag date" [(ngModel)]="base_data.date_of_birth_s" [matDatepicker]="s_dob"
+          (click)="s_dob.open()" placeholder="Select Date" readonly>
+        <mat-datepicker #s_dob color="primary"></mat-datepicker>
       </ion-item>
     </ion-col>
     <ion-col size="6">

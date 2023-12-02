@@ -4,13 +4,20 @@ import { RouteReuseStrategy } from '@angular/router';
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 
-import { AppComponent } from './app.component';
+import { AppComponent, MY_FORMATS } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { RoundProgressModule } from 'angular-svg-round-progressbar';
 import { TokenInterceptorService } from './services/token-interceptor.service';
 import { DatePipe } from '@angular/common';
+
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatNativeDateModule, MAT_DATE_LOCALE, MAT_DATE_FORMATS, DateAdapter } from '@angular/material/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatInputModule } from '@angular/material/input';
+import { AmountFormatDirective } from './directive/amount/amount-format.directive';
 
 @NgModule({
   declarations: [AppComponent],
@@ -20,6 +27,11 @@ import { DatePipe } from '@angular/common';
     AppRoutingModule,
     HttpClientModule,
     RoundProgressModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    BrowserAnimationsModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [
     {
@@ -33,7 +45,7 @@ import { DatePipe } from '@angular/common';
     //   useClass: MomentDateAdapter,
     //   deps: [MAT_DATE_LOCALE],
     // },
-    // { provide: MAT_DATE_FORMATS, useValue: MY_FORMATS },
+    { provide: MAT_DATE_FORMATS, useValue: MY_FORMATS },
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })

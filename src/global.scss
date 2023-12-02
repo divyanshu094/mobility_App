@@ -25,6 +25,8 @@
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
 
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
 body {
   font-family: 'Poppins', sans-serif;
 }
@@ -74,11 +76,28 @@ h5,
 h6,
 p,
 span {
-  font-family: 'Poppins';
+  font-family: 'Poppins'!important;
+  margin: 0!important;
+  line-height: normal!important;
+}
+
+h3{
+  font-size: .9em!important;
 }
 
 
 /////////////////////////////////////////////
+.amountInput {
+  text-align: end !important;
+
+  ::placeholder {
+    text-align: start !important;
+  }
+  
+  ::-ms-input-placeholder { /* Edge 12 -18 */
+    text-align: start !important;
+  }
+}
 
 ion-select {
   background: url('/assets/icon/arrow-down.svg') no-repeat;
@@ -108,14 +127,20 @@ ion-select {
   padding: 0% 6px !important;
   font-size: 0.9em;
   font-family: 'Poppins';
+  height: 44px;
+  width: 100%;
 }
 
 .ion-text-label {
   color: #222222;
   font-family: 'Poppins';
-  font-size: 0.8rem;
-  font-weight: 500;
-  margin: 0% 0% 1% 2%;
+  font-size: 0.8rem!important;
+  font-weight: 500!important;
+  margin: 0% 0% 1% 2%!important;
+}
+
+.date{
+  background: url('/assets/icon/calander.svg') no-repeat 95% center!important;
 }
 
 .posRelative {

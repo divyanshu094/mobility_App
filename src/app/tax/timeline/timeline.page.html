@@ -13,7 +13,7 @@
         </ion-avatar>
         <ion-label>
           <h2>{{step.name}}</h2>
-          <h3><b>ETA: <span class="date">{{step.date | date}}</span></b></h3>
+          <h3><b>ETA: <span class="date_time">{{step.date | date}}</span></b></h3>
         </ion-label>
       </ion-item>
       <ion-item class="buttons" *ngIf="isVisible(step.name,i)  && !step.completed">

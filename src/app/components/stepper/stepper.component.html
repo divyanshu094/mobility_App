@@ -1,0 +1,9 @@
+<ion-list>
+  <ion-item *ngFor="let step of steps; index as i">
+     <ion-label>{{ step }}</ion-label>
+     <!-- <div class="stepper-buttons">
+       <ion-button *ngIf="i !== 0" expand="block" (click)="goToPreviousStep()">Back</ion-button>
+       <ion-button *ngIf="i !== steps.length - 1" expand="block" (click)="goToNextStep()">Next</ion-button>
+     </div> -->
+  </ion-item>
+ </ion-list>

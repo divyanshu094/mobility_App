@@ -9,7 +9,8 @@
       <p class="ion-text-label">Amount Paid</p>
 
       <ion-item lines="none" class="ion-no-padding">
-        <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"></ion-input>
+        <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"
+          [(ngModel)]="estimated_tax.q1_ris1_amount_paid" inputAmountFormat></ion-input>
       </ion-item>
     </ion-col>
     <ion-col size="6">
@@ -17,8 +18,9 @@
       <p class="ion-text-label">Paid Date</p>
 
       <ion-item lines="none" class="ion-no-padding posRelative datepicker">
-        <ion-input [legacy]="true" placeholder="Enter" class="ion-input-tag ion-input-tag-date"></ion-input>
-        <ion-img src="assets/icon/calander.svg" class="calander-posAbs"></ion-img>
+        <input class="ion-input-tag date" [matDatepicker]="q1_ris1_date" [(ngModel)]="estimated_tax.q1_ris1_date"
+          (click)="q1_ris1_date.open()" placeholder="Select Date" readonly>
+        <mat-datepicker #q1_ris1_date color="primary"></mat-datepicker>
       </ion-item>
     </ion-col>
 
@@ -32,7 +34,8 @@
       <p class="ion-text-label">Amount Paid</p>
 
       <ion-item lines="none" class="ion-no-padding">
-        <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"></ion-input>
+        <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"
+          [(ngModel)]="estimated_tax.q2_ris1_amount_paid" inputAmountFormat></ion-input>
       </ion-item>
     </ion-col>
     <ion-col size="6">
@@ -40,8 +43,9 @@
       <p class="ion-text-label">Paid Date</p>
 
       <ion-item lines="none" class="ion-no-padding posRelative">
-        <ion-input [legacy]="true" placeholder="Enter" class="ion-input-tag"></ion-input>
-        <ion-img src="assets/icon/calander.svg" class="calander-posAbs"></ion-img>
+        <input class="ion-input-tag date" [matDatepicker]="q2_ris1_date" [(ngModel)]="estimated_tax.q2_ris1_date"
+          (click)="q2_ris1_date.open()" placeholder="Select Date" readonly>
+        <mat-datepicker #q2_ris1_date color="primary"></mat-datepicker>
       </ion-item>
     </ion-col>
 
@@ -55,7 +59,8 @@
       <p class="ion-text-label">Amount Paid</p>
 
       <ion-item lines="none" class="ion-no-padding">
-        <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"></ion-input>
+        <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"
+          [(ngModel)]="estimated_tax.q3_ris1_amount_paid" inputAmountFormat></ion-input>
       </ion-item>
     </ion-col>
     <ion-col size="6">
@@ -63,8 +68,9 @@
       <p class="ion-text-label">Paid Date</p>
 
       <ion-item lines="none" class="ion-no-padding posRelative">
-        <ion-input [legacy]="true" placeholder="Enter" class="ion-input-tag"></ion-input>
-        <ion-img src="assets/icon/calander.svg" class="calander-posAbs"></ion-img>
+        <input class="ion-input-tag date" [matDatepicker]="q3_ris1_date" [(ngModel)]="estimated_tax.q3_ris1_date"
+          (click)="q3_ris1_date.open()" placeholder="Select Date" readonly>
+        <mat-datepicker #q3_ris1_date color="primary"></mat-datepicker>
       </ion-item>
     </ion-col>
 
@@ -78,7 +84,8 @@
       <p class="ion-text-label">Amount Paid</p>
 
       <ion-item lines="none" class="ion-no-padding">
-        <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"></ion-input>
+        <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"
+          [(ngModel)]="estimated_tax.q4_ris1_amount_paid" inputAmountFormat></ion-input>
       </ion-item>
     </ion-col>
     <ion-col size="6">
@@ -86,8 +93,9 @@
       <p class="ion-text-label">Paid Date</p>
 
       <ion-item lines="none" class="ion-no-padding posRelative">
-        <ion-input [legacy]="true" placeholder="Enter" class="ion-input-tag"></ion-input>
-        <ion-img src="assets/icon/calander.svg" class="calander-posAbs"></ion-img>
+        <input class="ion-input-tag date" [matDatepicker]="q4_ris1_date" [(ngModel)]="estimated_tax.q4_ris1_date"
+          (click)="q4_ris1_date.open()" placeholder="Select Date" readonly>
+        <mat-datepicker #q4_ris1_date color="primary"></mat-datepicker>
       </ion-item>
     </ion-col>
     <ion-col size="12">
@@ -111,46 +119,32 @@
       <p class="ion-text-label">Amount Paid</p>
 
       <ion-item lines="none" class="ion-no-padding">
-        <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"></ion-input>
+        <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"
+          [(ngModel)]="estimated_tax.q1_state1_amount_paid" inputAmountFormat></ion-input>
       </ion-item>
     </ion-col>
     <ion-col size="6">
       <p class="ion-text-label">Paid Date</p>
       <ion-item lines="none" class="ion-no-padding posRelative">
-        <ion-input [legacy]="true" placeholder="Enter" class="ion-input-tag"></ion-input>
-        <ion-img src="assets/icon/calander.svg" class="calander-posAbs"></ion-img>
+        <input class="ion-input-tag date" [matDatepicker]="q1_state1_date" [(ngModel)]="estimated_tax.q1_state1_date"
+          (click)="q1_state1_date.open()" placeholder="Select Date" readonly>
+        <mat-datepicker #q1_state1_date color="primary"></mat-datepicker>
       </ion-item>
     </ion-col>
 
     <ion-col size="6">
       <p class="ion-text-label">Amount Paid</p>
       <ion-item lines="none" class="ion-no-padding">
-        <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"></ion-input>
+        <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"
+          [(ngModel)]="estimated_tax.q2_state1_amount_paid" inputAmountFormat></ion-input>
       </ion-item>
     </ion-col>
     <ion-col size="6">
       <p class="ion-text-label">Paid Date</p>
       <ion-item lines="none" class="ion-no-padding posRelative">
-        <ion-input [legacy]="true" placeholder="Enter" class="ion-input-tag"></ion-input>
-        <ion-img src="assets/icon/calander.svg" class="calander-posAbs"></ion-img>
-      </ion-item>
-    </ion-col>
-
-    <ion-col size="6">
-
-      <p class="ion-text-label">Amount Paid</p>
-
-      <ion-item lines="none" class="ion-no-padding">
-        <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"></ion-input>
-      </ion-item>
-    </ion-col>
-    <ion-col size="6">
-
-      <p class="ion-text-label">Paid Date</p>
-
-      <ion-item lines="none" class="ion-no-padding posRelative">
-        <ion-input [legacy]="true" placeholder="Enter" class="ion-input-tag"></ion-input>
-        <ion-img src="assets/icon/calander.svg" class="calander-posAbs"></ion-img>
+        <input class="ion-input-tag date" [matDatepicker]="q2_state1_date" [(ngModel)]="estimated_tax.q2_state1_date"
+          (click)="q2_state1_date.open()" placeholder="Select Date" readonly>
+        <mat-datepicker #q2_state1_date color="primary"></mat-datepicker>
       </ion-item>
     </ion-col>
 
@@ -159,7 +153,8 @@
       <p class="ion-text-label">Amount Paid</p>
 
       <ion-item lines="none" class="ion-no-padding">
-        <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"></ion-input>
+        <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"
+          [(ngModel)]="estimated_tax.q3_state1_amount_paid" inputAmountFormat></ion-input>
       </ion-item>
     </ion-col>
     <ion-col size="6">
@@ -167,8 +162,29 @@
       <p class="ion-text-label">Paid Date</p>
 
       <ion-item lines="none" class="ion-no-padding posRelative">
-        <ion-input [legacy]="true" placeholder="Enter" class="ion-input-tag"></ion-input>
-        <ion-img src="assets/icon/calander.svg" class="calander-posAbs"></ion-img>
+        <input class="ion-input-tag date" [matDatepicker]="q3_state1_date" [(ngModel)]="estimated_tax.q3_state1_date"
+          (click)="q3_state1_date.open()" placeholder="Select Date" readonly>
+        <mat-datepicker #q3_state1_date color="primary"></mat-datepicker>
+      </ion-item>
+    </ion-col>
+
+    <ion-col size="6">
+
+      <p class="ion-text-label">Amount Paid</p>
+
+      <ion-item lines="none" class="ion-no-padding">
+        <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"
+          [(ngModel)]="estimated_tax.q4_state1_amount_paid" inputAmountFormat></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col size="6">
+
+      <p class="ion-text-label">Paid Date</p>
+
+      <ion-item lines="none" class="ion-no-padding posRelative">
+        <input class="ion-input-tag date" [matDatepicker]="q4_state1_date" [(ngModel)]="estimated_tax.q4_state1_date"
+          (click)="q4_state1_date.open()" placeholder="Select Date" readonly>
+        <mat-datepicker #q4_state1_date color="primary"></mat-datepicker>
       </ion-item>
     </ion-col>
     <ion-col size="6">

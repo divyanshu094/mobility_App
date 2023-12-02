@@ -1,13 +1,13 @@
 <ion-content [fullscreen]="true" class="ion-padding ion-content-scroll">
   <ion-row>
     <ion-col size="12">
-      <ion-checkbox labelPlacement="end" class="checkbox-box"><span class="ion-text-wrap">Have my 2023 refund(s)
+      <ion-checkbox labelPlacement="end" class="checkbox-box" [(ngModel)]="direct_deposit_direct_debit_in_formation.have_my_2022_refund"><span class="ion-text-wrap">Have my 2023 refund(s)
           directly deposited into my bank
           account.</span></ion-checkbox> <br />
-      <ion-checkbox labelPlacement="end" class="checkbox-box"><span class="ion-text-wrap">Pay my 2023 balance(s) due
+      <ion-checkbox labelPlacement="end" class="checkbox-box" [(ngModel)]="direct_deposit_direct_debit_in_formation.have_my_2022_balance"><span class="ion-text-wrap">Pay my 2023 balance(s) due
           directly from my bank
           account.</span></ion-checkbox> <br />
-      <ion-checkbox labelPlacement="end" class="checkbox-box"><span class="ion-text-wrap">Pay my 2024 quarterly
+      <ion-checkbox labelPlacement="end" class="checkbox-box" [(ngModel)]="direct_deposit_direct_debit_in_formation.have_my_2022_quarterly"><span class="ion-text-wrap">Pay my 2024 quarterly
           estimated payments directly from my
           bank.</span></ion-checkbox> <br />
     </ion-col>
@@ -17,7 +17,7 @@
         <h1 class="ion-text-label">Account Owner</h1>
       </ion-text>
       <ion-item lines="none" class="ion-no-padding">
-        <ion-select placeholder="Select" class="ion-input-tag">
+        <ion-select placeholder="Select" class="ion-input-tag" [(ngModel)]="direct_deposit_direct_debit_in_formation.account_owner">
           <ion-select-option value="apple">Apple</ion-select-option>
           <ion-select-option value="banana">Banana</ion-select-option>
           <ion-select-option value="orange">Orange</ion-select-option>
@@ -30,7 +30,7 @@
         <h1 class="ion-text-label">Type of Account</h1>
       </ion-text>
       <ion-item lines="none" class="ion-no-padding">
-        <ion-select placeholder="Select" class="ion-input-tag">
+        <ion-select placeholder="Select" class="ion-input-tag" [(ngModel)]="direct_deposit_direct_debit_in_formation.type_of_account">
           <ion-select-option value="apple">Apple</ion-select-option>
           <ion-select-option value="banana">Banana</ion-select-option>
           <ion-select-option value="orange">Orange</ion-select-option>
@@ -43,7 +43,7 @@
         <h1 class="ion-text-label">Routing Number</h1>
       </ion-text>
       <ion-item lines="none" class="ion-no-padding">
-        <ion-input [legacy]="true" type="Number" placeholder="Enter" class="ion-input-tag"></ion-input>
+        <ion-input [legacy]="true" type="Number" placeholder="Enter" class="ion-input-tag" [(ngModel)]="direct_deposit_direct_debit_in_formation.routing_number"></ion-input>
       </ion-item>
     </ion-col>
     <ion-col size="12">
@@ -51,7 +51,7 @@
         <h1 class="ion-text-label">Account Number</h1>
       </ion-text>
       <ion-item lines="none" class="ion-no-padding">
-        <ion-input [legacy]="true" type="Number" placeholder="Enter" class="ion-input-tag"></ion-input>
+        <ion-input [legacy]="true" type="Number" placeholder="Enter" class="ion-input-tag" [(ngModel)]="direct_deposit_direct_debit_in_formation.account_number"></ion-input>
       </ion-item>
     </ion-col>
     <ion-col size="6">

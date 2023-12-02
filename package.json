@@ -1,8 +1,8 @@
 {
-  "name": "mobility_app",
+  "name": "MobilitySQR",
   "version": "0.0.1",
   "author": "Ionic Framework",
-  "homepage": "https://ionicframework.com/",
+  "homepage": "https://mobilitysqr.com/",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -14,10 +14,12 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "^16.0.0",
+    "@angular/cdk": "^16.2.12",
     "@angular/common": "^16.0.0",
     "@angular/compiler": "^16.0.0",
     "@angular/core": "^16.0.0",
     "@angular/forms": "^16.0.0",
+    "@angular/material": "^16.2.12",
     "@angular/platform-browser": "^16.0.0",
     "@angular/platform-browser-dynamic": "^16.0.0",
     "@angular/router": "^16.0.0",
@@ -30,6 +32,7 @@
     "@capacitor/status-bar": "5.0.6",
     "@ionic/angular": "^7.0.0",
     "angular-svg-round-progressbar": "^11.0.0",
+    "capacitor-native-biometric": "^4.2.2",
     "ionicons": "^7.0.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",

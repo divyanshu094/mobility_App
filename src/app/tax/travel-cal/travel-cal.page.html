@@ -1,13 +1,71 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>travel-cal</ion-title>
-  </ion-toolbar>
+<ion-header [translucent]="true" class="ion-no-border">
+  <app-back-header title="Travel Calendar"></app-back-header>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">travel-cal</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div class="main-div">
+    <ul class="CalanderHeadding">
+      <li class="prev" (click)="previousMonth()">&#10094;</li>
+      <li class="monthYear">
+        {{mnthName}} {{year}}
+      </li>
+      <li class="next" (click)="nextMonth()">&#10095;</li>
+    </ul>
+    <ul class="weekdays">
+      <li *ngFor="let day of namesOfDays">{{day}}</li>
+    </ul>
+    <ul class="days">
+      <li *ngFor="let date of days" [class.trns]="!date" [class.isweekend]="date.isweekend"
+        [class.work_event]="date.event?.length > 0 && date.event[0].assignment_type.assigment_name.toLowerCase() == 'work'"
+        [class.transit_event]="date.event?.length > 0 && date.event[0].assignment_type.assigment_name.toLowerCase() == 'transit'"
+        [class.business_event]="date.event?.length > 0 && date.event[0].assignment_type.assigment_name.toLowerCase() == 'business'"
+        [class.holiday_event]="date.event?.length > 0 && date.event[0].assignment_type.assigment_name.toLowerCase() == 'holiday/vacation'"
+        [class.work_active]="date.event?.length > 0 && date.event[0].assignment_type.assigment_name.toLowerCase() == 'work' && date.isToday"
+        [class.transit_active]="date.event?.length > 0 && date.event[0].assignment_type.assigment_name.toLowerCase() == 'transit' && date.isToday"
+        [class.business_active]="date.event?.length > 0 && date.event[0].assignment_type.assigment_name.toLowerCase() == 'business' && date.isToday"
+        [class.holiday_active]="date.event?.length > 0 && date.event[0].assignment_type.assigment_name.toLowerCase() == 'holiday/vacation' && date.isToday"
+        [class.not_assignment_type.assigment_name]="date.event?.length > 0 && !date.event[0].assignment_type.assigment_name && date.isToday"
+        (click)="viewEvents(date)">
+        <!-- [matMenuTriggerFor]="details" -->
+
+        <span class="upr" *ngIf="date && date.event?.length > 0">{{date.event[0].destination_country.code}}</span>
+        <div style="font-size: 0.7rem;" [class.today_loc]="date.isToday" [class.day_loc]="!date.isToday">
+          <span *ngIf="(date.event?.length > 0 && date.event[0].city_name); else notShow">
+            {{date.event[0].city_name.length > 10 ?
+            (date.event[date.event.length -
+            1].city_name | slice:0:10)+'..' : date.event[0].city_name}}
+          </span>
+        </div>
+        {{date.date}}
+        <ng-container *ngIf="date.event?.length > 0 && date.event[0].assignment_type.assigment_name">
+          <span [class.work]="date.event[0].assignment_type.assigment_name.toLowerCase()=='work'"
+            [class.transit]="date.event[0].assignment_type.assigment_name.toLowerCase()=='transit'"
+            [class.business]="date.event[0].assignment_type.assigment_name.toLowerCase()=='business'"
+            [class.holiday]="date.event[0].assignment_type.assigment_name.toLowerCase()=='holiday/vacation'"
+            class="lwr">{{getActivity(date.event, 'activity')
+            }}</span>
+        </ng-container>
+      </li>
+    </ul>
+    <ng-template #notShow>
+      <span>&nbsp;&nbsp;</span>
+    </ng-template>
+    <!-- <mat-menu #details="matMenu">
+      <div class="events" *ngFor="let event of calEvents">
+        <span>{{event.assignment_type.assigment_name}}</span>
+        <span>
+          <p>{{event.from_date | date}} - {{event.to_date | date}}</p>
+          <p><b>{{event.destination_city}},{{event.destination_country.name}}</b></p>
+        </span>
+      </div>
+    </mat-menu> -->
+  </div>
+  <div class="events" *ngFor="let event of calender_Events">
+    <span>{{event.assignment_type.assigment_name}}</span>
+    <span>
+      <p class="dates">{{event.from_date | date}} - {{event.to_date | date}}</p>
+      <p><b>{{event.destination_city}},{{event.destination_country.name}}</b></p>
+    </span>
+  </div>
+
 </ion-content>
