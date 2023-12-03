@@ -6,6 +6,7 @@ ion-searchbar.custom {
 
 h5 {
   margin: 2% 0 0 4%;
+  font-size: 1.1em;
 }
 
 ion-card {
@@ -25,12 +26,15 @@ ion-card-content {
 
   h2{
     width: 90%;
+    margin: 0;
+    font-size: 1.1em;
   }
 
   p {
     font-size: 0.7em;
     color: #222222;
-    font-family: Poppins;
+    font-family: "Poppins";
+    margin: 0;
   }
 
   ion-label {
@@ -62,7 +66,7 @@ ion-popover {
 .add-text{
   float: inline-end;
   margin-right: 5%;
-  font-size: 0.7em;
+  font-size: 0.8em;
   font-weight: bold;
   color: #92479B;
 }

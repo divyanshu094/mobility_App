@@ -95,10 +95,10 @@ export class LoginPage implements OnInit {
   }
 
   onSuccessLogin(result: any) {
+    sessionStorage.clear();
     this.commonService.saveToken(result['access']);
     this.commonService.saveRefreshToken(result['refresh']);
-    localStorage.clear();
-    localStorage.setItem("user_detail", JSON.stringify(result.user));
+    sessionStorage.setItem("user_detail", JSON.stringify(result.user));
     if (result.user.membership && result.user.membership[0]?.role.length > 0) {
       if (result.user.membership[0].organizations.master_permission_module.length > 0) {
         if (result.user.membership[0].organizations.master_permission_module[0].module.toLowerCase().trim() == "tax master") {
@@ -109,10 +109,10 @@ export class LoginPage implements OnInit {
           sessionStorage.setItem("module", "tax");
           if (isCpa || isCpaMember) {
             sessionStorage.setItem("current_role", "cpa");
-            this.router.navigate(['cpa-dahboard']);
+            this.router.navigate(['/cpa-dashboard']);
           } else if (isReviewer) {
             sessionStorage.setItem("current_role", "reviewer");
-            this.router.navigate(['reviwer-dahboard']);
+            this.router.navigate(['/cpa-dashboard']);
           } else {
             if (isAdmin) {
               sessionStorage.setItem("current_role", "tax_admin");

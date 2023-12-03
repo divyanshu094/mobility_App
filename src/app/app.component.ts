@@ -61,8 +61,8 @@ export class AppComponent {
   }
 
   showDetails() {
-    if (localStorage["user_detail"])
-      var user_detail = JSON.parse(localStorage["user_detail"]);
+    if (sessionStorage["user_detail"])
+      var user_detail = JSON.parse(sessionStorage["user_detail"]);
     if (user_detail) {
       this.profile_pic = user_detail.profile.photo.file;
       this.name = user_detail.first_name + ' ' + user_detail.last_name;
@@ -78,7 +78,7 @@ export class AppComponent {
         text: 'Yes',
         role: 'confirm',
         handler: () => {
-          localStorage.clear();
+          // localStorage.clear();
           sessionStorage.clear();
           this.router.navigate(['/']);
         },

@@ -32,7 +32,7 @@ export class AddDocumentComponent  implements OnInit {
     //   return;
     }
 
-    // var user_id = JSON.parse(localStorage.getItem("user_detail")).id;
+    // var user_id = JSON.parse(sessionStorage.getItem("user_detail")).id;
     const formData = new FormData()
     // formData.append('file', this.pic);
     formData.append('title', this.doc_name);

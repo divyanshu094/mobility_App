@@ -1,0 +1,13 @@
+<ion-header [translucent]="true" class="ion-no-border">
+  <app-header></app-header>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid class="box-grid">
+    <ion-card class="box" *ngFor="let item of items">
+      <!-- <ion-img src="./assets/icon/tax_organizer_dash.svg" alt="tax_organizer_dash"></ion-img> -->
+      <h1 class="count">{{item.count}}</h1>
+      <ion-label class="lbl">{{item.name}}</ion-label>
+    </ion-card>
+  </ion-grid>
+</ion-content>

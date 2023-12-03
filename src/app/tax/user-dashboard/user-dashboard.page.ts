@@ -15,9 +15,9 @@ export class UserDashboardPage implements OnInit {
   constructor(private apiService: ApiserviceService, private commonService: CommonserviceService) { }
 
   ngOnInit() {
-    this.user = JSON.parse(localStorage["user_detail"]);
+    this.user = JSON.parse(sessionStorage["user_detail"]);
     this.year = new Date().getFullYear();
-    // this.getStatus();
+    this.getStatus();
   }
 
   getStatus() {

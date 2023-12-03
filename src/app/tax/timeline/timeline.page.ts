@@ -17,7 +17,7 @@ export class TimelinePage implements OnInit {
   constructor(private route: ActivatedRoute, private router: Router,private apiService: ApiserviceService, private commonService: CommonserviceService) { }
 
   ngOnInit() {
-    this.user = JSON.parse(localStorage["user_detail"]);
+    this.user = JSON.parse(sessionStorage["user_detail"]);
     // this.user_id = this.route.snapshot.paramMap.get("id");
     this.user_id=this.user.id;
     this.getTimeline();

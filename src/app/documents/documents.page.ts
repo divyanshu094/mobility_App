@@ -15,7 +15,7 @@ export class DocumentsPage implements OnInit {
   constructor(private apiService: ApiserviceService, private commonService: CommonserviceService, public popoverCtrl: PopoverController, private modalCtrl: ModalController, private alertController: AlertController) { }
 
   ngOnInit() {
-    var user = JSON.parse(localStorage["user_detail"]);
+    var user = JSON.parse(sessionStorage["user_detail"]);
     this.user_id = user.id;
     this.getDocuments();
   }

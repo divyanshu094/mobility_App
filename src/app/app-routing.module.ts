@@ -49,6 +49,10 @@ const routes: Routes = [
   {
     path: 'eng-letter',
     loadChildren: () => import('./tax/eng-letter/eng-letter.module').then( m => m.EngLetterPageModule)
+  },
+  {
+    path: 'cpa-dashboard',
+    loadChildren: () => import('./tax/cpa-dashboard/cpa-dashboard.module').then( m => m.CpaDashboardPageModule)
   }
 ];
 
