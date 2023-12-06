@@ -7,6 +7,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 })
 export class RentalIncomeComponent  implements OnInit {
   @Output() pageChange = new EventEmitter<string>();
+  base_data:any={};
   constructor() { }
 
   ngOnInit() { }

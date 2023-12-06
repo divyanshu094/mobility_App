@@ -1,0 +1,47 @@
+<ion-content class="ion-padding">
+  <ion-row class="header">
+    <ion-col size="2"></ion-col>
+    <ion-col size="8">
+      <h4>Add Details</h4>
+    </ion-col>
+    <ion-col size="2"><ion-icon name="close-outline" size="large" (click)="cancel()"></ion-icon></ion-col>
+  </ion-row>
+
+  <h6 class="ion-text-label">From Country<em class="required">*</em></h6>
+  <ion-select placeholder="Select" class="ion-input-tag" interface="action-sheet" [(ngModel)]="fromCountry"
+    (ionChange)="getStates($event.target.value,'from')">
+    <ion-select-option *ngFor="let country of countryList" [value]="country.id">{{country.name}}</ion-select-option>
+  </ion-select>
+  <h6 class="ion-text-label">From State<em class="required">*</em></h6>
+  <ion-select placeholder="Select" class="ion-input-tag" interface="action-sheet" [(ngModel)]="fromState">
+    <ion-select-option *ngFor="let state of fromStateList" [value]="state.name">
+      {{state.name}}</ion-select-option>
+  </ion-select>
+  <h6 class="ion-text-label">To Country<em class="required">*</em></h6>
+  <ion-select placeholder="Select" class="ion-input-tag" interface="action-sheet" [(ngModel)]="toCountry"
+    (ionChange)="getStates($event.target.value,'to')">
+    <ion-select-option *ngFor="let country of countryList" [value]="country.id">{{country.name}}</ion-select-option>
+  </ion-select>
+  <h6 class="ion-text-label">To State<em class="required">*</em></h6>
+  <ion-select placeholder="Select" class="ion-input-tag" interface="action-sheet" [(ngModel)]="toState">
+    <ion-select-option *ngFor="let state of toStateList" [value]="state.name">
+      {{state.name}}</ion-select-option>
+  </ion-select>
+  <h6 class="ion-text-label">From Date<em class="required">*</em></h6>
+  <input class="ion-input-tag date" [matDatepicker]="picker1" (click)="picker1.open()"
+    [(ngModel)]="start_date" placeholder="Select Date" readonly>
+  <mat-datepicker #picker1 color="primary"></mat-datepicker>
+  <h6 class="ion-text-label">To Date<em class="required">*</em></h6>
+  <input class="ion-input-tag date" [matDatepicker]="picker2" (click)="picker2.open()"
+    [(ngModel)]="end_date" [min]="start_date" placeholder="Select Date" readonly>
+  <mat-datepicker #picker2 color="primary"></mat-datepicker>
+  <h6 class="ion-text-label">Assignment Type<em class="required">*</em></h6>
+  <ion-select placeholder="Select" class="ion-input-tag" interface="action-sheet" [(ngModel)]="assignment_type">
+    <ion-select-option *ngFor="let type of assignmentTypeArr"
+      [value]="type.id">{{type.assigment_name}}</ion-select-option>
+  </ion-select>
+  <h6 class="ion-text-label">Remark</h6>
+  <ion-input type="text" class="ion-input-tag" placeholder="Enter document name"></ion-input>
+
+  <ion-button expand="block" class="sign-in-btn" (click)="addDetails()">Add</ion-button>
+</ion-content>

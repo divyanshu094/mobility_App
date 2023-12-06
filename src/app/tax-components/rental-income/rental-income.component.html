@@ -1,3 +1,375 @@
-<p>
-  rental-income works!
-</p>
+<ion-content [fullscreen]="true" class="ion-padding ion-content-scroll">
+  <ion-row>
+    <ion-col size="12">
+      <ion-checkbox class="checkbox-box" labelPlacement="end" [(ngModel)]="base_data.taxpayer_legally_blind"><span
+          class="ion-text-wrap">New rental in 2023?</span></ion-checkbox>
+    </ion-col>
+    <ion-col size="12">
+      <ion-text class="ion-text-box">
+        <h1 class="ion-text-label">Date Of Birth</h1>
+      </ion-text>
+      <ion-item lines="none" class="ion-no-padding posRelative">
+        <input class="ion-input-tag date" [(ngModel)]="base_data.date_of_birth_t" [matDatepicker]="t_dob"
+          (click)="t_dob.open()" placeholder="Select Date" readonly>
+        <mat-datepicker #t_dob color="primary"></mat-datepicker>
+      </ion-item>
+    </ion-col>
+    <ion-col size="12" class="margin-top-2">
+      <ion-checkbox class="checkbox-box" labelPlacement="end" [(ngModel)]="base_data.taxpayer_legally_blind"><span
+          class="ion-text-wrap">Rental ended or sold in 2023</span></ion-checkbox>
+    </ion-col>
+    <ion-col size="12">
+      <p class="taxpayer-text">Rental Information</p>
+    </ion-col>
+
+    <ion-col size="12">
+      <ion-text class="ion-text-box">
+        <h1 class="ion-text-label">Type of Property</h1>
+      </ion-text>
+      <ion-select placeholder="Select" class="ion-input-tag" [(ngModel)]="base_data.country">
+        <ion-select-option value="apple">Apple</ion-select-option>
+        <ion-select-option value="banana">Banana</ion-select-option>
+        <ion-select-option value="orange">Orange</ion-select-option>
+      </ion-select>
+    </ion-col>
+    <ion-col size="12">
+      <ion-text class="ion-text-box">
+        <h1 class="ion-text-label">Owner</h1>
+      </ion-text>
+      <ion-select placeholder="Select" class="ion-input-tag" [(ngModel)]="base_data.country">
+        <ion-select-option value="apple">Apple</ion-select-option>
+        <ion-select-option value="banana">Banana</ion-select-option>
+        <ion-select-option value="orange">Orange</ion-select-option>
+      </ion-select>
+    </ion-col>
+    <ion-col size="12">
+      <ion-text class="ion-text-box">
+        <h1 class="ion-text-label">Percentage Ownership</h1>
+      </ion-text>
+      <ion-item lines="none" class="ion-no-padding">
+        <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"
+          [(ngModel)]="base_data.phone_s"></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col size="12">
+      <ion-text class="ion-text-box">
+        <h1 class="ion-text-label">Address</h1>
+      </ion-text>
+      <ion-item lines="none" class="ion-no-padding">
+        <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"
+          [(ngModel)]="base_data.phone_s"></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col size="6">
+      <ion-text class="ion-text-box">
+        <h1 class="ion-text-label">City/State</h1>
+      </ion-text>
+      <ion-item lines="none" class="ion-no-padding">
+        <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"
+          [(ngModel)]="base_data.phone_s"></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col size="6">
+      <ion-text class="ion-text-box">
+        <h1 class="ion-text-label">Country</h1>
+      </ion-text>
+      <ion-item lines="none" class="ion-no-padding">
+        <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"
+          [(ngModel)]="base_data.phone_s"></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col size="12">
+      <ion-text class="ion-text-box">
+        <h1 class="ion-text-label">Days Available For Rent</h1>
+      </ion-text>
+      <ion-item lines="none" class="ion-no-padding">
+        <ion-input [legacy]="true" type="number" placeholder="Enter" class="ion-input-tag"
+          [(ngModel)]="base_data.phone_s"></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col size="12">
+      <ion-text class="ion-text-box">
+        <h1 class="ion-text-label">Days Used For Personal Use</h1>
+      </ion-text>
+      <ion-item lines="none" class="ion-no-padding">
+        <ion-input [legacy]="true" type="number" placeholder="Enter" class="ion-input-tag"
+          [(ngModel)]="base_data.phone_s"></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col size="12">
+      <p class="taxpayer-text">Rental Expenses</p>
+    </ion-col>
+    <ion-col size="6">
+      <ion-text class="ion-text-box">
+        <h1 class="ion-text-label">Advertising</h1>
+      </ion-text>
+      <ion-item lines="none" class="ion-no-padding">
+        <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"
+          [(ngModel)]="base_data.phone_s"></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col size="6">
+      <ion-text class="ion-text-box">
+        <h1 class="ion-text-label">Auto & Travel</h1>
+      </ion-text>
+      <ion-item lines="none" class="ion-no-padding">
+        <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"
+          [(ngModel)]="base_data.phone_s"></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col size="6">
+      <ion-text class="ion-text-box">
+        <h1 class="ion-text-label">Auto Miles</h1>
+      </ion-text>
+      <ion-item lines="none" class="ion-no-padding">
+        <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"
+          [(ngModel)]="base_data.phone_s"></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col size="6">
+      <ion-text class="ion-text-box">
+        <h1 class="ion-text-label">Insurance</h1>
+      </ion-text>
+      <ion-item lines="none" class="ion-no-padding">
+        <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"
+          [(ngModel)]="base_data.phone_s"></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col size="12">
+      <ion-text class="ion-text-box">
+        <h1 class="ion-text-label">Cleaning & Maintenance</h1>
+      </ion-text>
+      <ion-item lines="none" class="ion-no-padding">
+        <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"
+          [(ngModel)]="base_data.phone_s"></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col size="12">
+      <ion-text class="ion-text-box">
+        <h1 class="ion-text-label">Commissions Paid</h1>
+      </ion-text>
+      <ion-item lines="none" class="ion-no-padding">
+        <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"
+          [(ngModel)]="base_data.phone_s"></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col size="12">
+      <ion-text class="ion-text-box">
+        <h1 class="ion-text-label">Grounds & Gardening</h1>
+      </ion-text>
+      <ion-item lines="none" class="ion-no-padding">
+        <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"
+          [(ngModel)]="base_data.phone_s"></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col size="12">
+      <ion-text class="ion-text-box">
+        <h1 class="ion-text-label">Mortgage Interest Expense</h1>
+      </ion-text>
+      <ion-item lines="none" class="ion-no-padding">
+        <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"
+          [(ngModel)]="base_data.phone_s"></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col size="6">
+      <ion-text class="ion-text-box">
+        <h1 class="ion-text-label">Pest Control</h1>
+      </ion-text>
+      <ion-item lines="none" class="ion-no-padding">
+        <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"
+          [(ngModel)]="base_data.phone_s"></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col size="6">
+      <ion-text class="ion-text-box">
+        <h1 class="ion-text-label">Utilities</h1>
+      </ion-text>
+      <ion-item lines="none" class="ion-no-padding">
+        <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"
+          [(ngModel)]="base_data.phone_s"></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col size="6">
+      <ion-text class="ion-text-box">
+        <h1 class="ion-text-label">Taxes</h1>
+      </ion-text>
+      <ion-item lines="none" class="ion-no-padding">
+        <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"
+          [(ngModel)]="base_data.phone_s"></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col size="6">
+      <ion-text class="ion-text-box">
+        <h1 class="ion-text-label">Supplies</h1>
+      </ion-text>
+      <ion-item lines="none" class="ion-no-padding">
+        <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"
+          [(ngModel)]="base_data.phone_s"></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col size="6">
+      <ion-text class="ion-text-box">
+        <h1 class="ion-text-label">Interest Expense</h1>
+      </ion-text>
+      <ion-item lines="none" class="ion-no-padding">
+        <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"
+          [(ngModel)]="base_data.phone_s"></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col size="6">
+      <ion-text class="ion-text-box">
+        <h1 class="ion-text-label">Association Dues</h1>
+      </ion-text>
+      <ion-item lines="none" class="ion-no-padding">
+        <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"
+          [(ngModel)]="base_data.phone_s"></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col size="12" class="ion-text-end">
+      <ion-button class="add-btn">
+        + Add New Property Rental Information & Expenses
+      </ion-button>
+    </ion-col>
+
+    <ion-col size="12"  class="margin-top-2">
+      <ion-checkbox class="checkbox-box" labelPlacement="end" [(ngModel)]="base_data.taxpayer_legally_blind"><span
+          class="ion-text-wrap">Did you purchase property, equipment, furniture, or other capital assets for your
+          rental(s) during 2023</span></ion-checkbox>
+      <ion-checkbox class="checkbox-box" labelPlacement="end" [(ngModel)]="base_data.taxpayer_legally_blind"><span
+          class="ion-text-wrap">Did you sell property, equipment, furniture, or other capital assets from your rental(s)
+          during 2023</span></ion-checkbox>
+
+    </ion-col>
+    <ion-col size="12">
+      <p class="taxpayer-text">Acquisitions</p>
+    </ion-col>
+    <ion-col size="12">
+      <ion-text class="ion-text-box">
+        <h1 class="ion-text-label">Description of Asset Acquired</h1>
+      </ion-text>
+      <ion-item lines="none" class="ion-no-padding">
+        <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"
+          [(ngModel)]="base_data.zip"></ion-input>
+      </ion-item>
+    </ion-col>
+    <!-- <ion-col size="6">
+      <ion-text class="ion-text-box">
+        <h1 class="ion-text-label">Date</h1>
+      </ion-text>
+      <ion-item lines="none" class="ion-no-padding posRelative">
+        <input class="ion-input-tag date" [(ngModel)]="base_data.date_of_birth_t" [matDatepicker]="t_dob"
+          (click)="t_dob.open()" placeholder="Select Date" readonly>
+        <mat-datepicker #t_dob color="primary"></mat-datepicker>
+      </ion-item>
+    </ion-col> -->
+    <ion-col size="6">
+      <ion-text class="ion-text-box">
+        <h1 class="ion-text-label">Date</h1>
+      </ion-text>
+      <ion-item lines="none" class="ion-no-padding">
+        <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"
+          [(ngModel)]="base_data.zip"></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col size="6">
+      <ion-text class="ion-text-box">
+        <h1 class="ion-text-label">Cost</h1>
+      </ion-text>
+      <ion-item lines="none" class="ion-no-padding">
+        <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"
+          [(ngModel)]="base_data.zip"></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col size="12">
+      <p class="taxpayer-text">Dispositions</p>
+    </ion-col>
+    <ion-col size="12">
+      <ion-text class="ion-text-box">
+        <h1 class="ion-text-label">Description of Asset Sold/Disposed</h1>
+      </ion-text>
+      <ion-item lines="none" class="ion-no-padding">
+        <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"
+          [(ngModel)]="base_data.zip"></ion-input>
+      </ion-item>
+    </ion-col>
+    <!-- <ion-col size="6">
+      <ion-text class="ion-text-box">
+        <h1 class="ion-text-label">Date</h1>
+      </ion-text>
+      <ion-item lines="none" class="ion-no-padding posRelative">
+        <input class="ion-input-tag date" [(ngModel)]="base_data.date_of_birth_t" [matDatepicker]="t_dob"
+          (click)="t_dob.open()" placeholder="Select Date" readonly>
+        <mat-datepicker #t_dob color="primary"></mat-datepicker>
+      </ion-item>
+    </ion-col> -->
+    <ion-col size="6">
+      <ion-text class="ion-text-box">
+        <h1 class="ion-text-label">Date</h1>
+      </ion-text>
+      <ion-item lines="none" class="ion-no-padding">
+        <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"
+          [(ngModel)]="base_data.zip"></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col size="6">
+      <ion-text class="ion-text-box">
+        <h1 class="ion-text-label">Cost</h1>
+      </ion-text>
+      <ion-item lines="none" class="ion-no-padding">
+        <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"
+          [(ngModel)]="base_data.zip"></ion-input>
+      </ion-item>
+    </ion-col>
+
+    <ion-col size="12">
+      <p class="taxpayer-text">Renovations And Capital Improvements</p>
+    </ion-col>
+    <ion-col size="12">
+      <ion-text class="ion-text-box">
+        <h1 class="ion-text-label">Description of Improvements</h1>
+      </ion-text>
+      <ion-item lines="none" class="ion-no-padding">
+        <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"
+          [(ngModel)]="base_data.zip"></ion-input>
+      </ion-item>
+    </ion-col>
+    <!-- <ion-col size="6">
+      <ion-text class="ion-text-box">
+        <h1 class="ion-text-label">Date</h1>
+      </ion-text>
+      <ion-item lines="none" class="ion-no-padding posRelative">
+        <input class="ion-input-tag date" [(ngModel)]="base_data.date_of_birth_t" [matDatepicker]="t_dob"
+          (click)="t_dob.open()" placeholder="Select Date" readonly>
+        <mat-datepicker #t_dob color="primary"></mat-datepicker>
+      </ion-item>
+    </ion-col> -->
+    <ion-col size="6">
+      <ion-text class="ion-text-box">
+        <h1 class="ion-text-label">Date</h1>
+      </ion-text>
+      <ion-item lines="none" class="ion-no-padding">
+        <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"
+          [(ngModel)]="base_data.zip"></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col size="6">
+      <ion-text class="ion-text-box">
+        <h1 class="ion-text-label">Cost</h1>
+      </ion-text>
+      <ion-item lines="none" class="ion-no-padding">
+        <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"
+          [(ngModel)]="base_data.zip"></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col size="6">
+      <ion-button expand="block" class="btn-outline" (click)="next()">Previous
+        <ion-icon slot="start" mode="ios" name="chevron-back-outline"></ion-icon>
+      </ion-button>
+    </ion-col>
+    <ion-col size="6">
+      <ion-button expand="block" class="btn-save-nxt" (click)="next()">Submit
+        <ion-icon slot="end" mode="ios" name="chevron-forward-outline"></ion-icon>
+      </ion-button>
+    </ion-col>
+  </ion-row>
+</ion-content>

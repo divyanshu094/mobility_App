@@ -12,6 +12,7 @@ export class UserDashboardPage implements OnInit {
   user: any = {};
   current_status:any="";
   due_date:any="";
+  current_step:number=0;
   constructor(private apiService: ApiserviceService, private commonService: CommonserviceService) { }
 
   ngOnInit() {
@@ -26,6 +27,7 @@ export class UserDashboardPage implements OnInit {
         if (result.status) {
           this.current_status=result.message;
           this.due_date=result.date;
+          this.current_step=result.position-1;
         }
       },
       (error) => {

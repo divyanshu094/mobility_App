@@ -9,7 +9,7 @@
         <br>
         <span class="due_date">Due Date: <em>{{due_date}}</em></span>
       </div>
-      <round-progress [current]="2" [max]="8" [color]="'#FFBCBC'" [background]="'#DC6ED833'" [radius]="100"
+      <round-progress [current]="current_step" [max]="8" [color]="'#FFBCBC'" [background]="'#DC6ED833'" [radius]="100"
         [stroke]="15" [semicircle]="false" [rounded]="true" [clockwise]="true" [responsive]="true" [duration]="800"
         [animation]="'easeInOutQuart'" [animationDelay]="100">
       </round-progress>

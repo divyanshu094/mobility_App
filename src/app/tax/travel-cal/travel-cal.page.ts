@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalController } from '@ionic/angular';
+import { AddTravelDetailComponent } from 'src/app/components/add-travel-detail/add-travel-detail.component';
 import { ApiserviceService } from 'src/app/services/apiservice.service';
 import { CommonserviceService } from 'src/app/services/commonservice.service';
 
@@ -17,7 +19,7 @@ export class TravelCalPage implements OnInit {
   calEvents: any = [];
   user: any;
   year: any = ""
-  constructor(private apiService: ApiserviceService, public commonService: CommonserviceService) { }
+  constructor(private apiService: ApiserviceService, public commonService: CommonserviceService, private modalCtrl: ModalController) { }
 
   ngOnInit() {
     this.user = JSON.parse(sessionStorage["user_detail"]);
@@ -35,6 +37,19 @@ export class TravelCalPage implements OnInit {
       (error) => {
       }
     );
+  }
+
+  async addTravel() {
+    const modal = await this.modalCtrl.create({
+      component: AddTravelDetailComponent,
+      breakpoints: [0.5, 0.8, 1.0],
+      initialBreakpoint: 0.5,
+      cssClass: 'otp-modal',
+    });
+    await modal.present();
+    modal.onDidDismiss().then((data) => {
+      this.getTravelEvents();
+    });
   }
 
   nextMonth() {
@@ -64,7 +79,7 @@ export class TravelCalPage implements OnInit {
     this.renderCalender(new Date(date))
   }
 
-  renderCalender(date:any) {
+  renderCalender(date: any) {
     //var htmlContent = "";
     this.days = [];
     var FebNumberOfDays: any = 28;
@@ -140,7 +155,7 @@ export class TravelCalPage implements OnInit {
   }
 
 
-  viewEvents(data:any) {
+  viewEvents(data: any) {
     if (data && data.event.length > 0) {
       // $('.calBtn').trigger('click');
       this.calEvents = data.event;

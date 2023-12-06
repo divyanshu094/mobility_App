@@ -1,0 +1,20 @@
+h4 {
+    margin: 0;
+    font-weight: 500;
+    font-size: 5vw;
+}
+
+.header {
+  text-align: center;
+  align-items: center;
+}
+
+.sign-in-btn {
+    --border-radius: 5px;
+    --border: 1px solid #92479B;
+    --background: #92479B;
+    --box-shadow: none;
+    height: 40px;
+    text-transform: capitalize;
+    margin-top: 5%;
+  }

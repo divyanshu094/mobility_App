@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./organizer.page.scss'],
 })
 export class OrganizerPage implements OnInit {
-  step: number = 1;
+  step: number = 7;
   step_names:any=[];
   constructor() { }
 

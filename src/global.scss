@@ -85,6 +85,14 @@ h3{
   font-size: .9em;
 }
 
+.required{
+  color: red!important;
+}
+
+.margin-top-2{
+  margin-top: 2%!important;
+}
+
 
 /////////////////////////////////////////////
 .amountInput {
@@ -100,8 +108,8 @@ h3{
 }
 
 ion-select {
-  background: url('/assets/icon/arrow-down.svg') no-repeat;
-  background-position: 95% center;
+  background: url('/assets/icon/arrow-down.svg') no-repeat!important;
+  background-position: 95% center!important;
 }
 
 .ion-content-scroll {
@@ -112,10 +120,10 @@ ion-select {
 }
 
 .taxpayer-text {
-  color: #92479B;
+  color: #92479B!important;
   font-size: 0.9rem;
   font-weight: 600;
-  margin: 0 2% 2%;
+  margin: 2% 0%!important;
   padding-bottom: 1%;
   border-bottom: 0.5px solid #DADADA;
 }
@@ -136,7 +144,7 @@ ion-select {
   font-family: 'Poppins';
   font-size: 0.8rem!important;
   font-weight: 500!important;
-  margin: 0% 0% 1% 2%!important;
+  margin: 2% 0% 0% 1% !important;
 }
 
 .date{
@@ -248,6 +256,16 @@ ion-select::part(icon) {
     color: #92479B;
     margin-bottom: 0;
   }
+}
+
+.add-btn{
+  border: 1px solid #92479B;
+  background-color: rgba(146, 71, 155, 0.1019607843);
+  border-radius: 8px;
+  --background: transparent;
+  color: #92479B;
+  text-transform: capitalize;
+  text-wrap: wrap;
 }
 
 //////////////////////////
