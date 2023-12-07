@@ -1,0 +1,26 @@
+<ion-header [translucent]="true" class="ion-no-border">
+  <app-back-header [title]="type"></app-back-header>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card class="cards" *ngFor="let item of returns;let i=index" (click)="openRecord(item)">
+    <ion-card-header class="border-bottom">
+      <span class="statusBg">{{item.submitted_date | date}}</span>
+      <ion-item lines="none" class="margin-top-2">
+        <ion-avatar slot="start">
+          <img src="./assets/icon/my_profile.svg" />
+        </ion-avatar>
+        <ion-label>
+          <h2>{{item.client_name}}</h2>
+          <p *ngIf="type!='Consulting Call'">Preparer: <span class="date_time">{{item.preparer}}</span></p>
+          <p *ngIf="type!='Consulting Call'">Signer: <span class="date_time">{{item.signer}}</span></p>
+          <p>Status: <span class="date_time">{{item.status}}</span></p>
+        </ion-label>
+      </ion-item>
+    </ion-card-header>
+  </ion-card>
+  <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

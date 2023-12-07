@@ -12,14 +12,24 @@ export class TimelinePage implements OnInit {
   timeline: any = [];
   imgArr: any = [];
   user: any;
-  year: string="2023";
+  year: any = "";
   user_id: any;
-  constructor(private route: ActivatedRoute, private router: Router,private apiService: ApiserviceService, private commonService: CommonserviceService) { }
+  from:any="";
+  client_name: string="";
+  client_email: any;
+  profile_pic: any;
+  constructor(private route: ActivatedRoute, private router: Router, private apiService: ApiserviceService, private commonService: CommonserviceService) {
+    this.year = this.route.snapshot.paramMap.get("year");
+    this.user_id = this.route.snapshot.paramMap.get("user_id");
+    this.from = this.route.snapshot.paramMap.get("from");
+  }
 
   ngOnInit() {
     this.user = JSON.parse(sessionStorage["user_detail"]);
-    // this.user_id = this.route.snapshot.paramMap.get("id");
-    this.user_id=this.user.id;
+    if (this.from=='list') {
+      this.user_id = this.user.id;
+      this.year = new Date().getFullYear();
+    }
     this.getTimeline();
   }
 
@@ -28,12 +38,12 @@ export class TimelinePage implements OnInit {
       (result: any) => {
         if (result.status) {
           this.timeline = result.results.tax_user_timeline;
-          // this.client_name = result.results.first_name + ' ' + result.results.last_name
+          this.client_name = result.results.first_name + ' ' + result.results.last_name
           // this.tax_id = result.results.user_tax_status[0].tax_return;
           // this.f_name = result.results.first_name;
           // this.l_name = result.results.last_name;
-          // this.client_email = result.results.email;
-          // this.profile_pic = result.results.profile?.photo.file;
+          this.client_email = result.results.email;
+          this.profile_pic = result.results.profile?.photo.file;
           this.imgArr = [{
             "img": "./assets/icon/call_with_expert.svg"
           }, {
@@ -68,7 +78,7 @@ export class TimelinePage implements OnInit {
     }
   }
 
-  gotoPage(name:any) {
+  gotoPage(name: any) {
     var url = ''
     if (name.toLowerCase() == 'call with tax expert') {
       url = '/schedule-call'
@@ -77,7 +87,7 @@ export class TimelinePage implements OnInit {
     } else if (name.toLowerCase() == 'tax organizer') {
       url = '/organizer'
     }
-    if (url)
+    if (url && this.from!='list')
       this.router.navigate([url]);
   }
 

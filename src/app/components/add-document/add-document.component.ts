@@ -2,14 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { ApiserviceService } from 'src/app/services/apiservice.service';
 import { CommonserviceService } from 'src/app/services/commonservice.service';
+import { Camera, CameraResultType } from '@capacitor/camera';
 
 @Component({
   selector: 'app-add-document',
   templateUrl: './add-document.component.html',
   styleUrls: ['./add-document.component.scss'],
 })
-export class AddDocumentComponent  implements OnInit {
-  doc_name:any="";
+export class AddDocumentComponent implements OnInit {
+  doc_name: any = "";
   constructor(private apiService: ApiserviceService, private commonService: CommonserviceService, private modalCtrl: ModalController) { }
 
   ngOnInit() { }
@@ -18,18 +19,34 @@ export class AddDocumentComponent  implements OnInit {
     this.modalCtrl.dismiss(null, 'cancel');
   }
 
-  addDoc(){
+  addDoc() {
     this.modalCtrl.dismiss(null, 'cancel');
   }
+
+  takePicture = async () => {
+    const image = await Camera.getPhoto({
+      quality: 90,
+      allowEditing: true,
+      resultType: CameraResultType.Uri
+    });
+
+    // image.webPath will contain a path that can be set as an image src.
+    // You can access the original file using image.path, which can be
+    // passed to the Filesystem API to read the raw data of the image,
+    // if desired (or pass resultType: CameraResultType.Base64 to getPhoto)
+    var imageUrl = image.webPath;
+    // Can be set to the src of an image now
+    // imageElement.src = imageUrl;
+  };
 
   uploadFiles() {
 
     if (!this.doc_name) {
       this.commonService.showAlert("Alert", "Please enter document name");
       return;
-    // } else if (!this.pic) {
-    //   this.commonService.showAlert("Alert", "Please select file");
-    //   return;
+      // } else if (!this.pic) {
+      //   this.commonService.showAlert("Alert", "Please select file");
+      //   return;
     }
 
     // var user_id = JSON.parse(sessionStorage.getItem("user_detail")).id;

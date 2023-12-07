@@ -3,9 +3,15 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
+  <p>
+    <span class="heading">Global Tax Network</span>
+    <ion-select placeholder="Select" class="ion-input-tag year-select" interface="action-sheet" [(ngModel)]="year" (ionChange)="getDashboarCounts()">
+      <ion-select-option *ngFor="let y of years_arr" [value]="y">{{y}}</ion-select-option>
+    </ion-select>
+  </p>
   <ion-grid class="box-grid">
-    <ion-card class="box" *ngFor="let item of items">
-      <!-- <ion-img src="./assets/icon/tax_organizer_dash.svg" alt="tax_organizer_dash"></ion-img> -->
+    <ion-card class="box" *ngFor="let item of items" (click)="gotoPage(item)">
+      <ion-img [src]="item.img" alt="tax_organizer_dash" class="box-icon"></ion-img>
       <h1 class="count">{{item.count}}</h1>
       <ion-label class="lbl">{{item.name}}</ion-label>
     </ion-card>

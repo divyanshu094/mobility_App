@@ -1,0 +1,53 @@
+.cards {
+  border-radius: 15px;
+  box-shadow: 0px 3px 20px 0px #0025611A;
+}
+
+.border-bottom {
+  border-bottom: 0.5px solid #DADADA
+}
+
+ion-card-header,
+ion-card-content {
+  padding: 0;
+}
+
+.date_time {
+  color: #92479B;
+
+}
+
+ion-avatar {
+  width: 50px;
+  height: 50px;
+}
+
+.margin-top-2 {
+  margin-top: 2%;
+}
+
+h2 {
+  font-size: 1em;
+  font-weight: 500;
+  margin: 0;
+  text-transform: capitalize;
+}
+
+p {
+  margin: 0;
+  font-size: 0.8em;
+  white-space: initial;
+}
+
+.statusBg {
+    padding: 1% 4%;
+    font-size: 0.8em;
+    border-radius: 0px 15px 0px 15px;
+    margin-left: 2%;
+    position: absolute;
+    top: 0;
+    font-weight: 500;
+    right: 0;
+    z-index: 10;
+    color: #92479B;
+  }

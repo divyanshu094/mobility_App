@@ -5,30 +5,56 @@
   margin: 1% 1.5%;
   display: inline-grid;
   border-radius: 8px;
-  height: 105px;
+  height: 125px;
+  background: linear-gradient(201.38deg, rgba(255, 255, 255, 0.1) 11.69%, rgba(100, 193, 222, 0.1) 92.17%);
 
   ion-img {
-    width: 65px;
-    height: 65px;
-    top: 5px;
-    right: 5px;
+    width: 40px;
+    height: 40px;
+    top: 7px;
+    right: 7px;
+    position: absolute;
   }
 
   .lbl {
-    // position: absolute;
-    bottom: 32px;
-    left: 10px;
     font-size: 5vw;
-    color: #000;
+    color: #242629;
     padding: 4%;
+    font-family: 'Poppins';
+    font-weight: 500;
   }
 
   .count {
-    text-align: end;
     padding: 0 8%;
     font-size: 2.2em;
     font-weight: 500;
-    color: #963fa7;
+    color: #222222;
     margin: 0;
   }
+}
+
+.box:nth-of-type(odd) {
+  border-radius: 32px 32px 8px 32px;
+}
+
+.box:nth-of-type(even) {
+  border-radius: 32px 32px 32px 8px;
+}
+
+.heading {
+  text-align: left;
+  color: #92479B;
+  font-size: 1.1em;
+  font-weight: 600;
+  letter-spacing: 0em;
+  text-align: left;
+  margin: 1% 0% 0 5%;
+}
+
+.year-select {
+  width: 22% !important;
+  padding: 0 3% !important;
+  height: 30px !important;
+  float: inline-end;
+  margin-right: 5%;
 }

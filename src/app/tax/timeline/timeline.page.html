@@ -3,6 +3,16 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
+  <ion-item lines="none" class="user-item" *ngIf="from=='list'">
+    <ion-avatar slot="start">
+      <img [src]="profile_pic ? profile_pic : './assets/icon/my_profile.svg'" />
+    </ion-avatar>
+    <ion-label>
+      <h2>{{client_name}}</h2>
+      <p>@<span class="date_time">{{client_email}}</span></p>
+    </ion-label>
+  </ion-item>
+
   <ion-card class="cards" *ngFor="let step of timeline;let i=index">
     <ion-card-header class="border-bottom" (click)="gotoPage(step.name)">
       <span class="statusBg"
