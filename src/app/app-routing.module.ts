@@ -65,6 +65,10 @@ const routes: Routes = [
   {
     path: 'service-list/:user_id/:year',
     loadChildren: () => import('./tax/service-list/service-list.module').then( m => m.ServiceListPageModule)
+  },
+  {
+    path: 'schedule-call',
+    loadChildren: () => import('./tax/schedule-call/schedule-call.module').then( m => m.ScheduleCallPageModule)
   }
 ];
 

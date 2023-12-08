@@ -4,9 +4,9 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { EngLetterPageRoutingModule } from './eng-letter-routing.module';
+import { ScheduleCallPageRoutingModule } from './schedule-call-routing.module';
 
-import { EngLetterPage } from './eng-letter.page';
+import { ScheduleCallPage } from './schedule-call.page';
 import { AllImportModule } from 'src/app/components/all-import/all-import.module';
 
 @NgModule({
@@ -14,9 +14,9 @@ import { AllImportModule } from 'src/app/components/all-import/all-import.module
     CommonModule,
     FormsModule,
     IonicModule,
-    EngLetterPageRoutingModule,
+    ScheduleCallPageRoutingModule,
     AllImportModule
   ],
-  declarations: [EngLetterPage]
+  declarations: [ScheduleCallPage]
 })
-export class EngLetterPageModule {}
+export class ScheduleCallPageModule {}
