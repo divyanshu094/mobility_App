@@ -1,0 +1,39 @@
+.cards {
+  border-radius: 15px;
+  box-shadow: 0px 3px 20px 0px #0025611A;
+}
+
+.input-row {
+  align-items: center;
+}
+
+h2,
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.total {
+  margin-left: 3%;
+  margin-top: 3% !important;
+}
+
+.total_amount {
+  color: #92479B;
+  font-weight: 500;
+}
+
+.user-item {
+  --background: #FEF5FF;
+  border-radius: 13px;
+  margin: 0 3%;
+}
+
+.btn-publish {
+  --border-radius: 8px;
+  --border: 1px solid #227D1A;
+  --box-shadow: none;
+  height: 44px;
+  text-transform: capitalize;
+  --background: #227D1A;
+}

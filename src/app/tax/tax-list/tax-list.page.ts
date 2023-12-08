@@ -92,12 +92,15 @@ export class TaxListPage implements OnInit {
       (result: any) => {
         // this.returns = [];
         this.total_records = result.count;
-        result.results.forEach((element: { reviewer_data: { action_taken_by_reviewer: { first_name: string; last_name: string; }; }; tax_return: { id: any; user: { first_name: string; last_name: string; user_tax_status: { updated_date: any; }[]; id: any; tax_return_last_status: any; }; action_taken_by_on_tax: { first_name: string; last_name: string; }; }; }) => {
+        result.results.forEach((element: { reviewer_data: { action_taken_by_reviewer: { first_name: string; last_name: string; }; }; tax_return: {
+          tax_organizer_working_directory: any; id: any; user: { first_name: string; last_name: string; user_tax_status: { updated_date: any; }[]; id: any; tax_return_last_status: any; }; action_taken_by_on_tax: { first_name: string; last_name: string; }; 
+}; }) => {
           var signer = "";
           if (element.reviewer_data.action_taken_by_reviewer?.first_name) {
             signer = element.reviewer_data.action_taken_by_reviewer?.first_name + ' ' + element.reviewer_data.action_taken_by_reviewer?.last_name;
           }
           var obj = {
+            // 'row_id': element.tax_return.tax_organizer_working_directory.id,
             'id': element.tax_return.id,
             'client_name': element.tax_return.user.first_name + ' ' + element.tax_return.user.last_name,
             'tax_year': this.year,
@@ -273,8 +276,8 @@ export class TaxListPage implements OnInit {
         this.total_records = result.count;
         result.results.forEach((element: {
           base_data: any;
-          user: any; profile: any; first_name: string; last_name: string; id: any; tax_return_last_status: any; 
-}) => {
+          user: any; profile: any; first_name: string; last_name: string; id: any; tax_return_last_status: any;
+        }) => {
           var signer = "";
           // if (element.action_taken_by_reviewer?.first_name) {
           //   signer = element.action_taken_by_reviewer?.first_name + ' ' + element.action_taken_by_reviewer?.last_name;
@@ -333,7 +336,11 @@ export class TaxListPage implements OnInit {
   }
 
   openRecord(item: any) {
-    this.router.navigate(['/timeline', item.user_id, this.year,'list']);
+    if (this.type == 'Total Tax Returns') {
+      this.router.navigate(['/service-list', item.user_id, this.year]);
+    } else {
+      this.router.navigate(['/timeline', item.user_id, this.year, 'list']);
+    }
   }
 
 }

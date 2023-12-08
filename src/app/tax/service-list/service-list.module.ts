@@ -4,9 +4,9 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { ProfilePageRoutingModule } from './profile-routing.module';
+import { ServiceListPageRoutingModule } from './service-list-routing.module';
 
-import { ProfilePage } from './profile.page';
+import { ServiceListPage } from './service-list.page';
 import { AllImportModule } from 'src/app/components/all-import/all-import.module';
 
 @NgModule({
@@ -14,9 +14,9 @@ import { AllImportModule } from 'src/app/components/all-import/all-import.module
     CommonModule,
     FormsModule,
     IonicModule,
-    ProfilePageRoutingModule,
+    ServiceListPageRoutingModule,
     AllImportModule
   ],
-  declarations: [ProfilePage]
+  declarations: [ServiceListPage]
 })
-export class ProfilePageModule {}
+export class ServiceListPageModule {}

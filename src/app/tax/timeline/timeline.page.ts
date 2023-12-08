@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ModalController } from '@ionic/angular';
+import { TimelineUploadComponent } from 'src/app/components/timeline-upload/timeline-upload.component';
 import { ApiserviceService } from 'src/app/services/apiservice.service';
 import { CommonserviceService } from 'src/app/services/commonservice.service';
 
@@ -14,11 +16,12 @@ export class TimelinePage implements OnInit {
   user: any;
   year: any = "";
   user_id: any;
-  from:any="";
-  client_name: string="";
+  from: any = "";
+  client_name: string = "";
   client_email: any;
   profile_pic: any;
-  constructor(private route: ActivatedRoute, private router: Router, private apiService: ApiserviceService, private commonService: CommonserviceService) {
+  tax_id:any;
+  constructor(private route: ActivatedRoute, private router: Router, private apiService: ApiserviceService, private commonService: CommonserviceService, private modalCtrl: ModalController) {
     this.year = this.route.snapshot.paramMap.get("year");
     this.user_id = this.route.snapshot.paramMap.get("user_id");
     this.from = this.route.snapshot.paramMap.get("from");
@@ -26,7 +29,7 @@ export class TimelinePage implements OnInit {
 
   ngOnInit() {
     this.user = JSON.parse(sessionStorage["user_detail"]);
-    if (this.from=='list') {
+    if (this.from != 'list') {
       this.user_id = this.user.id;
       this.year = new Date().getFullYear();
     }
@@ -39,7 +42,7 @@ export class TimelinePage implements OnInit {
         if (result.status) {
           this.timeline = result.results.tax_user_timeline;
           this.client_name = result.results.first_name + ' ' + result.results.last_name
-          // this.tax_id = result.results.user_tax_status[0].tax_return;
+          this.tax_id = result.results.user_tax_status[0].tax_return;
           // this.f_name = result.results.first_name;
           // this.l_name = result.results.last_name;
           this.client_email = result.results.email;
@@ -87,8 +90,25 @@ export class TimelinePage implements OnInit {
     } else if (name.toLowerCase() == 'tax organizer') {
       url = '/organizer'
     }
-    if (url && this.from!='list')
+    if (url && this.from != 'list')
       this.router.navigate([url]);
+  }
+
+  async uploadAttachment(step: any, doc_name: any, status: any) {
+    const modal = await this.modalCtrl.create({
+      component: TimelineUploadComponent,
+      breakpoints: [0.5, 0.8],
+      initialBreakpoint: 0.5,
+      cssClass: 'otp-modal',
+      componentProps: {
+        step: step,
+        doc_name: doc_name,
+        status: status,
+        "id": this.tax_id,
+        // "row_id": this.row_id,
+      }
+    });
+    await modal.present();
   }
 
 }

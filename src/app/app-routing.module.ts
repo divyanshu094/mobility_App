@@ -47,7 +47,7 @@ const routes: Routes = [
     loadChildren: () => import('./notification/notification.module').then(m => m.NotificationPageModule)
   },
   {
-    path: 'profile',
+    path: 'tax-profile',
     loadChildren: () => import('./tax/profile/profile.module').then(m => m.ProfilePageModule)
   },
   {
@@ -61,6 +61,10 @@ const routes: Routes = [
   {
     path: 'tax-list/:type/:year',
     loadChildren: () => import('./tax/tax-list/tax-list.module').then(m => m.TaxListPageModule)
+  },
+  {
+    path: 'service-list/:user_id/:year',
+    loadChildren: () => import('./tax/service-list/service-list.module').then( m => m.ServiceListPageModule)
   }
 ];
 

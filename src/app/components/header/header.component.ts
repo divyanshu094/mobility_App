@@ -11,4 +11,8 @@ export class HeaderComponent  implements OnInit {
 
   ngOnInit() {}
 
+  gotoNotification(){
+    // this.ro
+  }
+
 }

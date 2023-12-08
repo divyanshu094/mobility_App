@@ -15,7 +15,7 @@ export class AppComponent {
   name: any = "";
   profile_pic: any = "";
   public appPages = [
-    { title: 'My Profile', url: '/profile', icon: './assets/icon/my_profile.svg' },
+    { title: 'My Profile', url: '/tax-profile', icon: './assets/icon/my_profile.svg' },
     { title: 'Documents', url: '/documents', icon: './assets/icon/documents_menu.svg', },
     { title: 'Notification', url: '/notification', icon: './assets/icon/bell_icon.svg' },
   ];

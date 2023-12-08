@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { ApiserviceService } from 'src/app/services/apiservice.service';
 import { CommonserviceService } from 'src/app/services/commonservice.service';
-import { Camera, CameraResultType } from '@capacitor/camera';
+import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 
 @Component({
   selector: 'app-add-document',
@@ -10,7 +10,8 @@ import { Camera, CameraResultType } from '@capacitor/camera';
   styleUrls: ['./add-document.component.scss'],
 })
 export class AddDocumentComponent implements OnInit {
-  doc_name: any = "";
+  doc_name: any = "test";
+  pic: any;
   constructor(private apiService: ApiserviceService, private commonService: CommonserviceService, private modalCtrl: ModalController) { }
 
   ngOnInit() { }
@@ -25,8 +26,9 @@ export class AddDocumentComponent implements OnInit {
 
   takePicture = async () => {
     const image = await Camera.getPhoto({
-      quality: 90,
-      allowEditing: true,
+      source:CameraSource.Camera,
+      quality: 100,
+      allowEditing: false,
       resultType: CameraResultType.Uri
     });
 
@@ -35,23 +37,29 @@ export class AddDocumentComponent implements OnInit {
     // passed to the Filesystem API to read the raw data of the image,
     // if desired (or pass resultType: CameraResultType.Base64 to getPhoto)
     var imageUrl = image.webPath;
+    this.pic=image.path;
+    this.uploadFiles();
     // Can be set to the src of an image now
     // imageElement.src = imageUrl;
   };
 
+  uploadPiture(){
+    
+  }
+
   uploadFiles() {
 
-    if (!this.doc_name) {
-      this.commonService.showAlert("Alert", "Please enter document name");
-      return;
-      // } else if (!this.pic) {
-      //   this.commonService.showAlert("Alert", "Please select file");
-      //   return;
-    }
+    // if (!this.doc_name) {
+    //   this.commonService.showAlert("Alert", "Please enter document name");
+    //   return;
+    //   // } else if (!this.pic) {
+    //   //   this.commonService.showAlert("Alert", "Please select file");
+    //   //   return;
+    // }
 
     // var user_id = JSON.parse(sessionStorage.getItem("user_detail")).id;
     const formData = new FormData()
-    // formData.append('file', this.pic);
+    formData.append('file', this.pic);
     formData.append('title', this.doc_name);
     // formData.append('user', user_id);
     this.apiService.requestViaPost('/employee/master_document/', formData).then((result: any) => {

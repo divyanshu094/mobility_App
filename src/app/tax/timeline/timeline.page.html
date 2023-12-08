@@ -27,8 +27,8 @@
         </ion-label>
       </ion-item>
       <ion-item class="buttons" *ngIf="isVisible(step.name,i)  && !step.completed">
-        <ion-button size="small" class="accept-btn">Accept</ion-button>
-        <ion-button size="small" class="reject-btn">Reject</ion-button>
+        <ion-button size="small" class="accept-btn" (click)="uploadAttachment(step,step.doc_name,true)">Accept</ion-button>
+        <ion-button size="small" class="reject-btn" (click)="uploadAttachment(step,step.doc_name,false)">Reject</ion-button>
       </ion-item>
     </ion-card-header>
     <ion-card-content>

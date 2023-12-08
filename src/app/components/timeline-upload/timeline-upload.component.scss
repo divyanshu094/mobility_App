@@ -1,0 +1,52 @@
+h4 {
+    margin: 0;
+    font-weight: 500;
+    font-size: 5vw;
+}
+
+.header {
+  text-align: center;
+  align-items: center;
+}
+
+ion-input {
+  border-radius: 8px;
+  border: 1px solid #D9D9D9;
+  background: #FFF;
+  padding: 0 3% !important;
+  height: 48px !important;
+  min-height: initial !important;
+  margin: 2% 0 5% 0;
+}
+
+.box {
+  border: 2px dotted #D9D9D9;
+  margin: 1%;
+  // height: 100px;
+  background: linear-gradient(0deg, #F7F7F7, #F7F7F7);
+  border-radius: 8px;
+  padding: 8%;
+
+  ion-img {
+    width: 25%;
+    margin: auto;
+  }
+
+  p {
+    font-size: 0.8em;
+    text-align: center;
+    color: #92479B;
+    margin-bottom: 0;
+    margin-top: 4%;
+  }
+}
+
+.sign-in-btn {
+  --border-radius: 5px;
+  --border: 1px solid #92479B;
+  --background: #92479B;
+  --box-shadow: none;
+  height: 40px;
+  text-transform: capitalize;
+  margin-top: 5%;
+}

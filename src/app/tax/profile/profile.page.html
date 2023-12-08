@@ -1,13 +1,54 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>profile</ion-title>
-  </ion-toolbar>
+<ion-header [translucent]="true" class="ion-no-border">
+  <app-back-header title="Profile"></app-back-header>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">profile</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-avatar class="pic">
+    <img [src]="profile_pic ? profile_pic : './assets/icon/my_profile.svg'" alt="profile-img" />
+  </ion-avatar>
+  <ion-list>
+    <ion-text class="ion-text-box">
+      <h1 class="ion-text-label">User Name<em class="required">*</em></h1>
+    </ion-text>
+    <ion-item lines="none" class="ion-no-padding">
+      <ion-input [legacy]="true" type="text" [(ngModel)]="personalInfo.profile.username" placeholder=""
+        class="ion-input-tag" disabled></ion-input>
+    </ion-item>
+
+    <ion-text class="ion-text-box">
+      <h1 class="ion-text-label">Business Email<em class="required">*</em></h1>
+    </ion-text>
+    <ion-item lines="none" class="ion-no-padding">
+      <ion-input [legacy]="true" type="text" [(ngModel)]="personalInfo.profile.email" placeholder=""
+        class="ion-input-tag" disabled></ion-input>
+    </ion-item>
+
+    <ion-text class="ion-text-box">
+      <h1 class="ion-text-label">First Name<em class="required">*</em></h1>
+    </ion-text>
+    <ion-item lines="none" class="ion-no-padding">
+      <ion-input [legacy]="true" type="text" [(ngModel)]="personalInfo.profile.first_name"
+        placeholder="Enter First Name" class="ion-input-tag"></ion-input>
+    </ion-item>
+
+    <ion-text class="ion-text-box">
+      <h1 class="ion-text-label">Middle Name</h1>
+    </ion-text>
+    <ion-item lines="none" class="ion-no-padding">
+      <ion-input [legacy]="true" type="text" [(ngModel)]="personalInfo.profile.middle_name"
+        placeholder="Enter Middle Name" class="ion-input-tag"></ion-input>
+    </ion-item>
+
+    <ion-text class="ion-text-box">
+      <h1 class="ion-text-label">Last Name<em class="required">*</em></h1>
+    </ion-text>
+    <ion-item lines="none" class="ion-no-padding">
+      <ion-input [legacy]="true" type="text" [(ngModel)]="personalInfo.profile.last_name" placeholder="Enter Last Name"
+        class="ion-input-tag"></ion-input>
+    </ion-item>
+
+
+  </ion-list>
+  <ion-button expand="block" class="btn-save-nxt" (click)="savePersonal()">Save</ion-button>
+
 </ion-content>

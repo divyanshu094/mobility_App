@@ -1,0 +1,48 @@
+<ion-header [translucent]="true" class="ion-no-border">
+  <app-back-header title="Service"></app-back-header>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-item lines="none" class="user-item">
+    <ion-avatar slot="start">
+      <img [src]="profile_pic ? profile_pic : './assets/icon/my_profile.svg'" />
+    </ion-avatar>
+    <ion-label>
+      <h2>{{client_name}}</h2>
+      <p>@<span class="date_time">{{client_email}}</span></p>
+    </ion-label>
+  </ion-item>
+
+  <ion-card class="cards" *ngFor="let item of serviceList">
+    <ion-card-header class="border-bottom">
+      <ion-checkbox aria-checked="true" justify="start" labelPlacement="end" [checked]="item.selected || item.required"
+        (ionChange)="changeStatus($event.target.checked,item)" [disabled]="item.selected"><span
+          class="ion-text-wrap">{{item.service_name}}</span></ion-checkbox>
+      <ion-row class="input-row">
+        <ion-col size="2">Fees</ion-col>
+        <ion-col size="10">
+          <ion-item lines="none">
+            <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"
+              (keyup)="updateAmount(item)" [(ngModel)]="item.fees"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+    </ion-card-header>
+  </ion-card>
+</ion-content>
+<ion-footer [translucent]="true" class="ion-no-padding">
+  <ion-toolbar>
+    <p class="total">Total Fees: <span class="total_amount"></span>{{total_amount}}</p>
+    <ion-row>
+      <ion-col size="6">
+        <ion-button expand="block" class="btn-save-nxt" (click)="updateUserServiceList(false)">
+          Save</ion-button>
+      </ion-col>
+      <ion-col size="6">
+        <ion-button expand="block" class="btn-publish" (click)="updateUserServiceList(true)">Publish
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

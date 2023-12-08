@@ -8,18 +8,15 @@
   </ion-row>
 
   <h6 class="ion-text-label">Document Name</h6>
-  <ion-input type="text" [(ngModel)]="doc_name" class="ion-input-tag" placeholder="Enter document name"></ion-input>
+  <ion-textarea type="text" [counter]="true" maxlength="400" [autoGrow]="true" [(ngModel)]="remark" fill="outline" 
+    placeholder="Enter document name"></ion-textarea>
 
   <h6 class="ion-text-label">Add Document</h6>
 
   <ion-row>
-    <ion-col class="box" (click)="uploadPiture()">
+    <ion-col class="box" (click)="chooseFile()">
       <ion-img src="./assets/icon/upload.svg" class=""></ion-img>
       <p>Upload File</p>
-    </ion-col>
-    <ion-col class="box" (click)="takePicture()">
-      <ion-img src="./assets/icon/take_photo.svg" class="logo"></ion-img>
-      <p>Take Photo</p>
     </ion-col>
   </ion-row>
   <ion-item lines="none" class="ion-no-padding">
@@ -27,6 +24,7 @@
       <img src="./assets/icon/pdf_icon.svg" />
     </ion-avatar>
     <ion-label>Engagement letter.pdf</ion-label>
+    <ion-icon name="close-outline" size="large" slot="end"></ion-icon>
   </ion-item>
-  <ion-button expand="block" class="sign-in-btn" (click)="addDoc()">Add</ion-button>
+  <ion-button expand="block" class="sign-in-btn" (click)="action()">Upload</ion-button>
 </ion-content>

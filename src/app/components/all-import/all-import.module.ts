@@ -13,6 +13,7 @@ import { StepperComponent } from '../stepper/stepper.component';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { AmountFormatDirective } from 'src/app/directive/amount/amount-format.directive';
 import { AddTravelDetailComponent } from '../add-travel-detail/add-travel-detail.component';
+import { TimelineUploadComponent } from '../timeline-upload/timeline-upload.component';
 
 
 
@@ -25,7 +26,8 @@ import { AddTravelDetailComponent } from '../add-travel-detail/add-travel-detail
     AddDocumentComponent,
     StepperComponent,
     AmountFormatDirective,
-    AddTravelDetailComponent
+    AddTravelDetailComponent,
+    TimelineUploadComponent
   ],
   imports: [
     CommonModule,
@@ -42,7 +44,8 @@ import { AddTravelDetailComponent } from '../add-travel-detail/add-travel-detail
     StepperComponent,
     MatDatepickerModule,
     AmountFormatDirective,
-    AddTravelDetailComponent
+    AddTravelDetailComponent,
+    TimelineUploadComponent
   ]
 })
 export class AllImportModule { }

@@ -1,13 +1,19 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>notification</ion-title>
-  </ion-toolbar>
+<ion-header [translucent]="true" class="ion-no-border">
+  <app-back-header title="Notification"></app-back-header>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">notification</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-card class="cards" *ngFor="let notification of NotificationArr">
+    <ion-card-header class="border-bottom">
+      <ion-item lines="none">
+        <ion-avatar slot="start">
+          <img src='./assets/icon/bell_icon.svg' class="bell"/>
+        </ion-avatar>
+        <ion-label>
+          <h4>{{notification.header}}</h4>
+          <p class="margin0">{{notification.message}}</p>
+        </ion-label>
+      </ion-item>
+    </ion-card-header>
+  </ion-card>
 </ion-content>
