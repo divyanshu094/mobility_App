@@ -19,10 +19,12 @@ export class SalaryWageComponent implements OnInit {
   }
 
   next() {
+    this.saveData();
     this.pageChange.emit("next");
   }
 
   prev() {
+    this.saveData();
     this.pageChange.emit("prev");
   }
 
@@ -40,4 +42,24 @@ export class SalaryWageComponent implements OnInit {
     );
   }
 
+  saveData() {
+    for (let i = 0; i < this.salary_and_wage_income.length; i++) {
+      this.salary_and_wage_income[i].w2_uploaded_attachment_file = this.salary_and_wage_income[i].w2_uploaded_attachment_file?.id ? this.salary_and_wage_income[i].w2_uploaded_attachment_file.id : "";
+    }
+    var json = {
+      "final_submitted": false,
+      "tax_return": this.salary_and_wage_income.tax_return,
+      "page_no": 5,
+      "salary_and_wage_income": this.salary_and_wage_income,
+      "base_data": {}
+    }
+    this.apiService.requestViaPost('/website/tax_return_preparation/', json).then(
+      (result: any) => {
+        if (result.status) {
+
+        }
+      }, (err: any) => {
+      });
+
+  }
 }

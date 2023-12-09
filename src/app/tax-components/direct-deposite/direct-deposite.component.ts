@@ -18,11 +18,12 @@ export class DirectDepositeComponent implements OnInit {
   }
 
   next() {
-    // this.saveData();
+    this.saveData();
     this.pageChange.emit("next");
   }
 
   prev() {
+    this.saveData();
     this.pageChange.emit("prev");
   }
 
@@ -47,7 +48,8 @@ export class DirectDepositeComponent implements OnInit {
       "tax_return": this.direct_deposit_direct_debit_in_formation.tax_return,
       "page_no": 4,
       "direct_deposit_direct_debit_in_formation": this.direct_deposit_direct_debit_in_formation,
-      "tax_file_uploaded":[]
+      "tax_file_uploaded":[],
+      "base_data": {}
     }
     this.apiService.requestViaPost('/website/tax_return_preparation/', json).then(
       (result: any) => {

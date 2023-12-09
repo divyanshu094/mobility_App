@@ -6,13 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./organizer.page.scss'],
 })
 export class OrganizerPage implements OnInit {
-  step: number = 7;
+  step: number = 1;
   step_names:any=[];
   constructor() { }
 
   ngOnInit() {
     this.step_names=['','PERSONAL INFORMATION','ESTIMATED TAX PAYMENTS','DIRECT DEPOSIT/DIRECT DEBIT INFORMATION','SALARY & WAGE INCOME',
-    'INVESTMENT INCOME','Pension, annuity, & retirement income','BUSINESS INCOME AND EXPENSES','RENTAL INCOME & EXPENSES','','','','','','','','','','','']
+    'INVESTMENT INCOME','BUSINESS INCOME AND EXPENSES','Pension, annuity, & retirement income','RENTAL INCOME & EXPENSES','','','','','','','','','','','']
   }
 
   next(eve: any) {

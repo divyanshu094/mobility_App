@@ -15,6 +15,7 @@ export class AppComponent {
   name: any = "";
   profile_pic: any = "";
   public appPages = [
+    { title: 'Dashboard', url: this.getDashUrl(), icon: './assets/icon/my_profile.svg' },
     { title: 'My Profile', url: '/tax-profile', icon: './assets/icon/my_profile.svg' },
     { title: 'Documents', url: '/documents', icon: './assets/icon/documents_menu.svg', },
     { title: 'Notification', url: '/notification', icon: './assets/icon/bell_icon.svg' },
@@ -23,25 +24,20 @@ export class AppComponent {
     this.initApp();
   }
 
+  getDashUrl() {
+    var url = '/user-dashboard';
+    if (sessionStorage["current_role"] != 'tax_user') {
+      url = '/cpa-dashboard';
+    }
+    return url;
+  }
+
   initApp() {
     //================native back button handling===============================>
     var lastTimeBackPress = 0;
     var timePeriodToExit = 2000;
     this.platform.backButton.subscribeWithPriority(0, async () => {
-      if (this.router.url === '/user-dashboard') {
-        if (new Date().getTime() - lastTimeBackPress < timePeriodToExit) {
-          App.exitApp(); //Exit from app
-        } else {
-          const toast = await this.toastCtrl.create({
-            message: 'Press back again to exit App.',
-            duration: 3000,
-            position: 'bottom'
-          });
-          toast.present();
-
-          lastTimeBackPress = new Date().getTime();
-        }
-      } else if (this.router.url === '/login') {
+      if (this.router.url === '/user-dashboard' || this.router.url === 'cpa-dashboard' || this.router.url === '/login') {
         if (new Date().getTime() - lastTimeBackPress < timePeriodToExit) {
           App.exitApp(); //Exit from app
         } else {

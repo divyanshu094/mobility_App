@@ -18,12 +18,12 @@ export class EstimatedTaxComponent implements OnInit {
   }
 
   next() {
-    // this.saveData();
+    this.saveData();
     this.pageChange.emit("next");
   }
 
   prev() {
-    // this.saveData();
+    this.saveData();
     this.pageChange.emit("prev");
   }
 
@@ -41,22 +41,22 @@ export class EstimatedTaxComponent implements OnInit {
   }
 
   saveData() {
-    this.estimated_tax.q1_ris1_date = this.estimated_tax.q4_state1_date ? this.datepipe.transform(this.estimated_tax.q1_ris1_date, 'yyyy-MM-dd') : ""
-    this.estimated_tax.q2_ris1_date = this.estimated_tax.q2_ris1_date ? this.datepipe.transform(this.estimated_tax.q2_ris1_date, 'yyyy-MM-dd') : ""
-    this.estimated_tax.q3_ris1_date = this.estimated_tax.q3_ris1_date ? this.datepipe.transform(this.estimated_tax.q3_ris1_date, 'yyyy-MM-dd') : ""
-    this.estimated_tax.q4_ris1_date = this.estimated_tax.q4_ris1_date ? this.datepipe.transform(this.estimated_tax.q4_ris1_date, 'yyyy-MM-dd') : ""
-    this.estimated_tax.q1_state1_date = this.estimated_tax.q1_state1_date ? this.datepipe.transform(this.estimated_tax.q1_state1_date, 'yyyy-MM-dd') : ""
-    this.estimated_tax.q2_state1_date = this.estimated_tax.q2_state1_date ? this.datepipe.transform(this.estimated_tax.q2_state1_date, 'yyyy-MM-dd') : ""
-    this.estimated_tax.q3_state1_date = this.estimated_tax.q3_state1_date ? this.datepipe.transform(this.estimated_tax.q3_state1_date, 'yyyy-MM-dd') : ""
-    this.estimated_tax.q4_state1_date = this.estimated_tax.q4_state1_date ? this.datepipe.transform(this.estimated_tax.q4_state1_date, 'yyyy-MM-dd') : ""
-    this.estimated_tax.q1_ris2_date = this.estimated_tax.q1_ris2_date ? this.datepipe.transform(this.estimated_tax.q1_ris2_date, 'yyyy-MM-dd') : ""
-    this.estimated_tax.q2_ris2_date = this.estimated_tax.q2_ris2_date ? this.datepipe.transform(this.estimated_tax.q2_ris2_date, 'yyyy-MM-dd') : ""
-    this.estimated_tax.q3_ris2_date = this.estimated_tax.q3_ris2_date ? this.datepipe.transform(this.estimated_tax.q3_ris2_date, 'yyyy-MM-dd') : ""
-    this.estimated_tax.q4_ris2_date = this.estimated_tax.q4_ris2_date ? this.datepipe.transform(this.estimated_tax.q4_ris2_date, 'yyyy-MM-dd') : ""
-    this.estimated_tax.q1_state2_date = this.estimated_tax.q1_state2_date ? this.datepipe.transform(this.estimated_tax.q1_state2_date, 'yyyy-MM-dd') : ""
-    this.estimated_tax.q2_state2_date = this.estimated_tax.q2_state2_date ? this.datepipe.transform(this.estimated_tax.q2_state2_date, 'yyyy-MM-dd') : ""
-    this.estimated_tax.q3_state2_date = this.estimated_tax.q3_state2_date ? this.datepipe.transform(this.estimated_tax.q3_state2_date, 'yyyy-MM-dd') : ""
-    this.estimated_tax.q4_state2_date = this.estimated_tax.q4_state2_date ? this.datepipe.transform(this.estimated_tax.q4_state2_date, 'yyyy-MM-dd') : ""
+    this.estimated_tax.q1_ris1_date = this.estimated_tax.q4_state1_date ? this.datepipe.transform(this.estimated_tax.q1_ris1_date, 'yyyy-MM-dd') : null
+    this.estimated_tax.q2_ris1_date = this.estimated_tax.q2_ris1_date ? this.datepipe.transform(this.estimated_tax.q2_ris1_date, 'yyyy-MM-dd') : null
+    this.estimated_tax.q3_ris1_date = this.estimated_tax.q3_ris1_date ? this.datepipe.transform(this.estimated_tax.q3_ris1_date, 'yyyy-MM-dd') : null
+    this.estimated_tax.q4_ris1_date = this.estimated_tax.q4_ris1_date ? this.datepipe.transform(this.estimated_tax.q4_ris1_date, 'yyyy-MM-dd') : null
+    this.estimated_tax.q1_state1_date = this.estimated_tax.q1_state1_date ? this.datepipe.transform(this.estimated_tax.q1_state1_date, 'yyyy-MM-dd') : null
+    this.estimated_tax.q2_state1_date = this.estimated_tax.q2_state1_date ? this.datepipe.transform(this.estimated_tax.q2_state1_date, 'yyyy-MM-dd') : null
+    this.estimated_tax.q3_state1_date = this.estimated_tax.q3_state1_date ? this.datepipe.transform(this.estimated_tax.q3_state1_date, 'yyyy-MM-dd') : null
+    this.estimated_tax.q4_state1_date = this.estimated_tax.q4_state1_date ? this.datepipe.transform(this.estimated_tax.q4_state1_date, 'yyyy-MM-dd') : null
+    this.estimated_tax.q1_ris2_date = this.estimated_tax.q1_ris2_date ? this.datepipe.transform(this.estimated_tax.q1_ris2_date, 'yyyy-MM-dd') : null
+    this.estimated_tax.q2_ris2_date = this.estimated_tax.q2_ris2_date ? this.datepipe.transform(this.estimated_tax.q2_ris2_date, 'yyyy-MM-dd') : null
+    this.estimated_tax.q3_ris2_date = this.estimated_tax.q3_ris2_date ? this.datepipe.transform(this.estimated_tax.q3_ris2_date, 'yyyy-MM-dd') : null
+    this.estimated_tax.q4_ris2_date = this.estimated_tax.q4_ris2_date ? this.datepipe.transform(this.estimated_tax.q4_ris2_date, 'yyyy-MM-dd') : null
+    this.estimated_tax.q1_state2_date = this.estimated_tax.q1_state2_date ? this.datepipe.transform(this.estimated_tax.q1_state2_date, 'yyyy-MM-dd') : null
+    this.estimated_tax.q2_state2_date = this.estimated_tax.q2_state2_date ? this.datepipe.transform(this.estimated_tax.q2_state2_date, 'yyyy-MM-dd') : null
+    this.estimated_tax.q3_state2_date = this.estimated_tax.q3_state2_date ? this.datepipe.transform(this.estimated_tax.q3_state2_date, 'yyyy-MM-dd') : null
+    this.estimated_tax.q4_state2_date = this.estimated_tax.q4_state2_date ? this.datepipe.transform(this.estimated_tax.q4_state2_date, 'yyyy-MM-dd') : null
     if (this.estimated_tax.attchments)
       this.estimated_tax.attachment_file.push(...this.estimated_tax.attchments.map((item: { id: any; }) => item.id));
 
@@ -65,6 +65,7 @@ export class EstimatedTaxComponent implements OnInit {
       "tax_return": this.estimated_tax.tax_return,
       "page_no": 3,
       "estimated_tax": this.estimated_tax,
+      "base_data": {}
     }
     this.apiService.requestViaPost('/website/tax_return_preparation/', json).then(
       (result: any) => {
