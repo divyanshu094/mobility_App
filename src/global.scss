@@ -76,21 +76,21 @@ h5,
 h6,
 p,
 span {
-  font-family: 'Poppins'!important;
+  font-family: 'Poppins' !important;
   margin: 0;
-  line-height: normal!important;
+  line-height: normal !important;
 }
 
-h3{
+h3 {
   font-size: .9em;
 }
 
-.required{
-  color: red!important;
+.required {
+  color: red !important;
 }
 
-.margin-top-2{
-  margin-top: 2%!important;
+.margin-top-2 {
+  margin-top: 2% !important;
 }
 
 
@@ -101,15 +101,16 @@ h3{
   ::placeholder {
     text-align: start !important;
   }
-  
-  ::-ms-input-placeholder { /* Edge 12 -18 */
+
+  ::-ms-input-placeholder {
+    /* Edge 12 -18 */
     text-align: start !important;
   }
 }
 
 ion-select {
-  background: url('/assets/icon/arrow-down.svg') no-repeat!important;
-  background-position: 95% center!important;
+  background: url('/assets/icon/arrow-down.svg') no-repeat !important;
+  background-position: 95% center !important;
 }
 
 .ion-content-scroll {
@@ -120,10 +121,10 @@ ion-select {
 }
 
 .taxpayer-text {
-  color: #92479B!important;
+  color: #92479B !important;
   font-size: 0.9rem;
   font-weight: 600;
-  margin: 2% 0%!important;
+  margin: 2% 0% !important;
   padding-bottom: 1%;
   border-bottom: 0.5px solid #DADADA;
 }
@@ -142,13 +143,13 @@ ion-select {
 .ion-text-label {
   color: #222222;
   font-family: 'Poppins';
-  font-size: 0.8rem!important;
-  font-weight: 500!important;
+  font-size: 0.8rem !important;
+  font-weight: 500 !important;
   margin: 2% 0% 0% 1% !important;
 }
 
-.date{
-  background: url('/assets/icon/calander.svg') no-repeat 95% center!important;
+.date {
+  background: url('/assets/icon/calander.svg') no-repeat 95% center !important;
 }
 
 .posRelative {
@@ -258,7 +259,7 @@ ion-select::part(icon) {
   }
 }
 
-.add-btn{
+.add-btn {
   border: 1px solid #92479B;
   background-color: rgba(146, 71, 155, 0.1019607843);
   border-radius: 8px;
@@ -266,6 +267,29 @@ ion-select::part(icon) {
   color: #92479B;
   text-transform: capitalize;
   text-wrap: wrap;
+}
+
+
+
+
+.optionsPopOver {
+  --background: rgba(40, 173, 218, 0.6);
+  --backdrop-opacity: 0.6;
+  --box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.6);
+  --color: white;
+  --width: 180px;
+
+  ion-content {
+    --padding-top: 0 !important;
+    --padding-bottom: 0 !important;
+    --padding-start: 0 !important;
+  }
+
+  .pop_icon {
+    width: 22px;
+    height: 25px;
+    margin-right: 8%;
+  }
 }
 
 //////////////////////////

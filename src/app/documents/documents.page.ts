@@ -3,6 +3,7 @@ import { ApiserviceService } from '../services/apiservice.service';
 import { CommonserviceService } from '../services/commonservice.service';
 import { AlertController, ModalController, PopoverController } from '@ionic/angular';
 import { AddDocumentComponent } from '../components/add-document/add-document.component';
+import { OptionsComponent } from '../components/options/options.component';
 
 @Component({
   selector: 'app-documents',
@@ -15,7 +16,7 @@ export class DocumentsPage implements OnInit {
   constructor(private apiService: ApiserviceService, private commonService: CommonserviceService, public popoverCtrl: PopoverController, private modalCtrl: ModalController, private alertController: AlertController) { }
 
   ngOnInit() {
-    var user = JSON.parse(sessionStorage["user_detail"]);
+    var user = JSON.parse(localStorage["user_detail"]);
     this.user_id = user.id;
     this.getDocuments();
   }
@@ -28,6 +29,10 @@ export class DocumentsPage implements OnInit {
       cssClass: 'otp-modal',
     });
     await modal.present();
+
+    modal.onDidDismiss().then((data) => {
+      this.getDocuments();
+    });
   }
 
   getDocuments() {
@@ -42,8 +47,42 @@ export class DocumentsPage implements OnInit {
     );
   }
 
-  edit(data: any) {
+  async showOptions(ev: any, item: any) {
+    const pop = await this.popoverCtrl.create({
+      component: OptionsComponent,
+      cssClass: 'optionsPopOver',
+      event: ev,
+      showBackdrop: true
+    })
 
+    pop.onDidDismiss().then((dataReturned) => {
+      console.log(dataReturned.data);
+      if (dataReturned.data == 'del') {
+        this.delete(item)
+      } else if (dataReturned.data == 'edit') {
+        this.edit(item);
+      }
+    })
+
+    return await pop.present();
+
+  }
+
+  async edit(data: any) {
+    const modal = await this.modalCtrl.create({
+      component: AddDocumentComponent,
+      breakpoints: [0.5, 0.8],
+      initialBreakpoint: 0.5,
+      cssClass: 'otp-modal',
+      componentProps:{
+        "data":data
+      }
+    });
+    await modal.present();
+
+    modal.onDidDismiss().then((data) => {
+      this.getDocuments();
+    });
   }
 
   async delete(data: any) {
@@ -63,12 +102,11 @@ export class DocumentsPage implements OnInit {
     await alert.present();
   }
 
- async deleteDocument(id: any) {
+  async deleteDocument(id: any) {
     this.apiService.requestViaDelete('/employee/update_master_document/' + id + '/').then(
       async (result: any) => {
         if (result.status) {
           this.getDocuments();
-          await this.popoverCtrl.dismiss();
           this.commonService.showSuccess("Success", result.message)
         } else {
           this.commonService.showError("Alert", "Error");

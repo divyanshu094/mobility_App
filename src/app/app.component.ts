@@ -26,13 +26,18 @@ export class AppComponent {
 
   getDashUrl() {
     var url = '/user-dashboard';
-    if (sessionStorage["current_role"] != 'tax_user') {
+    if (localStorage["current_role"] != 'tax_user') {
       url = '/cpa-dashboard';
     }
     return url;
   }
 
   initApp() {
+    const token = localStorage['loggedIn'];
+    if (token) {
+      this.router.navigate([this.getDashUrl()]);
+    }
+
     //================native back button handling===============================>
     var lastTimeBackPress = 0;
     var timePeriodToExit = 2000;
@@ -57,8 +62,8 @@ export class AppComponent {
   }
 
   showDetails() {
-    if (sessionStorage["user_detail"])
-      var user_detail = JSON.parse(sessionStorage["user_detail"]);
+    if (localStorage["user_detail"])
+      var user_detail = JSON.parse(localStorage["user_detail"]);
     if (user_detail) {
       this.profile_pic = user_detail.profile.photo.file;
       this.name = user_detail.first_name + ' ' + user_detail.last_name;
@@ -75,7 +80,8 @@ export class AppComponent {
         role: 'confirm',
         handler: () => {
           // localStorage.clear();
-          sessionStorage.clear();
+          localStorage.removeItem('loggedIn');
+          localStorage.clear();
           this.router.navigate(['/']);
         },
       }

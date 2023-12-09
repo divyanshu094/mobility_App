@@ -14,6 +14,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { AmountFormatDirective } from 'src/app/directive/amount/amount-format.directive';
 import { AddTravelDetailComponent } from '../add-travel-detail/add-travel-detail.component';
 import { TimelineUploadComponent } from '../timeline-upload/timeline-upload.component';
+import { OptionsComponent } from '../options/options.component';
 
 
 
@@ -27,7 +28,8 @@ import { TimelineUploadComponent } from '../timeline-upload/timeline-upload.comp
     StepperComponent,
     AmountFormatDirective,
     AddTravelDetailComponent,
-    TimelineUploadComponent
+    TimelineUploadComponent,
+    OptionsComponent
   ],
   imports: [
     CommonModule,
@@ -45,7 +47,8 @@ import { TimelineUploadComponent } from '../timeline-upload/timeline-upload.comp
     MatDatepickerModule,
     AmountFormatDirective,
     AddTravelDetailComponent,
-    TimelineUploadComponent
+    TimelineUploadComponent,
+    OptionsComponent
   ]
 })
 export class AllImportModule { }

@@ -22,7 +22,7 @@ export class TravelCalPage implements OnInit {
   constructor(private apiService: ApiserviceService, public commonService: CommonserviceService, private modalCtrl: ModalController) { }
 
   ngOnInit() {
-    this.user = JSON.parse(sessionStorage["user_detail"]);
+    this.user = JSON.parse(localStorage["user_detail"]);
     this.getTravelEvents();
   }
 

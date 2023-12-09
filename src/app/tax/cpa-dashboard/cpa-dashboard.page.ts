@@ -29,7 +29,7 @@ export class CpaDashboardPage implements OnInit {
         if (result.status) {
           // this.dashboard_counts = result.results;
           var value_arr: any = [];
-          if (sessionStorage["current_role"] == "cpa") {
+          if (localStorage["current_role"] == "cpa") {
             value_arr = [{
               'name': "Total Tax Returns",
               'count': result.results.total_tax_returns,

@@ -78,10 +78,10 @@ export class OtpComponent implements OnInit {
   }
 
   onSuccessLogin(result: any) {
-    sessionStorage.clear();
+    localStorage.clear();
     this.commonService.saveToken(result['access']);
     this.commonService.saveRefreshToken(result['refresh']);
-    sessionStorage.setItem("user_detail", JSON.stringify(result.user));
+    localStorage.setItem("user_detail", JSON.stringify(result.user));
     if (result.user.membership && result.user.membership[0]?.role.length > 0) {
       if (result.user.membership[0].organizations.master_permission_module.length > 0) {
         if (result.user.membership[0].organizations.master_permission_module[0].module.toLowerCase().trim() == "tax master") {
@@ -89,23 +89,23 @@ export class OtpComponent implements OnInit {
           var isCpaMember = result.user.membership[0].role.find((val: { name: string; }) => { return val.name == 'Tax Preparer' || val.name == 'CPA Team Members' });
           var isAdmin = result.user.membership[0].role.find((val: { name: string; }) => { return val.name == 'Admin' });
           var isReviewer = result.user.membership[0].role.find((val: { name: string; }) => { return val.name == 'Reviewer' });
-          sessionStorage.setItem("module", "tax");
+          localStorage.setItem("module", "tax");
           if (isCpa || isCpaMember) {
-            sessionStorage.setItem("current_role", "cpa");
+            localStorage.setItem("current_role", "cpa");
             this.router.navigate(['/cpa-dashboard']);
           } else if (isReviewer) {
-            sessionStorage.setItem("current_role", "reviewer");
+            localStorage.setItem("current_role", "reviewer");
             this.router.navigate(['/cpa-dashboard']);
           } else {
             if (isAdmin) {
-              sessionStorage.setItem("current_role", "tax_admin");
+              localStorage.setItem("current_role", "tax_admin");
               this.router.navigate(['/user-dashboard']);
             } else {
-              sessionStorage.setItem("current_role", "tax_user");
+              localStorage.setItem("current_role", "tax_user");
               if (result.user.membership[0].user_joined_meeting) {
                 this.router.navigate(['/user-dashboard']);
               } else {
-                sessionStorage.setItem("module", "");
+                localStorage.setItem("module", "");
                 this.router.navigate(['/schedule-call']);
               }
             }
@@ -113,40 +113,40 @@ export class OtpComponent implements OnInit {
           }
 
         } else {
-          sessionStorage.setItem("module", "travel");
+          localStorage.setItem("module", "travel");
           if (result.user.membership[0].role[0].id == 5) {
-            sessionStorage.setItem("current_role", "superadmin");
+            localStorage.setItem("current_role", "superadmin");
             this.router.navigate(['/superadmin/dashboard']);
           } else if (result.user.membership[0].role[0].id == 7) {
-            sessionStorage.setItem("current_role", "vendor");
+            localStorage.setItem("current_role", "vendor");
             this.router.navigate(['/vendor/tickets']);
           } else if (result.user.membership[0].role[0].id == 1) {
-            sessionStorage.setItem("current_role", "admin");
+            localStorage.setItem("current_role", "admin");
             this.router.navigate(['/gm-dashboard']);
           } else {
-            sessionStorage.setItem("current_role", "employee");
+            localStorage.setItem("current_role", "employee");
             this.router.navigate(['/dashboard']);
           }
         }
       } else {
-        sessionStorage.setItem("module", "travel");
+        localStorage.setItem("module", "travel");
         if (result.user.membership[0].role[0].id == 5) {
-          sessionStorage.setItem("current_role", "superadmin");
+          localStorage.setItem("current_role", "superadmin");
           this.router.navigate(['/superadmin/dashboard']);
         } else if (result.user.membership[0].role[0].id == 7) {
-          sessionStorage.setItem("current_role", "vendor");
+          localStorage.setItem("current_role", "vendor");
           this.router.navigate(['/vendor/tickets']);
         } else if (result.user.membership[0].role[0].id == 1) {
-          sessionStorage.setItem("current_role", "admin");
+          localStorage.setItem("current_role", "admin");
           this.router.navigate(['/gm-dashboard']);
         } else {
-          sessionStorage.setItem("current_role", "employee");
+          localStorage.setItem("current_role", "employee");
           this.router.navigate(['/dashboard']);
         }
       }
     } else {
-      sessionStorage.setItem("module", "travel");
-      sessionStorage.setItem("current_role", "employee");
+      localStorage.setItem("module", "travel");
+      localStorage.setItem("current_role", "employee");
       this.router.navigate(['/dashboard']);
     }
   }

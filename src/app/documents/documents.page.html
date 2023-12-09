@@ -10,7 +10,7 @@
     <ion-card *ngFor="let item of documents;let i=index">
       <ion-card-content>
         <ion-item>
-          <ion-img src="./assets/icon/three_dot.svg" class="dots" [id]="i+'over'"></ion-img>
+          <ion-img src="./assets/icon/three_dot.svg" class="dots" (click)="showOptions($event,item)"></ion-img>
           <ion-avatar slot="start">
             <img [alt]="item.title" src="./assets/icon/pdf_icon.svg" />
           </ion-avatar>
@@ -21,24 +21,6 @@
           </ion-label>
         </ion-item>
       </ion-card-content>
-      <ion-popover [trigger]="i+'over'" triggerAction="click">
-        <ng-template>
-          <ion-content class="ion-padding">
-            <ion-item lines="none" (click)="edit(item)">
-              <ion-thumbnail class="pop_icon">
-                <img src="./assets/icon/edit.svg" />
-              </ion-thumbnail>
-              <ion-label>Edit</ion-label>
-            </ion-item>
-            <ion-item lines="none" (click)="delete(item)">
-              <ion-thumbnail class="pop_icon">
-                <img src="./assets/icon/del.svg" />
-              </ion-thumbnail>
-              <ion-label>Delete</ion-label>
-            </ion-item>
-          </ion-content>
-        </ng-template>
-      </ion-popover>
     </ion-card>
   </ion-list>
 

@@ -28,7 +28,7 @@ export class TimelinePage implements OnInit {
   }
 
   ngOnInit() {
-    this.user = JSON.parse(sessionStorage["user_detail"]);
+    this.user = JSON.parse(localStorage["user_detail"]);
     if (this.from != 'list') {
       this.user_id = this.user.id;
       this.year = new Date().getFullYear();
@@ -72,9 +72,9 @@ export class TimelinePage implements OnInit {
   }
 
   isVisible(step: any, index: any) {
-    if (sessionStorage.getItem("current_role") == "cpa" && (step == 'Tax Return Preparation') && this.timeline[index - 1].completed) {
+    if (localStorage.getItem("current_role") == "cpa" && (step == 'Tax Return Preparation') && this.timeline[index - 1].completed) {
       return true;
-    } else if (sessionStorage.getItem("current_role") == "reviewer" && (step == 'Tax Return Review') && this.timeline[index - 1].completed) {
+    } else if (localStorage.getItem("current_role") == "reviewer" && (step == 'Tax Return Review') && this.timeline[index - 1].completed) {
       return true;
     } else {
       return false;

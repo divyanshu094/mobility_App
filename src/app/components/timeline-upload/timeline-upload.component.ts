@@ -32,9 +32,9 @@ export class TimelineUploadComponent implements OnInit {
   action() {
     if (this.step.name == 'e-file Return') {
       this.uploadFinalReturn();
-    } else if (sessionStorage.getItem("current_role") == "cpa") {
+    } else if (localStorage.getItem("current_role") == "cpa") {
       this.uploadPreparedReturn();
-    } else if (sessionStorage.getItem("current_role") == "reviewer") {
+    } else if (localStorage.getItem("current_role") == "reviewer") {
       this.uploadReturnReviewer();
     } else {
       if (this.doc_name == 'Engagement Letter') {
