@@ -106,12 +106,9 @@
       <p class="ion-text-label">State</p>
 
       <ion-item lines="none" class="ion-no-padding">
-        <ion-select placeholder="Select" class="ion-input-tag">
-          <ion-select-option value="apple">Apple</ion-select-option>
-          <ion-select-option value="banana">Banana</ion-select-option>
-          <ion-select-option value="orange">Orange</ion-select-option>
+        <ion-select placeholder="Select" class="ion-input-tag" interface="action-sheet" [(ngModel)]="estimated_tax.state">
+          <ion-select-option *ngFor="let state of commonService.US_StateList" value={{state.id}}>{{state.name}}</ion-select-option>
         </ion-select>
-        
       </ion-item>
     </ion-col>
     <ion-col size="6">

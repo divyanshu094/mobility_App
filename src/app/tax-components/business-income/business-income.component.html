@@ -8,66 +8,70 @@
       <ion-list class="ion-padding" slot="content" class="ion-no-padding ">
         <ion-label class="ion-text-label">Who owns(T/S)?</ion-label>
         <ion-item lines="none" class="ion-no-padding ">
-          <ion-select placeholder="Select" class="ion-input-tag ion-input-tag-select">
-            <ion-select-option value="apple">Apple</ion-select-option>
-            <ion-select-option value="banana">Banana</ion-select-option>
-            <ion-select-option value="orange">Orange</ion-select-option>
+          <ion-select placeholder="Select" class="ion-input-tag" interface="action-sheet"
+            [(ngModel)]="business_income_and_expenses.who_owns_business_1">
+            <ion-select-option *ngFor="let item of commonService.ownerTSJ" value={{item}}>{{item}}</ion-select-option>
           </ion-select>
         </ion-item>
         <ion-label class="ion-text-label">What kind of business?</ion-label>
         <ion-item lines="none" class="ion-no-padding ">
-          <ion-select placeholder="Select" class="ion-input-tag ion-input-tag-select">
-            <ion-select-option value="apple">Apple</ion-select-option>
-            <ion-select-option value="banana">Banana</ion-select-option>
-            <ion-select-option value="orange">Orange</ion-select-option>
+          <ion-select placeholder="Select" class="ion-input-tag" interface="action-sheet"
+            [(ngModel)]="business_income_and_expenses.what_kind_of_business_1">
+            <ion-select-option *ngFor="let item of commonService.business_types"
+              value={{item}}>{{item}}</ion-select-option>
           </ion-select>
         </ion-item>
 
         <ion-label class="ion-text-label">Business name</ion-label>
         <ion-item lines="none" class="ion-no-padding ">
-          <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"></ion-input>
+          <ion-input [legacy]="true" type="text" placeholder="Enter"
+            [(ngModel)]="business_income_and_expenses.business_name_business_1" class="ion-input-tag"></ion-input>
         </ion-item>
 
         <ion-label class="ion-text-label">Business employer identification number</ion-label>
         <ion-item lines="none" class="ion-no-padding ">
-          <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"></ion-input>
+          <ion-input [legacy]="true" type="text" placeholder="Enter"
+            [(ngModel)]="business_income_and_expenses.business_employer_identification_business_1"
+            class="ion-input-tag"></ion-input>
         </ion-item>
 
         <ion-label class="ion-text-label">Business address</ion-label>
         <ion-item lines="none" class="ion-no-padding ">
-          <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"></ion-input>
+          <ion-input [legacy]="true" type="text" placeholder="Enter"
+            [(ngModel)]="business_income_and_expenses.business_address_business_1" class="ion-input-tag"></ion-input>
         </ion-item>
 
         <ion-label class="ion-text-label">Method of accounting</ion-label>
         <ion-item lines="none" class="ion-no-padding ">
-          <ion-select placeholder="Select" class="ion-input-tag ion-input-tag-select">
-            <ion-select-option value="apple">Apple</ion-select-option>
-            <ion-select-option value="banana">Banana</ion-select-option>
-            <ion-select-option value="orange">Orange</ion-select-option>
+          <ion-select placeholder="Select" class="ion-input-tag" interface="action-sheet"
+            [(ngModel)]="business_income_and_expenses.method_of_accounting_business_1">
+            <ion-select-option *ngFor="let item of commonService.accounting_methods"
+              value={{item}}>{{item}}</ion-select-option>
           </ion-select>
-
         </ion-item>
 
         <ion-item lines="none" class="ion-no-padding ">
-          <ion-checkbox justify="start" labelPlacement="end" class="checkbox-box "><span class="ion-text-wrap">Did you
+          <ion-checkbox justify="start" labelPlacement="end" class="checkbox-box"><span class="ion-text-wrap">Did you
               start this business in 2023?
               If yes, date started?</span></ion-checkbox>
         </ion-item>
 
         <ion-item lines="none" class="ion-no-padding ">
-          <ion-checkbox justify="start" labelPlacement="end" class="checkbox-box "><span class="ion-text-wrap">Did you
+          <ion-checkbox justify="start" labelPlacement="end" class="checkbox-box"><span class="ion-text-wrap">Did you
               end this business in 2023? If
               yes, date ended?</span></ion-checkbox>
         </ion-item>
 
         <ion-item lines="none" class="ion-no-padding ">
-          <ion-checkbox justify="start" labelPlacement="end" class="checkbox-box "><span class="ion-text-wrap">Were you
+          <ion-checkbox justify="start" labelPlacement="end" class="checkbox-box"
+            [(ngModel)]="business_income_and_expenses.were_you_involved_business_1"><span class="ion-text-wrap">Were you
               involved in the operations
               of this business on a regular, continuous, and substantial basis?</span></ion-checkbox>
         </ion-item>
 
         <ion-item lines="none" class="ion-no-padding ">
-          <ion-checkbox justify="start" labelPlacement="end" class="checkbox-box "><span class="ion-text-wrap">Have you
+          <ion-checkbox justify="start" labelPlacement="end" class="checkbox-box"
+            [(ngModel)]="business_income_and_expenses.have_you_prepared_business_1"><span class="ion-text-wrap">Have you
               prepared or will you prepare
               all required Forms 1099.</span></ion-checkbox>
         </ion-item>
@@ -89,23 +93,30 @@
       </ion-item>
       <ion-list class="ion-padding" slot="content" class="ion-no-padding ">
         <ion-item lines="none" class="ion-no-padding ">
-          <ion-checkbox justify="start" labelPlacement="end" class="checkbox-box "><span class="ion-text-wrap">Did you
+          <ion-checkbox justify="start" labelPlacement="end" class="checkbox-box"
+            [(ngModel)]="business_income_and_expenses.did_you_have_employees_business_1"><span class="ion-text-wrap">Did
+              you
               have employees?</span>
           </ion-checkbox>
         </ion-item>
 
         <ion-item lines="none" class="ion-no-padding ">
-          <ion-checkbox justify="start" labelPlacement="end" class="checkbox-box "><span class="ion-text-wrap">Did you
-              have < 50 full-time equivalent employees?</span></ion-checkbox>
+          <ion-checkbox justify="start" labelPlacement="end" class="checkbox-box"
+            [(ngModel)]="business_income_and_expenses.did_you_have_business_1"><span class="ion-text-wrap">Did you
+              have &lt; 50 full-time equivalent employees?</span></ion-checkbox>
         </ion-item>
 
         <ion-item lines="none" class="ion-no-padding ">
-          <ion-checkbox justify="start" labelPlacement="end" class="checkbox-box "><span class="ion-text-wrap">Did you
-              pay an average wage < $50,000?</span></ion-checkbox>
+          <ion-checkbox justify="start" labelPlacement="end" class="checkbox-box"
+            [(ngModel)]="business_income_and_expenses.did_you_pay_an_average_business_1"><span class="ion-text-wrap">Did
+              you
+              pay an average wage &lt; $50,000?</span></ion-checkbox>
         </ion-item>
 
         <ion-item lines="none" class="ion-no-padding ">
-          <ion-checkbox justify="start" labelPlacement="end" class="checkbox-box "><span class="ion-text-wrap">Did you
+          <ion-checkbox justify="start" labelPlacement="end" class="checkbox-box"
+            [(ngModel)]="business_income_and_expenses.did_you_pay_at_least_business_1"><span class="ion-text-wrap">Did
+              you
               pay at least half of the
               employees' healthinsurance premiums?</span></ion-checkbox>
         </ion-item>
@@ -115,16 +126,17 @@
           </ion-label>
         </ion-item>
         <ion-item lines="none" class="ion-no-padding ">
-          <ion-checkbox aria-checked="true" justify="start" labelPlacement="end" class="checkbox-box "><span
+          <ion-checkbox aria-checked="true" justify="start" labelPlacement="end" class="checkbox-box"><span
               class="ion-text-wrap">Expense - Wages
               (may need to provide payroll reports)</span></ion-checkbox>
         </ion-item>
         <ion-label class="ion-text-label">Amount</ion-label>
         <ion-item lines="none" class="ion-no-padding ">
-          <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"></ion-input>
+          <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"
+            [(ngModel)]="business_income_and_expenses.expense_wages_business_1"></ion-input>
         </ion-item>
         <ion-item lines="none" class="ion-no-padding ">
-          <ion-checkbox justify="start" labelPlacement="end" class="checkbox-box "><span class="ion-text-wrap">Expense -
+          <ion-checkbox justify="start" labelPlacement="end" class="checkbox-box"><span class="ion-text-wrap">Expense -
               Dependent care benefits
             </span></ion-checkbox>
         </ion-item>
@@ -156,28 +168,31 @@
       <ion-list class="ion-padding" slot="content" class="ion-no-padding ">
         <ion-label class="ion-text-label">Health insurance premiums paid for yourself and your dependents</ion-label>
         <ion-item lines="none" class="ion-no-padding ">
-          <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"></ion-input>
+          <ion-input [legacy]="true" type="text" placeholder="Enter"
+            [(ngModel)]="business_income_and_expenses.health_insurance_business_1" class="ion-input-tag"></ion-input>
         </ion-item>
         <ion-label class="ion-text-label">Do you already have a self-employed retirement plan?</ion-label>
         <ion-item lines="none" class="ion-no-padding ">
-          <ion-select placeholder="Select" class="ion-input-tag" [(ngModel)]="base_data.state">
-            <ion-select-option value="apple">Apple</ion-select-option>
-            <ion-select-option value="banana">Banana</ion-select-option>
-            <ion-select-option value="orange">Orange</ion-select-option>
+          <ion-select placeholder="Select" class="ion-input-tag" interface="action-sheet"
+            [(ngModel)]="business_income_and_expenses.do_you_already_business_1">
+            <ion-select-option *ngFor="let item of commonService.yesNoArray" value={{item}}>{{item}}</ion-select-option>
           </ion-select>
         </ion-item>
         <ion-label class="ion-text-label">What type (SEP IRA, SIMPLE, SOLO 401k, etc.)?</ion-label>
         <ion-item lines="none" class="ion-no-padding ">
-          <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"></ion-input>
+          <ion-input [legacy]="true" type="text" placeholder="Enter"
+            [(ngModel)]="business_income_and_expenses.what_type_business_1" class="ion-input-tag"></ion-input>
         </ion-item>
         <ion-label class="ion-text-label">What amount did you contribute (or will you contribute) for 2023?
         </ion-label>
         <ion-item lines="none" class="ion-no-padding ">
-          <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"></ion-input>
+          <ion-input [legacy]="true" type="text" placeholder="Enter"
+            [(ngModel)]="business_income_and_expenses.what_amount_business_1" inputAmountFormat
+            class="ion-input-tag"></ion-input>
         </ion-item>
 
         <ion-item lines="none" class="ion-no-padding ">
-          <ion-checkbox justify="start" labelPlacement="end" class="checkbox-box "><span class="ion-text-wrap">Do you
+          <ion-checkbox justify="start" labelPlacement="end" class="checkbox-box" [(ngModel)]="business_income_and_expenses.do_you_want_to_business_1"><span class="ion-text-wrap">Do you
               want to contribute the maximum
               amount allowed for 2023? (we can calculate for you)</span></ion-checkbox>
         </ion-item>
@@ -198,7 +213,7 @@
             </ion-text>
             <ion-item lines="none" class="ion-no-padding">
               <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"
-                [(ngModel)]="base_data.first_name_t"></ion-input>
+                [(ngModel)]="business_income_and_expenses.first_name_t"></ion-input>
             </ion-item>
           </ion-col>
           <ion-col size="6">
@@ -207,7 +222,7 @@
             </ion-text>
             <ion-item lines="none" class="ion-no-padding">
               <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"
-                [(ngModel)]="base_data.last_name_t"></ion-input>
+                [(ngModel)]="business_income_and_expenses.last_name_t"></ion-input>
             </ion-item>
           </ion-col>
 
@@ -217,7 +232,7 @@
             </ion-text>
             <ion-item lines="none" class="ion-no-padding posRelative">
               <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"
-                [(ngModel)]="base_data.last_name_t"></ion-input>
+                [(ngModel)]="business_income_and_expenses.last_name_t"></ion-input>
             </ion-item>
           </ion-col>
           <ion-col size="12">
@@ -226,7 +241,7 @@
             </ion-text>
             <ion-item lines="none" class="ion-no-padding posRelative">
               <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"
-                [(ngModel)]="base_data.last_name_t"></ion-input>
+                [(ngModel)]="business_income_and_expenses.last_name_t"></ion-input>
             </ion-item>
           </ion-col>
           <ion-col size="12">
@@ -235,7 +250,7 @@
             </ion-text>
             <ion-item lines="none" class="ion-no-padding posRelative">
               <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"
-                [(ngModel)]="base_data.last_name_t"></ion-input>
+                [(ngModel)]="business_income_and_expenses.last_name_t"></ion-input>
             </ion-item>
           </ion-col>
           <ion-col size="12">
@@ -244,7 +259,7 @@
             </ion-text>
             <ion-item lines="none" class="ion-no-padding posRelative">
               <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"
-                [(ngModel)]="base_data.last_name_t"></ion-input>
+                [(ngModel)]="business_income_and_expenses.last_name_t"></ion-input>
             </ion-item>
           </ion-col>
           <ion-col size="12">
@@ -253,7 +268,7 @@
             </ion-text>
             <ion-item lines="none" class="ion-no-padding posRelative">
               <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"
-                [(ngModel)]="base_data.last_name_t"></ion-input>
+                [(ngModel)]="business_income_and_expenses.last_name_t"></ion-input>
             </ion-item>
           </ion-col>
           <ion-col size="12">
@@ -262,7 +277,7 @@
             </ion-text>
             <ion-item lines="none" class="ion-no-padding posRelative">
               <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"
-                [(ngModel)]="base_data.last_name_t"></ion-input>
+                [(ngModel)]="business_income_and_expenses.last_name_t"></ion-input>
             </ion-item>
           </ion-col>
           <ion-col size="12">
@@ -271,7 +286,7 @@
             </ion-text>
             <ion-item lines="none" class="ion-no-padding posRelative">
               <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"
-                [(ngModel)]="base_data.last_name_t"></ion-input>
+                [(ngModel)]="business_income_and_expenses.last_name_t"></ion-input>
             </ion-item>
           </ion-col>
           <ion-col size="12">
@@ -280,7 +295,7 @@
             </ion-text>
             <ion-item lines="none" class="ion-no-padding posRelative">
               <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"
-                [(ngModel)]="base_data.last_name_t"></ion-input>
+                [(ngModel)]="business_income_and_expenses.last_name_t"></ion-input>
             </ion-item>
           </ion-col>
           <ion-col size="12">
@@ -289,7 +304,7 @@
             </ion-text>
             <ion-item lines="none" class="ion-no-padding posRelative">
               <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"
-                [(ngModel)]="base_data.last_name_t"></ion-input>
+                [(ngModel)]="business_income_and_expenses.last_name_t"></ion-input>
             </ion-item>
           </ion-col>
           <ion-col size="12">
@@ -298,7 +313,7 @@
             </ion-text>
             <ion-item lines="none" class="ion-no-padding posRelative">
               <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"
-                [(ngModel)]="base_data.last_name_t"></ion-input>
+                [(ngModel)]="business_income_and_expenses.last_name_t"></ion-input>
             </ion-item>
           </ion-col>
           <ion-col size="12">
@@ -307,7 +322,7 @@
             </ion-text>
             <ion-item lines="none" class="ion-no-padding posRelative">
               <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"
-                [(ngModel)]="base_data.last_name_t"></ion-input>
+                [(ngModel)]="business_income_and_expenses.last_name_t"></ion-input>
             </ion-item>
           </ion-col>
           <ion-col size="12">
@@ -316,7 +331,7 @@
             </ion-text>
             <ion-item lines="none" class="ion-no-padding posRelative">
               <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"
-                [(ngModel)]="base_data.last_name_t"></ion-input>
+                [(ngModel)]="business_income_and_expenses.last_name_t"></ion-input>
             </ion-item>
           </ion-col>
           <ion-col size="12">
@@ -325,7 +340,7 @@
             </ion-text>
             <ion-item lines="none" class="ion-no-padding posRelative">
               <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"
-                [(ngModel)]="base_data.last_name_t"></ion-input>
+                [(ngModel)]="business_income_and_expenses.last_name_t"></ion-input>
             </ion-item>
           </ion-col>
           <ion-col size="6">
@@ -334,7 +349,7 @@
             </ion-text>
             <ion-item lines="none" class="ion-no-padding posRelative">
               <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"
-                [(ngModel)]="base_data.last_name_t"></ion-input>
+                [(ngModel)]="business_income_and_expenses.last_name_t"></ion-input>
             </ion-item>
           </ion-col>
           <ion-col size="6">
@@ -343,7 +358,7 @@
             </ion-text>
             <ion-item lines="none" class="ion-no-padding posRelative">
               <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"
-                [(ngModel)]="base_data.last_name_t"></ion-input>
+                [(ngModel)]="business_income_and_expenses.last_name_t"></ion-input>
             </ion-item>
           </ion-col>
           <ion-col size="6">
@@ -352,7 +367,7 @@
             </ion-text>
             <ion-item lines="none" class="ion-no-padding">
               <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"
-                [(ngModel)]="base_data.occupation_t"></ion-input>
+                [(ngModel)]="business_income_and_expenses.occupation_t"></ion-input>
             </ion-item>
           </ion-col>
 
@@ -376,7 +391,7 @@
       <ion-list class="ion-padding" slot="content" class="ion-no-padding ">
         <ion-row>
           <ion-col size="12">
-            <ion-checkbox labelPlacement="end" [(ngModel)]="base_data.taxpayer_legally_blind"><span
+            <ion-checkbox labelPlacement="end" [(ngModel)]="business_income_and_expenses.taxpayer_legally_blind"><span
                 class="ion-text-wrap">Did you have inventory in
                 2023?</span></ion-checkbox>
           </ion-col>
@@ -384,7 +399,7 @@
             <ion-text class="ion-text-box">
               <h1 class="ion-text-label">Inventory method</h1>
             </ion-text>
-            <ion-select placeholder="Select" class="ion-input-tag" [(ngModel)]="base_data.country">
+            <ion-select placeholder="Select" class="ion-input-tag" [(ngModel)]="business_income_and_expenses.country">
               <ion-select-option value="apple">Apple</ion-select-option>
               <ion-select-option value="banana">Banana</ion-select-option>
               <ion-select-option value="orange">Orange</ion-select-option>
@@ -394,7 +409,7 @@
             <ion-text class="ion-text-box">
               <h1 class="ion-text-label">Were there any changes in inventory method or valuation method?</h1>
             </ion-text>
-            <ion-select placeholder="Select" class="ion-input-tag" [(ngModel)]="base_data.country">
+            <ion-select placeholder="Select" class="ion-input-tag" [(ngModel)]="business_income_and_expenses.country">
               <ion-select-option value="apple">Apple</ion-select-option>
               <ion-select-option value="banana">Banana</ion-select-option>
               <ion-select-option value="orange">Orange</ion-select-option>
@@ -406,7 +421,7 @@
             </ion-text>
             <ion-item lines="none" class="ion-no-padding">
               <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"
-                [(ngModel)]="base_data.first_name_s"></ion-input>
+                [(ngModel)]="business_income_and_expenses.first_name_s"></ion-input>
             </ion-item>
           </ion-col>
           <ion-col size="12">
@@ -415,7 +430,7 @@
             </ion-text>
             <ion-item lines="none" class="ion-no-padding">
               <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"
-                [(ngModel)]="base_data.first_name_s"></ion-input>
+                [(ngModel)]="business_income_and_expenses.first_name_s"></ion-input>
             </ion-item>
           </ion-col>
           <ion-col size="12">
@@ -424,7 +439,7 @@
             </ion-text>
             <ion-item lines="none" class="ion-no-padding">
               <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"
-                [(ngModel)]="base_data.first_name_s"></ion-input>
+                [(ngModel)]="business_income_and_expenses.first_name_s"></ion-input>
             </ion-item>
           </ion-col>
           <ion-col size="12">
@@ -433,7 +448,7 @@
             </ion-text>
             <ion-item lines="none" class="ion-no-padding">
               <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"
-                [(ngModel)]="base_data.first_name_s"></ion-input>
+                [(ngModel)]="business_income_and_expenses.first_name_s"></ion-input>
             </ion-item>
           </ion-col>
           <ion-col size="12">
@@ -442,7 +457,7 @@
             </ion-text>
             <ion-item lines="none" class="ion-no-padding">
               <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"
-                [(ngModel)]="base_data.first_name_s"></ion-input>
+                [(ngModel)]="business_income_and_expenses.first_name_s"></ion-input>
             </ion-item>
           </ion-col>
           <ion-col size="12">
@@ -451,7 +466,7 @@
             </ion-text>
             <ion-item lines="none" class="ion-no-padding">
               <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"
-                [(ngModel)]="base_data.first_name_s"></ion-input>
+                [(ngModel)]="business_income_and_expenses.first_name_s"></ion-input>
             </ion-item>
           </ion-col>
           <ion-col size="12">
@@ -463,7 +478,7 @@
             </ion-text>
             <ion-item lines="none" class="ion-no-padding">
               <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"
-                [(ngModel)]="base_data.first_name_s"></ion-input>
+                [(ngModel)]="business_income_and_expenses.first_name_s"></ion-input>
             </ion-item>
           </ion-col>
 
@@ -473,8 +488,8 @@
               <h1 class="ion-text-label">Date</h1>
             </ion-text>
             <ion-item lines="none" class="ion-no-padding posRelative">
-              <input class="ion-input-tag date" [(ngModel)]="base_data.date_of_birth_s" [matDatepicker]="s_dob"
-                (click)="s_dob.open()" placeholder="Select Date" readonly>
+              <input class="ion-input-tag date" [(ngModel)]="business_income_and_expenses.date_of_birth_s"
+                [matDatepicker]="s_dob" (click)="s_dob.open()" placeholder="Select Date" readonly>
               <mat-datepicker #s_dob color="primary"></mat-datepicker>
             </ion-item>
           </ion-col>
@@ -484,7 +499,7 @@
             </ion-text>
             <ion-item lines="none" class="ion-no-padding">
               <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"
-                [(ngModel)]="base_data.last_name_s"></ion-input>
+                [(ngModel)]="business_income_and_expenses.last_name_s"></ion-input>
             </ion-item>
           </ion-col>
           <ion-col size="12" class="ion-text-end">
@@ -501,7 +516,7 @@
             </ion-text>
             <ion-item lines="none" class="ion-no-padding">
               <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"
-                [(ngModel)]="base_data.first_name_s"></ion-input>
+                [(ngModel)]="business_income_and_expenses.first_name_s"></ion-input>
             </ion-item>
           </ion-col>
           <ion-col size="6">
@@ -510,7 +525,7 @@
             </ion-text>
             <ion-item lines="none" class="ion-no-padding">
               <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"
-                [(ngModel)]="base_data.last_name_s"></ion-input>
+                [(ngModel)]="business_income_and_expenses.last_name_s"></ion-input>
             </ion-item>
           </ion-col>
           <ion-col size="6">
@@ -519,7 +534,7 @@
             </ion-text>
             <ion-item lines="none" class="ion-no-padding">
               <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"
-                [(ngModel)]="base_data.last_name_s"></ion-input>
+                [(ngModel)]="business_income_and_expenses.last_name_s"></ion-input>
             </ion-item>
           </ion-col>
 
@@ -528,7 +543,7 @@
               <h1 class="ion-text-label">Date</h1>
             </ion-text>
             <ion-item lines="none" class="ion-no-padding posRelative">
-              <input class="ion-input-tag date" [(ngModel)]="base_data.date_of_birth_s" [matDatepicker]="s_dob"
+              <input class="ion-input-tag date" [(ngModel)]="business_income_and_expenses.date_of_birth_s" [matDatepicker]="s_dob"
                 (click)="s_dob.open()" placeholder="Select Date" readonly>
               <mat-datepicker #s_dob color="primary"></mat-datepicker>
             </ion-item>
@@ -553,7 +568,7 @@
             <ion-text class="ion-text-box">
               <h1 class="ion-text-label">User Type(T/S)</h1>
             </ion-text>
-            <ion-select placeholder="Select" class="ion-input-tag" [(ngModel)]="base_data.country">
+            <ion-select placeholder="Select" class="ion-input-tag" [(ngModel)]="business_income_and_expenses.country">
               <ion-select-option value="apple">Apple</ion-select-option>
               <ion-select-option value="banana">Banana</ion-select-option>
               <ion-select-option value="orange">Orange</ion-select-option>
@@ -566,7 +581,7 @@
             </ion-text>
             <ion-item lines="none" class="ion-no-padding">
               <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"
-                [(ngModel)]="base_data.first_name_s"></ion-input>
+                [(ngModel)]="business_income_and_expenses.first_name_s"></ion-input>
             </ion-item>
           </ion-col>
           <ion-col size="12">
@@ -575,7 +590,7 @@
             </ion-text>
             <ion-item lines="none" class="ion-no-padding">
               <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"
-                [(ngModel)]="base_data.first_name_s"></ion-input>
+                [(ngModel)]="business_income_and_expenses.first_name_s"></ion-input>
             </ion-item>
           </ion-col>
 
@@ -607,7 +622,7 @@
             </ion-text>
             <ion-item lines="none" class="ion-no-padding">
               <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"
-                [(ngModel)]="base_data.first_name_s"></ion-input>
+                [(ngModel)]="business_income_and_expenses.first_name_s"></ion-input>
             </ion-item>
           </ion-col>
           <ion-col size="6">
@@ -616,7 +631,7 @@
             </ion-text>
             <ion-item lines="none" class="ion-no-padding">
               <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"
-                [(ngModel)]="base_data.first_name_s"></ion-input>
+                [(ngModel)]="business_income_and_expenses.first_name_s"></ion-input>
             </ion-item>
           </ion-col>
 
@@ -633,7 +648,7 @@
             </ion-text>
             <ion-item lines="none" class="ion-no-padding">
               <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"
-                [(ngModel)]="base_data.first_name_s"></ion-input>
+                [(ngModel)]="business_income_and_expenses.first_name_s"></ion-input>
             </ion-item>
           </ion-col>
           <ion-col size="6">
@@ -642,7 +657,7 @@
             </ion-text>
             <ion-item lines="none" class="ion-no-padding">
               <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"
-                [(ngModel)]="base_data.first_name_s"></ion-input>
+                [(ngModel)]="business_income_and_expenses.first_name_s"></ion-input>
             </ion-item>
           </ion-col>
 
@@ -659,7 +674,7 @@
             </ion-text>
             <ion-item lines="none" class="ion-no-padding">
               <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"
-                [(ngModel)]="base_data.first_name_s"></ion-input>
+                [(ngModel)]="business_income_and_expenses.first_name_s"></ion-input>
             </ion-item>
           </ion-col>
           <ion-col size="6">
@@ -668,7 +683,7 @@
             </ion-text>
             <ion-item lines="none" class="ion-no-padding">
               <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"
-                [(ngModel)]="base_data.first_name_s"></ion-input>
+                [(ngModel)]="business_income_and_expenses.first_name_s"></ion-input>
             </ion-item>
           </ion-col>
 
@@ -685,7 +700,7 @@
             </ion-text>
             <ion-item lines="none" class="ion-no-padding">
               <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"
-                [(ngModel)]="base_data.first_name_s"></ion-input>
+                [(ngModel)]="business_income_and_expenses.first_name_s"></ion-input>
             </ion-item>
           </ion-col>
           <ion-col size="6">
@@ -694,7 +709,7 @@
             </ion-text>
             <ion-item lines="none" class="ion-no-padding">
               <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"
-                [(ngModel)]="base_data.first_name_s"></ion-input>
+                [(ngModel)]="business_income_and_expenses.first_name_s"></ion-input>
             </ion-item>
           </ion-col>
 
@@ -711,7 +726,7 @@
             </ion-text>
             <ion-item lines="none" class="ion-no-padding">
               <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"
-                [(ngModel)]="base_data.first_name_s"></ion-input>
+                [(ngModel)]="business_income_and_expenses.first_name_s"></ion-input>
             </ion-item>
           </ion-col>
           <ion-col size="6">
@@ -720,7 +735,7 @@
             </ion-text>
             <ion-item lines="none" class="ion-no-padding">
               <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"
-                [(ngModel)]="base_data.first_name_s"></ion-input>
+                [(ngModel)]="business_income_and_expenses.first_name_s"></ion-input>
             </ion-item>
           </ion-col>
 
@@ -736,7 +751,7 @@
             </ion-text>
             <ion-item lines="none" class="ion-no-padding">
               <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"
-                [(ngModel)]="base_data.first_name_s"></ion-input>
+                [(ngModel)]="business_income_and_expenses.first_name_s"></ion-input>
             </ion-item>
           </ion-col>
           <ion-col size="6">
@@ -745,7 +760,7 @@
             </ion-text>
             <ion-item lines="none" class="ion-no-padding">
               <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"
-                [(ngModel)]="base_data.first_name_s"></ion-input>
+                [(ngModel)]="business_income_and_expenses.first_name_s"></ion-input>
             </ion-item>
           </ion-col>
         </ion-row>
@@ -761,7 +776,7 @@
             <ion-text class="ion-text-box">
               <h1 class="ion-text-label">User Type(T/S)</h1>
             </ion-text>
-            <ion-select placeholder="Select" class="ion-input-tag" [(ngModel)]="base_data.country">
+            <ion-select placeholder="Select" class="ion-input-tag" [(ngModel)]="business_income_and_expenses.country">
               <ion-select-option value="apple">Apple</ion-select-option>
               <ion-select-option value="banana">Banana</ion-select-option>
               <ion-select-option value="orange">Orange</ion-select-option>
@@ -773,7 +788,7 @@
             </ion-text>
             <ion-item lines="none" class="ion-no-padding">
               <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"
-                [(ngModel)]="base_data.first_name_s"></ion-input>
+                [(ngModel)]="business_income_and_expenses.first_name_s"></ion-input>
             </ion-item>
           </ion-col>
           <ion-col size="12">
@@ -781,8 +796,8 @@
               <h1 class="ion-text-label">Date placed in service</h1>
             </ion-text>
             <ion-item lines="none" class="ion-no-padding posRelative">
-              <input class="ion-input-tag date" [(ngModel)]="base_data.date_of_birth_t" [matDatepicker]="t_dob"
-                (click)="t_dob.open()" placeholder="Select Date" readonly>
+              <input class="ion-input-tag date" [(ngModel)]="business_income_and_expenses.date_of_birth_t"
+                [matDatepicker]="t_dob" (click)="t_dob.open()" placeholder="Select Date" readonly>
               <mat-datepicker #t_dob color="primary"></mat-datepicker>
             </ion-item>
           </ion-col>
@@ -792,7 +807,7 @@
             </ion-text>
             <ion-item lines="none" class="ion-no-padding">
               <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"
-                [(ngModel)]="base_data.first_name_s"></ion-input>
+                [(ngModel)]="business_income_and_expenses.first_name_s"></ion-input>
             </ion-item>
           </ion-col>
           <ion-col size="12">
@@ -801,7 +816,7 @@
             </ion-text>
             <ion-item lines="none" class="ion-no-padding">
               <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"
-                [(ngModel)]="base_data.first_name_s"></ion-input>
+                [(ngModel)]="business_income_and_expenses.first_name_s"></ion-input>
             </ion-item>
           </ion-col>
           <ion-col size="12">
@@ -810,7 +825,7 @@
             </ion-text>
             <ion-item lines="none" class="ion-no-padding">
               <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"
-                [(ngModel)]="base_data.first_name_s"></ion-input>
+                [(ngModel)]="business_income_and_expenses.first_name_s"></ion-input>
             </ion-item>
           </ion-col>
           <ion-col size="12">
@@ -819,15 +834,16 @@
             </ion-text>
             <ion-item lines="none" class="ion-no-padding">
               <ion-input [legacy]="true" type="text" placeholder="Enter" class="ion-input-tag"
-                [(ngModel)]="base_data.first_name_s"></ion-input>
+                [(ngModel)]="business_income_and_expenses.first_name_s"></ion-input>
             </ion-item>
           </ion-col>
 
           <ion-col size="12">
-            <ion-checkbox labelPlacement="end" [(ngModel)]="base_data.taxpayer_legally_blind"><span
+            <ion-checkbox labelPlacement="end" [(ngModel)]="business_income_and_expenses.taxpayer_legally_blind"><span
                 class="ion-text-wrap">Do you have another
                 vehicle available for personal use?</span></ion-checkbox>
-            <ion-checkbox labelPlacement="end" [(ngModel)]="base_data.taxpayer_disabled"><span class="ion-text-wrap">Do
+            <ion-checkbox labelPlacement="end" [(ngModel)]="business_income_and_expenses.taxpayer_disabled"><span
+                class="ion-text-wrap">Do
                 you have evidence to support
                 your deduction?</span></ion-checkbox>
           </ion-col>

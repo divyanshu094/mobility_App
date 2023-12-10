@@ -3,6 +3,7 @@ import { CommonserviceService } from './services/commonservice.service';
 import { AlertController, NavController, Platform, ToastController } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { App } from '@capacitor/app';
+import { ApiserviceService } from './services/apiservice.service';
 // import { BiometryType, NativeBiometric } from "capacitor-native-biometric";
 
 @Component({
@@ -20,7 +21,7 @@ export class AppComponent {
     { title: 'Documents', url: '/documents', icon: './assets/icon/documents_menu.svg', },
     { title: 'Notification', url: '/notification', icon: './assets/icon/bell_icon.svg' },
   ];
-  constructor(public commonService: CommonserviceService, private alertController: AlertController, private router: Router, private toastCtrl: ToastController, private platform: Platform, private navCtrl: NavController) {
+  constructor(private apiService: ApiserviceService, public commonService: CommonserviceService, private alertController: AlertController, private router: Router, private toastCtrl: ToastController, private platform: Platform, private navCtrl: NavController) {
     this.initApp();
   }
 
@@ -35,6 +36,7 @@ export class AppComponent {
   initApp() {
     const token = localStorage['loggedIn'];
     if (token) {
+      this.getPersonalInfo();
       this.router.navigate([this.getDashUrl()]);
     }
 
@@ -59,6 +61,22 @@ export class AppComponent {
         this.navCtrl.back();
       }
     });
+  }
+
+  getPersonalInfo() {
+    this.apiService.requestViaGet('/employee/update_employee/' + JSON.parse(localStorage["user_detail"]).id + '/').then(
+      (result: any) => {
+        if (result.status) {
+          var personalInfo = result.results;
+          this.profile_pic=personalInfo.profile.photo.file;
+          localStorage.setItem("user_detail",JSON.stringify(personalInfo));
+        } else {
+          this.commonService.showError("Alert", "No Record Found");
+        }
+      },
+      (error) => {
+      }
+    );
   }
 
   showDetails() {

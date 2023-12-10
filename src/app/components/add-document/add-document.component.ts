@@ -19,7 +19,7 @@ export class AddDocumentComponent implements OnInit {
   ngOnInit() {
     if (this.data) {
       this.doc_name = this.data.title;
-      const pathSegments = this.data.file.split('/');
+      const pathSegments = this.data.file.split('?')[0].split('/');
       var file_name = pathSegments[pathSegments.length - 1];
       this.pic={};
       this.pic.name = file_name

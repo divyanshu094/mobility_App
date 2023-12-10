@@ -175,20 +175,18 @@
       <ion-text class="ion-text-box">
         <h1 class="ion-text-label">Country</h1>
       </ion-text>
-      <ion-select placeholder="Select" class="ion-input-tag" [(ngModel)]="base_data.country">
-        <ion-select-option value="apple">Apple</ion-select-option>
-        <ion-select-option value="banana">Banana</ion-select-option>
-        <ion-select-option value="orange">Orange</ion-select-option>
+      <ion-select placeholder="Select" class="ion-input-tag" interface="action-sheet" [(ngModel)]="base_data.country"
+        (ionChange)="getStates($event.target.value)">
+        <ion-select-option *ngFor="let country of countryArray"
+          value={{country.id}}>{{country.name}}</ion-select-option>
       </ion-select>
     </ion-col>
     <ion-col size="6">
       <ion-text class="ion-text-box">
         <h1 class="ion-text-label">State</h1>
       </ion-text>
-      <ion-select placeholder="Select" class="ion-input-tag" [(ngModel)]="base_data.state">
-        <ion-select-option value="apple">Apple</ion-select-option>
-        <ion-select-option value="banana">Banana</ion-select-option>
-        <ion-select-option value="orange">Orange</ion-select-option>
+      <ion-select placeholder="Select" class="ion-input-tag" interface="action-sheet" [(ngModel)]="base_data.state">
+        <ion-select-option *ngFor="let state of stateList" value={{state.id}}>{{state.name}}</ion-select-option>
       </ion-select>
     </ion-col>
     <ion-col size="6">

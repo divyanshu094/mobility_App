@@ -4,6 +4,43 @@
     <ion-col size="12">
       <ion-checkbox labelPlacement="end" class="checkbox-box"><span class="ion-text-wrap">Do you have US Employment
           Income?</span></ion-checkbox>
+      <ion-checkbox labelPlacement="end" class="checkbox-box"><span class="ion-text-wrap">Do you have Foreign Employment
+          Income?</span></ion-checkbox>
+    </ion-col>
+    <ion-row *ngFor="let s of salary_and_wage_income;let i=index">
+      <ion-col size="12">
+        <ion-text class="ion-text-box">
+          <h1 class="ion-text-label">User Type(T/S)</h1>
+        </ion-text>
+        <ion-item lines="none" class="ion-no-padding">
+          <ion-select placeholder="Select" class="ion-input-tag" interface="action-sheet" [(ngModel)]="s.t_s_j">
+            <ion-select-option *ngFor="let item of commonService.ownerTSJ" value={{item}}>{{item}}</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+
+      <ion-col size="12">
+        <ion-text class="ion-text-box">
+          <h1 class="ion-text-label">Organization Name</h1>
+        </ion-text>
+        <ion-item lines="none" class="ion-no-padding">
+          <ion-input [legacy]="true" type="Number" placeholder="Enter" class="ion-input-tag"
+            [(ngModel)]="s.employer"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col size="12">
+        <ion-text class="ion-text-box">
+          <h1 class="ion-text-label">Add Attachment</h1>
+        </ion-text>
+        <div class="upload-box">
+          <ion-img src="./assets/icon/upload.svg" class=""></ion-img>
+          <p>Upload File</p>
+        </div>
+      </ion-col>
+    </ion-row>
+    <!-- <ion-col size="12">
+      <ion-checkbox labelPlacement="end" class="checkbox-box"><span class="ion-text-wrap">Do you have Foreign Employment
+          Income?</span></ion-checkbox>
     </ion-col>
 
     <ion-col size="12">
@@ -11,15 +48,12 @@
         <h1 class="ion-text-label">User Type(T/S)</h1>
       </ion-text>
       <ion-item lines="none" class="ion-no-padding">
-        <ion-select placeholder="Select" class="ion-input-tag">
-          <ion-select-option value="apple">Apple</ion-select-option>
-          <ion-select-option value="banana">Banana</ion-select-option>
-          <ion-select-option value="orange">Orange</ion-select-option>
+        <ion-select placeholder="Select" class="ion-input-tag" interface="action-sheet">
+          <ion-select-option *ngFor="let item of commonService.ownerTSJ" value={{item}}>{{item}}</ion-select-option>
         </ion-select>
-        
       </ion-item>
     </ion-col>
-  
+
     <ion-col size="12">
       <ion-text class="ion-text-box">
         <h1 class="ion-text-label">Organization Name</h1>
@@ -36,43 +70,7 @@
         <ion-img src="./assets/icon/upload.svg" class=""></ion-img>
         <p>Upload File</p>
       </div>
-    </ion-col>
-
-    <ion-col size="12">
-      <ion-checkbox labelPlacement="end" class="checkbox-box"><span class="ion-text-wrap">Do you have Foreign Employment Income?</span></ion-checkbox>
-    </ion-col>
-
-    <ion-col size="12">
-      <ion-text class="ion-text-box">
-        <h1 class="ion-text-label">User Type(T/S)</h1>
-      </ion-text>
-      <ion-item lines="none" class="ion-no-padding">
-        <ion-select placeholder="Select" class="ion-input-tag">
-          <ion-select-option value="apple">Apple</ion-select-option>
-          <ion-select-option value="banana">Banana</ion-select-option>
-          <ion-select-option value="orange">Orange</ion-select-option>
-        </ion-select>
-        
-      </ion-item>
-    </ion-col>
-  
-    <ion-col size="12">
-      <ion-text class="ion-text-box">
-        <h1 class="ion-text-label">Organization Name</h1>
-      </ion-text>
-      <ion-item lines="none" class="ion-no-padding">
-        <ion-input [legacy]="true" type="Number" placeholder="Enter" class="ion-input-tag"></ion-input>
-      </ion-item>
-    </ion-col>
-    <ion-col size="12">
-      <ion-text class="ion-text-box">
-        <h1 class="ion-text-label">Add Attachment</h1>
-      </ion-text>
-      <div class="upload-box">
-        <ion-img src="./assets/icon/upload.svg" class=""></ion-img>
-        <p>Upload File</p>
-      </div>
-    </ion-col>
+    </ion-col> -->
     <ion-col size="6">
       <ion-button expand="block" class="btn-outline" (click)="prev()">
         <ion-icon slot="start" mode="ios" name="chevron-back-outline"></ion-icon>

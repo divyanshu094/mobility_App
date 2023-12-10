@@ -13,6 +13,19 @@ const USER_KEY = 'auth-user';
 })
 export class CommonserviceService {
   userInfo: any = {};
+  countryArray: any = [];
+  stateArray: any = [];
+  cityArray: any = [];
+  US_StateList: any = [];
+  owner: any = ["Taxpayer", "Spouse","Joint"];
+  ownerTSJ: any = ["Taxpayer (T)", "Spouse (S)","Joint (J)"];
+  ownerTS: any = ["Taxpayer (T)", "Spouse (S)"];
+  inventry_methods: any = ["Lifo", "Fifo", "WFO"];
+  business_types: any = ["Sole Proprietorships", "Partnerships", "Corporations", "S Corporations", "Limited Liability Company (LLC)"];
+  accounting_methods: any = ["Cash", "Accrual", "Other"];
+  property_types: any = ["Residential", "Commercial", "Land", "Mixed use"]
+  yesNoArray: any = ["Yes", "No"];
+  accountType: any = ["Checking", "Savings"];
   constructor(private toastController: ToastController) { }
   // constructor(private toastr: ToastrService, public dialog: MatDialog) { }
 

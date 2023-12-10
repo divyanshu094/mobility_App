@@ -17,12 +17,9 @@
         <h1 class="ion-text-label">Account Owner</h1>
       </ion-text>
       <ion-item lines="none" class="ion-no-padding">
-        <ion-select placeholder="Select" class="ion-input-tag" [(ngModel)]="direct_deposit_direct_debit_in_formation.account_owner">
-          <ion-select-option value="apple">Apple</ion-select-option>
-          <ion-select-option value="banana">Banana</ion-select-option>
-          <ion-select-option value="orange">Orange</ion-select-option>
+        <ion-select placeholder="Select" class="ion-input-tag" interface="action-sheet" [(ngModel)]="direct_deposit_direct_debit_in_formation.account_owner">
+          <ion-select-option *ngFor="let item of commonService.owner" value={{item}}>{{item}}</ion-select-option>
         </ion-select>
-        
       </ion-item>
     </ion-col>
     <ion-col size="12">
@@ -30,12 +27,9 @@
         <h1 class="ion-text-label">Type of Account</h1>
       </ion-text>
       <ion-item lines="none" class="ion-no-padding">
-        <ion-select placeholder="Select" class="ion-input-tag" [(ngModel)]="direct_deposit_direct_debit_in_formation.type_of_account">
-          <ion-select-option value="apple">Apple</ion-select-option>
-          <ion-select-option value="banana">Banana</ion-select-option>
-          <ion-select-option value="orange">Orange</ion-select-option>
+        <ion-select placeholder="Select" class="ion-input-tag" interface="action-sheet" [(ngModel)]="direct_deposit_direct_debit_in_formation.type_of_account">
+          <ion-select-option *ngFor="let item of commonService.accountType" value={{item}}>{{item}}</ion-select-option>
         </ion-select>
-        
       </ion-item>
     </ion-col>
     <ion-col size="12">

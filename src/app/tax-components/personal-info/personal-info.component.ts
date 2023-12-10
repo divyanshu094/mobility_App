@@ -12,9 +12,12 @@ export class PersonalInfoComponent implements OnInit {
   @Output() pageChange = new EventEmitter<string>();
   base_data: any = {};
   isSubmitted: boolean = false;
+  countryArray:any=[];
+  stateList:any=[];
   constructor(private apiService: ApiserviceService, public datepipe: DatePipe, public commonService: CommonserviceService) { }
 
   ngOnInit() {
+    this.getCountry();
     this.getFilledData();
   }
 
@@ -29,6 +32,9 @@ export class PersonalInfoComponent implements OnInit {
           var data = result.results;
           this.isSubmitted = data.user.user_tax_status[0].tax_return_submitted;
           this.base_data = data.base_data;
+          if(this.base_data.country){
+            this.getStates(this.base_data.country);
+          }
         }
       },
       (error) => {
@@ -58,6 +64,29 @@ export class PersonalInfoComponent implements OnInit {
         }
       }, (err: any) => {
       });
+  }
 
+  getCountry() {
+    this.apiService.requestViaGet('/superadmin/country/').then(
+      (result: any) => {
+        if (result.status) {
+          this.countryArray = result.results;
+        }
+      },
+      (error) => {
+      }
+    );
+  }
+
+  getStates(eve: any) {
+    this.apiService.requestViaGet('/superadmin/state_by_country/' + eve + '/').then(
+      (result: any) => {
+        if (result.status) {
+          this.stateList = result.results;
+        }
+      },
+      (error) => {
+      }
+    );
   }
 }
