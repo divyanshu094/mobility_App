@@ -22,11 +22,12 @@
       <p>Take Photo</p>
     </ion-col>
   </ion-row>
-  <ion-item lines="none" class="ion-no-padding">
+  <ion-item lines="none" class="ion-no-padding" *ngIf="pic">
     <ion-avatar slot="start">
       <img src="./assets/icon/pdf_icon.svg" />
     </ion-avatar>
-    <ion-label>Engagement letter.pdf</ion-label>
+    <ion-label>{{pic.name}}</ion-label>
+    <ion-icon name="close-outline" size="large" slot="end" *ngIf="!isEdit" (click)="removeFile()"></ion-icon>
   </ion-item>
-  <ion-button expand="block" class="sign-in-btn" (click)="uploadFiles()">Add</ion-button>
+  <ion-button expand="block" class="sign-in-btn" (click)="action()">{{isEdit ? 'Update' : 'Add' }}</ion-button>
 </ion-content>

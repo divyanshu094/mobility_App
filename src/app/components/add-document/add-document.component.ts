@@ -13,10 +13,18 @@ export class AddDocumentComponent implements OnInit {
   doc_name: any = "";
   pic: any;
   user_id: any = '';
+  isEdit:boolean=false;
   constructor(private apiService: ApiserviceService, private commonService: CommonserviceService, private modalCtrl: ModalController) { }
 
   ngOnInit() {
-    this.doc_name = this.data.title;
+    if (this.data) {
+      this.doc_name = this.data.title;
+      const pathSegments = this.data.file.split('/');
+      var file_name = pathSegments[pathSegments.length - 1];
+      this.pic={};
+      this.pic.name = file_name
+      this.isEdit=true;
+    }
     this.user_id = JSON.parse(localStorage["user_detail"]).id;
   }
 
@@ -36,7 +44,19 @@ export class AddDocumentComponent implements OnInit {
     });
   };
 
-  uploadFiles() {
+  removeFile() {
+    this.pic = "";
+  }
+
+  action(){
+    if(this.isEdit){
+      this.updateDoc();
+    }else{
+        this.addFiles();
+    }
+  }
+
+  addFiles() {
 
     if (!this.doc_name) {
       this.commonService.showAlert("Alert", "Please enter document name");
@@ -60,6 +80,26 @@ export class AddDocumentComponent implements OnInit {
       error => {
         console.log(error.error)
         this.commonService.showError("Alert", error.error);
+      }
+    );
+  }
+
+  updateDoc() {
+    var post_data = {
+      "title": this.doc_name,
+      "description":this.data.description
+    }
+
+    this.apiService.requestViaPatch('/employee/update_master_document/' + this.data.id + '/', post_data).then(
+      (result: any) => {
+        if (result.status) {
+          this.commonService.showSuccess("Success", result.message);
+          this.cancel();
+        } else {
+          this.commonService.showError("Error", result.error)
+        }
+      }, (err) => {
+
       }
     );
   }

@@ -15,7 +15,7 @@ export class TimelineUploadComponent implements OnInit {
   @Input() id: any;
   @Input() row_id: any;
   @Input() status: any;
-  prepared_attachment:any=[];
+  prepared_attachment: any = [];
   remark: any;
   constructor(private router: Router, private apiService: ApiserviceService, private commonService: CommonserviceService, private modalCtrl: ModalController) { }
 
@@ -25,11 +25,22 @@ export class TimelineUploadComponent implements OnInit {
     this.modalCtrl.dismiss(null, 'cancel');
   }
 
-  chooseFile(){
+  chooseFile = async () => {
+    this.commonService.uploadPiture().then((file: any) => {
+      this.prepared_attachment.push(file)
+    });
+  };
 
+  removeFile(index:number){
+    this.prepared_attachment.splice(index,1);
   }
 
   action() {
+    if(!this.remark){
+      this.commonService.showAlert("Alert", "Please enter comment");
+      return;
+    }
+
     if (this.step.name == 'e-file Return') {
       this.uploadFinalReturn();
     } else if (localStorage.getItem("current_role") == "cpa") {
