@@ -4,6 +4,7 @@ import { BehaviorSubject, Observable, catchError, throwError, switchMap, filter,
 import { ApiserviceService } from './apiservice.service';
 import { CommonserviceService } from './commonservice.service';
 import { LoadingController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 const TOKEN_HEADER_KEY = 'Authorization';
 @Injectable({
@@ -14,7 +15,7 @@ export class TokenInterceptorService implements HttpInterceptor {
   token: any;
   private isRefreshing = false;
   private refreshTokenSubject: BehaviorSubject<any> = new BehaviorSubject<any>(null);
-  constructor(private tokenService: CommonserviceService, private authService: ApiserviceService, public loadingCtrl: LoadingController) {
+  constructor(private tokenService: CommonserviceService, private authService: ApiserviceService, public loadingCtrl: LoadingController,private router: Router) {
     // var token = (sessionStorage.getItem('token'));
 
   }
@@ -56,6 +57,12 @@ export class TokenInterceptorService implements HttpInterceptor {
   }
 
   private handle401Error(request: HttpRequest<any>, next: HttpHandler) {
+    if(request.url.includes("token/refresh")){
+      this.tokenService.signOut();
+      this.tokenService.showAlert("Alert","Your session has expired, Please login again")
+      this.router.navigate(['/']);
+    }
+
     if (!this.isRefreshing) {
       this.isRefreshing = true;
       this.refreshTokenSubject.next(null);
