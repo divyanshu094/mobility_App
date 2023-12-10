@@ -23,13 +23,13 @@ export class TokenInterceptorService implements HttpInterceptor {
 
     this.loadingCtrl.getTop().then(hasLoading => {
       if (!hasLoading) {
-        // this.loadingCtrl.create({
-        //   message: 'Please Wait',
-        //   spinner: 'bubbles',
-        //   mode: 'ios',
-        //   keyboardClose: true,
-        //   translucent: true
-        // }).then(loading => loading.present());
+        this.loadingCtrl.create({
+          message: 'Please Wait',
+          spinner: 'bubbles',
+          mode: 'ios',
+          keyboardClose: true,
+          translucent: true
+        }).then(loading => loading.present());
       }
     })
 
