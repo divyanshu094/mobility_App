@@ -21,7 +21,7 @@ export class TimelinePage implements OnInit {
   client_email: any;
   profile_pic: any;
   tax_id:any;
-  constructor(private route: ActivatedRoute, private router: Router, private apiService: ApiserviceService, private commonService: CommonserviceService, private modalCtrl: ModalController) {
+  constructor(private route: ActivatedRoute, private router: Router, private apiService: ApiserviceService, public commonService: CommonserviceService, private modalCtrl: ModalController) {
     this.year = this.route.snapshot.paramMap.get("year");
     this.user_id = this.route.snapshot.paramMap.get("user_id");
     this.from = this.route.snapshot.paramMap.get("from");

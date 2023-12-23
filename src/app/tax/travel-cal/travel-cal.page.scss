@@ -72,7 +72,7 @@
   font-size: 1.4rem;
   font-weight: bold;
   color: #554848;
-  padding: 2% 0%;
+  padding: 1.5% 0% 3%;
   margin: 1% 0.6% 0% 0.6%;
   cursor: pointer;
   position: relative;
@@ -92,14 +92,14 @@
 .days li .lwr {
   text-align: right;
   color: #fff;
-  font-size: 1rem;
+  font-size: .7rem;
   font-weight: 600;
   -webkit-transform: rotate(314deg);
   transform: rotate(314deg);
   z-index: 10;
   position: absolute;
   right: 5%;
-  bottom: 2%;
+  bottom: 1%;
 }
 
 .holiday {
@@ -123,19 +123,19 @@
 }
 
 .holiday_event {
-  background: linear-gradient(135deg, #fff 72%, #F2413D 20%) !important;
+  background: linear-gradient(135deg, #fff 75%, #F2413D 20%) !important;
 }
 
 .business_event {
-  background: linear-gradient(135deg, #fff 72%, #45C4FF 20%) !important;
+  background: linear-gradient(135deg, #fff 75%, #45C4FF 20%) !important;
 }
 
 .work_event {
-  background: linear-gradient(135deg, #fff 72%, #4AB04E 20%) !important;
+  background: linear-gradient(135deg, #fff 75%, #4AB04E 20%) !important;
 }
 
 .transit_event {
-  background: linear-gradient(135deg, #fff 72%, #FAEA3B 20%) !important;
+  background: linear-gradient(135deg, #fff 75%, #FAEA3B 20%) !important;
 }
 
 .today_loc {

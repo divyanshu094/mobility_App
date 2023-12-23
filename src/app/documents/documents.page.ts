@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Injectable, OnInit, Pipe, PipeTransform } from '@angular/core';
 import { ApiserviceService } from '../services/apiservice.service';
 import { CommonserviceService } from '../services/commonservice.service';
 import { AlertController, ModalController, PopoverController } from '@ionic/angular';
@@ -13,7 +13,8 @@ import { OptionsComponent } from '../components/options/options.component';
 export class DocumentsPage implements OnInit {
   user_id: string = "";
   documents: any = [];
-  constructor(private apiService: ApiserviceService, private commonService: CommonserviceService, public popoverCtrl: PopoverController, private modalCtrl: ModalController, private alertController: AlertController) { }
+  filterTerm:any="";
+  constructor(private apiService: ApiserviceService, public commonService: CommonserviceService, public popoverCtrl: PopoverController, private modalCtrl: ModalController, private alertController: AlertController) { }
 
   ngOnInit() {
     var user = JSON.parse(localStorage["user_detail"]);
@@ -115,5 +116,9 @@ export class DocumentsPage implements OnInit {
       (error) => {
       }
     );
+  }
+  
+  onSearchInput(e:any) {
+    console.log(e);
   }
 }

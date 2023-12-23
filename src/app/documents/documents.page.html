@@ -3,16 +3,17 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-searchbar placeholder="Search" [debounce]="1000" class="custom"></ion-searchbar>
+  <ion-searchbar placeholder="Search" [debounce]="1000" [(ngModel)]="filterTerm" (ionInput)="onSearchInput($event)"
+    class="custom"></ion-searchbar>
   <h5>Document List <span class="add-text" (click)="addDocument()">Add New</span></h5>
 
   <ion-list>
-    <ion-card *ngFor="let item of documents;let i=index">
+    <ion-card *ngFor="let item of documents | filters: filterTerm">
       <ion-card-content>
         <ion-item>
           <ion-img src="./assets/icon/three_dot.svg" class="dots" (click)="showOptions($event,item)"></ion-img>
           <ion-avatar slot="start">
-            <img [alt]="item.title" src="./assets/icon/pdf_icon.svg" />
+            <img [alt]="item.title" [src]="commonService.getAttachmentIcon(item.file)" />
           </ion-avatar>
           <ion-label>
             <h2>{{item.title}}</h2>
@@ -24,6 +25,6 @@
     </ion-card>
   </ion-list>
 
-  
+
 
 </ion-content>

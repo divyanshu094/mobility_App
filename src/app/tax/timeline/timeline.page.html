@@ -44,7 +44,7 @@
             <ion-list *ngIf="step.file.length>0">
               <ion-item *ngFor="let attach of step.file; let index">
                 <ion-avatar slot="start">
-                  <img [src]="attach.file" [alt]="attach.title" />
+                  <img [src]="commonService.getAttachmentIcon(attach.file)" [alt]="attach.title" />
                 </ion-avatar>
                 <ion-label>{{attach.title}}</ion-label>
               </ion-item>

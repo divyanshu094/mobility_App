@@ -14,7 +14,7 @@ export class AddDocumentComponent implements OnInit {
   pic: any;
   user_id: any = '';
   isEdit:boolean=false;
-  constructor(private apiService: ApiserviceService, private commonService: CommonserviceService, private modalCtrl: ModalController) { }
+  constructor(private apiService: ApiserviceService, public commonService: CommonserviceService, private modalCtrl: ModalController) { }
 
   ngOnInit() {
     if (this.data) {

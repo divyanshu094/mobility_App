@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { AddTravelDetailComponent } from 'src/app/components/add-travel-detail/add-travel-detail.component';
+import { ViewTravelComponent } from 'src/app/components/view-travel/view-travel.component';
 import { ApiserviceService } from 'src/app/services/apiservice.service';
 import { CommonserviceService } from 'src/app/services/commonservice.service';
 
@@ -155,10 +156,19 @@ export class TravelCalPage implements OnInit {
   }
 
 
-  viewEvents(data: any) {
+  async viewEvents(data: any) {
     if (data && data.event.length > 0) {
-      // $('.calBtn').trigger('click');
       this.calEvents = data.event;
+      const modal1 = await this.modalCtrl.create({
+        component: ViewTravelComponent,
+        breakpoints: [0.5, 0.8],
+        initialBreakpoint: 0.3,
+        cssClass: 'otp-modal',
+        componentProps: {
+          "calender_Events":  this.calEvents
+        }
+      });
+      await modal1.present();
     }
   }
 

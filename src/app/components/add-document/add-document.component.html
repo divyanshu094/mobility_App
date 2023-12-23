@@ -24,7 +24,7 @@
   </ion-row>
   <ion-item lines="none" class="ion-no-padding" *ngIf="pic">
     <ion-avatar slot="start">
-      <img src="./assets/icon/pdf_icon.svg" />
+      <img [src]="commonService.getAttachmentIcon(pic.name)" />
     </ion-avatar>
     <ion-label>{{pic.name}}</ion-label>
     <ion-icon name="close-outline" size="large" slot="end" *ngIf="!isEdit" (click)="removeFile()"></ion-icon>

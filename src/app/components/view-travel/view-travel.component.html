@@ -1,0 +1,7 @@
+<div class="events" *ngFor="let event of calender_Events">
+  <span>{{event.assignment_type.assigment_name}}</span>
+  <span>
+    <p class="dates">{{event.from_date | date}} - {{event.to_date | date}}</p>
+    <p><b>{{event.destination_city}},{{event.destination_country.name}}</b></p>
+  </span>
+</div>

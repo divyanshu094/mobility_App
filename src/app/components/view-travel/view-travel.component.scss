@@ -1,0 +1,35 @@
+.events:nth-of-type(1){
+    margin-top: 10%;
+}
+
+.events {
+    display: table;
+    border: 1px solid #ccc;
+    margin: 2% 3%;
+    width: 94%;
+    border-radius: 5px;
+  
+    p {
+      margin: 0;
+    }
+  
+    span {
+      display: table-cell;
+    }
+  
+    span:nth-of-type(1) {
+      width: 25%;
+      background: #e6e6e6;
+      vertical-align: middle;
+      padding-left: 2%;
+      text-transform: capitalize;
+      font-weight: bold;
+      color: #92479b;
+      font-size: 0.9em;
+    }
+  
+    span:nth-of-type(2) {
+      width: 75%;
+      padding: 2%;
+    }
+  }

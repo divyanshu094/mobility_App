@@ -54,6 +54,16 @@ export class CommonserviceService {
   //   }
   // }
 
+  getAttachmentIcon(url:any) {
+    if (url.includes(".pdf")) {
+      return "./assets/icon/pdf_icon.svg";
+    } else if (url.includes(".jpg") || url.includes(".png") || url.includes(".svg") || url.includes(".jpeg") || url.includes(".webp")) {
+      return "./assets/icon/img_icon.svg";
+    } else {
+      return "./assets/icon/doc_icon.svg";
+    }
+  }
+
   takePicture = async () => {
     const image: any = await Camera.getPhoto({
       source: CameraSource.Camera,

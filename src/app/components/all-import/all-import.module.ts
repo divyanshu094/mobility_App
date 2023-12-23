@@ -15,6 +15,8 @@ import { AmountFormatDirective } from 'src/app/directive/amount/amount-format.di
 import { AddTravelDetailComponent } from '../add-travel-detail/add-travel-detail.component';
 import { TimelineUploadComponent } from '../timeline-upload/timeline-upload.component';
 import { OptionsComponent } from '../options/options.component';
+import { FilterPipe } from 'src/app/pipes/filter.pipe';
+import { ViewTravelComponent } from '../view-travel/view-travel.component';
 
 
 
@@ -29,7 +31,9 @@ import { OptionsComponent } from '../options/options.component';
     AmountFormatDirective,
     AddTravelDetailComponent,
     TimelineUploadComponent,
-    OptionsComponent
+    OptionsComponent,
+    FilterPipe,
+    ViewTravelComponent
   ],
   imports: [
     CommonModule,
@@ -48,7 +52,9 @@ import { OptionsComponent } from '../options/options.component';
     AmountFormatDirective,
     AddTravelDetailComponent,
     TimelineUploadComponent,
-    OptionsComponent
+    OptionsComponent,
+    FilterPipe,
+    ViewTravelComponent
   ]
 })
 export class AllImportModule { }

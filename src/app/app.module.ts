@@ -17,7 +17,6 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatNativeDateModule, MAT_DATE_LOCALE, MAT_DATE_FORMATS, DateAdapter } from '@angular/material/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatInputModule } from '@angular/material/input';
-import { AmountFormatDirective } from './directive/amount/amount-format.directive';
 
 @NgModule({
   declarations: [AppComponent],
